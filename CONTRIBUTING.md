@@ -3,7 +3,7 @@
 Thank you for investing your time in contributing to our project! 
 
 ## Code of Conduct
-This project and everyone participating in it is follows our Code of Conduct[link here]. By participating, you are also expected to uphold its standards and are subject to its enforcement guidelines.
+This project and everyone participating in it is follows our Code of Conduct (found in the root of this repository). By participating, you are also expected to uphold its standards and are subject to its enforcement guidelines.
 
 ## License
 By contributing, you agree that your contributions will be licensed under the MIT License.
@@ -15,7 +15,7 @@ All code or documentation contributions should be associated with an open issue.
 
 ### Issues 
 #### Creating an issue
-Check if the bug report, feature or documentation contribution does not already have an open issue. If not then a new issue can be created using the issue template linked [here](insert link later). 
+Check if the bug report, feature or documentation contribution does not already have an open issue. If not then a new issue can be created using the issue template linked [here](https://github.com/SE701-T1/frontend/blob/main/.github/issue_template.md). The issue will automatically populate with the template text.
 
 For a new feature request, the issue should describe the new feature and why it is needed. For bug reports, provide as much information as possible so that the others will be able to reproduce it. 
 
@@ -37,7 +37,7 @@ This project uses the fork and pull workflow. For more details see [this video](
 8. Merge your changes
 
 ### PR Templates
-Insert pr request template here. Pull requests should be created to merge all changes. Other team members will review the proposed code and suggest changes as required. Discussions about the code should be kept to the relevant issue/PR so that all team members can see and benefit from it.
+Pull requests should be created to merge all changes. The pull request form should auto fill with the template PR file. Other team members will review the proposed code and suggest changes as required. Discussions about the code should be kept to the relevant issue/PR so that all team members can see and benefit from it.
 
 ## Code review process
 Team members in the relevant sub-team will review the code submitted for PR. Team members will review code for readability, style, bugs, test coverage and completion of acceptance criteria. The reviwers should also make ensure that the application works as expected, all prevoius tests pass, and new features have associated unit tests.
@@ -46,4 +46,4 @@ Team members in the relevant sub-team will review the code submitted for PR. Tea
 (When linting and formatting is finalised add details here)
 
 ## Owners
-[insert links to owners files] The different parts of the project are owned by different contributors. The owners of each sub-team should review PR's related to their area of the project.
+The different parts of the project are owned by different contributors. The owners of each sub-team should review PR's related to their area of the project. [insert links to owners files] 
