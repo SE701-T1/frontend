@@ -3,7 +3,7 @@
 Thank you for investing your time in contributing to our project! 
 
 ## Code of Conduct
-This project and everyone participating in it is follows our Code of Conduct (found in the root of this repository). By participating, you are also expected to uphold its standards and are subject to its enforcement guidelines.
+This project and everyone participating in it, follows our Code of Conduct (found in the root of this repository). By participating, you are also expected to uphold its standards and are subject to its enforcement guidelines.
 
 ## License
 By contributing, you agree that your contributions will be licensed under the MIT License.
