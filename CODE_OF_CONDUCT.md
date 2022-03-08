@@ -2,7 +2,7 @@
 
 ## Our Pledge
 
-In the interest of creating a safe and inclusive work environment, we as members, contributors, and leaders pledge to make participation in SOFTENG 701 Team 1 a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status,
+In the interest of creating a safe and inclusive work environment, we as members, contributors, and leaders pledge to make participation in SOFTENG 701 a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status,
 nationality, personal appearance, race, religion, or sexual identity and orientation.
 
 We pledge to act and interact in ways that contribute to an open, welcoming,
@@ -17,7 +17,7 @@ Examples of behavior that contributes to a positive and productive environment i
 * Accepting responsibility and apologizing to those affected by our mistakes,
   and learning from the experience.
 * Focusing on what is best not just for us as individuals, but for the overall Team. 
-* Attending at least 1 team meeting every week. 
+* Attending at least one team meeting every week. 
 * Communicate with the team regularly and stay up to date on all communication platforms. 
 * Complete assigned tasks and meet deadlines.
 * Notify the team within an appropriate timeframe if unable to complete assigned tasks. 
@@ -33,13 +33,13 @@ Examples of unacceptable behavior include:
   address, without their explicit permission.
 * Other conduct which could reasonably be considered inappropriate in a
   professional setting.
-* Failing to complete assigned tasks and meet deadlines.
+* Failing to complete assigned tasks and meet deadlines without prior notice.
 * Lack of clear communication with team members.
 * Violating the team contribution guidlines and merging changes without appropriate approval. 
 
 ## Enforcement Responsibilities
 
-All members of SOFTENG 701 Team 1 are responsible for clarifying and enforcing our standards of
+All members of SOFTENG 701 are responsible for clarifying and enforcing our standards of
 acceptable behavior and will take appropriate and fair corrective action in
 response to any behavior that they deem inappropriate, threatening, offensive,
 or harmful.
@@ -55,8 +55,7 @@ This Code of Conduct applies within The University of Auckland SOFTENG 701 Cours
 
 ## Enforcement
 
-Instances of abusive, harassing, or otherwise unacceptable behavior may be
-reported to team leaders or SOFTENG 701 teaching staff responsible for enforcement at the University of Auckland Faculty of Engineering.
+Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to team leaders or SOFTENG 701 teaching staff james.tizard@auckland.ac.nz (Lecturer) or e.tempero@auckland.ac.nz (Course Coordinator, Lecturer) for enforcement at The University of Auckland Faculty of Engineering.
 All complaints will be reviewed and investigated promptly and fairly.
 
 All team leaders are obligated to respect the privacy and security of the
