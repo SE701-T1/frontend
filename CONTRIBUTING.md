@@ -22,7 +22,7 @@ For a new feature request, the issue should describe the new feature and why it 
 The issue should then be approved by the team, and assigned labels, before assigning a member to work on it.
 
 #### Issue Labeling
-The labels available for issues fall under 3 categories, Priority, Status and Type. All issues must have one of each category at all times. The priority label should be decided by the team working on the relevant issue. During development please update the issue as required.
+The labels available for issues fall under 3 categories, Priority, Status and Type. All issues must have one of each category at all times. The priority label should be decided by the team working on the relevant issue. During development please update the issue as required. For example if the issue is blocked then update the descripion with a link to the issue blocking it
 
 ### Suggested Workflow
 This project uses the fork and pull workflow. For more details see [this video](https://www.youtube.com/watch?v=nT8KGYVurIU).
@@ -40,7 +40,10 @@ This project uses the fork and pull workflow. For more details see [this video](
 Insert pr request template here. Pull requests should be created to merge all changes. Other team members will review the proposed code and suggest changes as required. Discussions about the code should be kept to the relevant issue/PR so that all team members can see and benefit from it.
 
 ## Code review process
-Team members in the relevant sub-team will review the code submitted for PR. Team members will review code for readability, style, bugs, test coverage and completion of acceptance criteria.
+Team members in the relevant sub-team will review the code submitted for PR. Team members will review code for readability, style, bugs, test coverage and completion of acceptance criteria. The reviwers should also make ensure that the application works as expected, all prevoius tests pass, and new features have associated unit tests.
 
 ## Code, commit message and branch name conventions
 (When linting and formatting is finalised add details here)
+
+## Owners
+[insert links to owners files] The different parts of the project are owned by different contributors. The owners of each sub-team should review PR's related to their area of the project.
