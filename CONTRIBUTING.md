@@ -3,17 +3,21 @@
 Thank you for investing your time in contributing to our project! 
 
 ## Code of Conduct
-This project and everyone participating in it is follows our Code of Conduct. By participating, you are also expected to uphold this code. 
+This project and everyone participating in it is follows our Code of Conduct[link here]. By participating, you are also expected to uphold its standards and are subject to its enforcement guidelines.
 
 ## License
-By contributing, you agree that your contributions will be licensed under its MIT License.
+By contributing, you agree that your contributions will be licensed under the MIT License.
 
 ## Getting started
-All code or documentation contributions should be associated with an open issue. If an issue does not exist, you should create one first. 
+We use GitHub issues associated with each project to track the work associated with that project. Check the issue comments/labels to see whether someone else has indicated that they are working on it. If the issue has been assigned then it is not available to pick up. 
+
+All code or documentation contributions should be associated with an open issue. If an issue does not exist for the area you wish to work on, one should be created first.
 
 ### Issues 
 #### Creating an issue
-Firstly please check if the bug report, feature or documentation contribution does not already have an open issue. If not then a new issue can be created using the issue template linked [here](insert link later). For a new feature request, the issue should describe the new feature and why it is needed. For bug reports, provide as much information as possible so that the others will be able to reproduce it.
+Check if the bug report, feature or documentation contribution does not already have an open issue. If not then a new issue can be created using the issue template linked [here](insert link later). 
+
+For a new feature request, the issue should describe the new feature and why it is needed. For bug reports, provide as much information as possible so that the others will be able to reproduce it. 
 
 The issue should then be approved by the team, and assigned labels, before assigning a member to work on it.
 
@@ -33,10 +37,10 @@ This project uses the fork and pull workflow. For more details see [this video](
 8. Merge your changes
 
 ### PR Templates
-Insert pr request template here.
-Other team members should review the proposed code and suggest changes as required. Discussions about the code should be kept to the relevant issue/PR so that all team members can see and benefit from it.
+Insert pr request template here. Pull requests should be created to merge all changes. Other team members will review the proposed code and suggest changes as required. Discussions about the code should be kept to the relevant issue/PR so that all team members can see and benefit from it.
 
 ## Code review process
+Team members in the relevant sub-team will review the code submitted for PR. Team members will review code for readability, style, bugs, test coverage and completion of acceptance criteria.
 
 ## Code, commit message and branch name conventions
 (When linting and formatting is finalised add details here)
