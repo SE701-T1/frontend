@@ -21,3 +21,12 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# other ignores for ides etc.
+coverage/
+*.log*
+*.sublime-project
+*.sublime-workspace
+.idea
+*.iml
+.vscode
