@@ -47,7 +47,7 @@ export default function Carousel({ className, data }) {
                     data.map((item) =>
                         <div 
                             key={item.id} 
-                            className={`${styles.circle}${(item.id === activePage.id) ? styles.active : ''}`} 
+                            className={`${styles.circle} ${(item.id === activePage.id) ? styles.active : ''}`} 
                             onClick={() => onSetActivePage(item.id)}
                             onKeyDown={() => onSetActivePage(item.id)}
                             role='button'
@@ -68,4 +68,8 @@ Carousel.propTypes = {
         description: PropTypes.string.isRequired
     })).isRequired,
     className: PropTypes.string
+};
+
+Carousel.defaultProps = {
+    className: ''
 };
