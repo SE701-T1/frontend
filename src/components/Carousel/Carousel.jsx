@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 import Page from './Page';
 import styles from './Carousel.module.css';
 
-export default function Carousel({ data }) {
+export default function Carousel({ className, data }) {
     const [activePage, setActivePage] = useState(data[0]);
 
     function onSetActivePage(index) {
@@ -19,7 +19,7 @@ export default function Carousel({ data }) {
     }
 
     return (
-        <div className={styles.container}>
+        <div className={`${styles.container} ${className}`}>
             <Page title={activePage.title} description={activePage.description}/>
             <div className={styles.buttonContainer}>
                 {
@@ -45,5 +45,6 @@ Carousel.propTypes = {
         id: PropTypes.number.isRequired,
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired
-    })).isRequired
+    })).isRequired,
+    className: PropTypes.string.isRequired
 };
