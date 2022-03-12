@@ -46,5 +46,5 @@ Carousel.propTypes = {
         title: PropTypes.string.isRequired,
         description: PropTypes.string.isRequired
     })).isRequired,
-    className: PropTypes.string.isRequired
+    className: PropTypes.string
 };
