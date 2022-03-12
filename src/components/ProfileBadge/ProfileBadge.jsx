@@ -49,7 +49,7 @@ function ProfileBadge({ active, name }) {
           overlap="circular"
           anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
           variant="dot">
-          <Avatar data-testid="avatar" alt={name} />
+          <Avatar data-testid={name} alt={name} />
         </Active>
       ) : (
         <Offline
@@ -57,7 +57,7 @@ function ProfileBadge({ active, name }) {
           overlap="circular"
           anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
           variant="dot">
-          <Avatar data-testid="avatar" alt={name} />
+          <Avatar data-testid={name} alt={name} />
         </Offline>
       )}
     </Container>

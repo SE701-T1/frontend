@@ -5,16 +5,15 @@ import ProfileBage from '../ProfileBadge';
 
 describe('Render Active ProfileBadge', () => {
   test('ProfileBadge test', () => {
-    render(<ProfileBage active />);
+    render(<ProfileBage active name="Bob" />);
     expect(screen.getByTestId('active'));
-    expect(screen.getByTestId('avatar'));
   });
 });
 
 describe('Render Offline ProfileBadge', () => {
   test('ProfileBadge test', () => {
-    render(<ProfileBage active={false} />);
+    render(<ProfileBage active={false} name="Bob" />);
     expect(screen.getByTestId('offline'));
-    expect(screen.getByTestId('avatar'));
+    expect(screen.getByTestId('Bob'));
   });
 });
