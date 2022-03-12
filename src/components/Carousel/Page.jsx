@@ -3,6 +3,10 @@ import PropTypes from 'prop-types';
 import { Typography } from '@mui/material';
 import styles from './Page.module.css';
 
+/**
+ * This is a pure (no state) component which is used by the Carousel to display information on
+ * each page.
+ */
 export default function Page({ title, description }) {
     return (
         <div>
