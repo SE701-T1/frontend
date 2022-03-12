@@ -2,7 +2,7 @@
 
 exports[`Carousel produces the correct initial snapshot 1`] = `
 <div
-  className="container undefined"
+  className="container "
 >
   <div>
     <h5
@@ -21,7 +21,7 @@ exports[`Carousel produces the correct initial snapshot 1`] = `
   >
     <div
       aria-label="Change page"
-      className="circleactive"
+      className="circle active"
       onClick={[Function]}
       onKeyDown={[Function]}
       role="button"
@@ -29,7 +29,7 @@ exports[`Carousel produces the correct initial snapshot 1`] = `
     />
     <div
       aria-label="Change page"
-      className="circle"
+      className="circle "
       onClick={[Function]}
       onKeyDown={[Function]}
       role="button"
