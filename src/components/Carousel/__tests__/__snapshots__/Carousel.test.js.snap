@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Carousel produces the correct initial snapshot 1`] = `
+<div
+  className="container undefined"
+>
+  <div>
+    <h5
+      className="MuiTypography-root MuiTypography-h5 title css-ag7rrr-MuiTypography-root"
+    >
+      page-one-title
+    </h5>
+    <h6
+      className="MuiTypography-root MuiTypography-subtitle2 description css-dd2x5a-MuiTypography-root"
+    >
+      page-one-description
+    </h6>
+  </div>
+  <div
+    className="buttonContainer"
+  >
+    <div
+      aria-label="Change page"
+      className="circleactive"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
+    />
+    <div
+      aria-label="Change page"
+      className="circle"
+      onClick={[Function]}
+      onKeyDown={[Function]}
+      role="button"
+      tabIndex={0}
+    />
+  </div>
+</div>
+`;
