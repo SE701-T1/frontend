@@ -1,0 +1,13 @@
+.status_active {
+  width: 10;
+  height: 10;
+  background: '#44b700';
+  color: '#44b700';
+}
+
+.status_offline {
+  width: 10;
+  height: 10;
+  background: '#9fa2a6';
+  color: '#9fa2a6';
+}
