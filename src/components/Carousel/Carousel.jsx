@@ -25,7 +25,7 @@ export default function Carousel({ data }) {
                 data.map((item) =>
                     <div 
                         key={item.id} 
-                        className={styles.circle} 
+                        className={`${styles.circle} ${item.id === activePage.id && styles.active}`} 
                         onClick={() => onSetActivePage(item.id)}
                         onKeyDown={() => onSetActivePage(item.id)}
                         role='button'
