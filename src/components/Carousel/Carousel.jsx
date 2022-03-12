@@ -19,22 +19,24 @@ export default function Carousel({ data }) {
     }
 
     return (
-        <>
+        <div className={styles.container}>
             <Page title={activePage.title} description={activePage.description}/>
-            {
-                data.map((item) =>
-                    <div 
-                        key={item.id} 
-                        className={`${styles.circle} ${item.id === activePage.id && styles.active}`} 
-                        onClick={() => onSetActivePage(item.id)}
-                        onKeyDown={() => onSetActivePage(item.id)}
-                        role='button'
-                        aria-label='Change page'
-                        tabIndex={0}
-                    />
-                )
-            }
-        </>
+            <div className={styles.buttonContainer}>
+                {
+                    data.map((item) =>
+                        <div 
+                            key={item.id} 
+                            className={`${styles.circle} ${item.id === activePage.id && styles.active}`} 
+                            onClick={() => onSetActivePage(item.id)}
+                            onKeyDown={() => onSetActivePage(item.id)}
+                            role='button'
+                            aria-label='Change page'
+                            tabIndex={0}
+                        />
+                    )
+                }
+            </div>
+        </div>
     )
 }
 
