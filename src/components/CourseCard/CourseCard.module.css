@@ -1,3 +1,20 @@
 .root {
-  max-width: 445;
+  max-width: 280px;
+  border-radius: 5%;
+}
+
+.semesterText {
+  color: #8896ac;
+}
+
+.icons {
+  color: #666666;
+}
+
+.unSelectedCard {
+  border-color: white;
+}
+
+.selectedCard {
+  border-color: ;
 }
