@@ -1,0 +1,31 @@
+.loginButton{
+    background-color: #C5D3E9;
+    text-decoration: none;
+    padding: 1rem 2rem;
+    display: inline-block;
+    border-radius: 1rem;
+    transition: all 0.2s;
+    position: relative;
+    font-size: 1rem;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    text-align: center;
+}
+
+.loginButton:hover{
+    transform: translateY(-3px);
+    box-shadow: 0 1rem 2rem rgba(#000, 0.2);
+}
+
+.loginButton:active, .loginButton.focus{
+    outline: none;
+    transform: translateY(-2px);
+    box-shadow: 0 0.5rem 1rem rgba(#000, 0.2);
+}
+
+.loginText{
+    margin-left: 1rem;
+}
+
+
