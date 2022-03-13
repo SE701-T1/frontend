@@ -25,7 +25,7 @@ export default function Login(){
                 onClick={renderProps.onClick} 
                 disabled={renderProps.disabled}>
                     <FcGoogle size={22} />
-                    <div className={`${styles.loginText}`}>Sign Up Using Google</div>
+                    <div className={`${styles.loginText}`}>SIGN IN WITH GOOGLE</div>
                 </button>
               )}
             onSuccess = {onSuccess}
