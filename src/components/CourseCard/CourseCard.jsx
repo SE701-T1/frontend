@@ -14,7 +14,7 @@ import styles from './CourseCard.module.css';
 const SelectedCard = styled(Card)(() => ({
   // border: '4px solid #8896ac',
   boxShadow: '0px 0px 0px 4.5px #8896ac inset',
-  borderRadius: '8%',
+  borderRadius: '15px',
 
   position: 'relative',
   '&::before,&::after': {
@@ -39,7 +39,7 @@ const SelectedCard = styled(Card)(() => ({
 }));
 
 const StyledCard = styled(Card)(() => ({
-  borderRadius: '5%',
+  borderRadius: '15px',
 }));
 
 function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }) {
