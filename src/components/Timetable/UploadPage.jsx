@@ -23,6 +23,9 @@ export default function UploadPage({ sendTimetableURL }) {
   const handleChange = (event) => {
     setcalendarURL(event.target.value);
   };
+  const handleSubmit = () => {
+    sendTimetableURL(calendarURL);
+  };
 
   return (
     <Stack direction="column" spacing={3} className={styles.title}>
@@ -37,7 +40,7 @@ export default function UploadPage({ sendTimetableURL }) {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton edge="end" color="primary" aria-label="submit" onClick={sendTimetableURL}>
+              <IconButton edge="end" color="primary" aria-label="submit" onClick={handleSubmit}>
                 <SendIcon />
               </IconButton>
             </InputAdornment>
