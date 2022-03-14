@@ -16,6 +16,7 @@ const SearchBox = styled(TextField)(() => ({
 
   '& .MuiInputBase-input': {
     width: '250px',
+    color:'black',
   },
 
   '& .MuiOutlinedInput-root': {
@@ -26,6 +27,7 @@ const SearchBox = styled(TextField)(() => ({
       borderColor: '#BFBFBF',
     },
   },
+
 }));
 
 export default function UserSearch() {
@@ -46,7 +48,7 @@ export default function UserSearch() {
           startAdornment: (
             <InputAdornment>
               <IconButton>
-                <SearchIcon />
+                <SearchIcon data-testid="searchIcon" />
               </IconButton>
             </InputAdornment>
           )
