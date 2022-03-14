@@ -1,54 +1,37 @@
-import React from 'react';
-import {Typography} from "@mui/material";
+import React, {useState} from 'react';
+import {ButtonBase, Typography} from "@mui/material";
 import ProfileBadge from "../ProfileBadge/ProfileBadge";
 import styles from './ChatListItem.module.css';
+import timeSince from "../../Util/TimeFormater";
 
-function ChatItemList({name, active, lastMessageText, lastMessageTime, selected}) {
+function ChatItemList({name, active, lastMessageText, lastMessageTime, onClick}) {
+  const [selected, setSelected] = useState(false);
 
-  function timeSince(date) {
+  function onContainerClick() {
+    setSelected(!selected);
 
-    const seconds = Math.floor((new Date() - date) / 1000);
-
-    let interval = seconds / 31536000;
-
-    if (interval > 1) {
-      return `${Math.floor(interval)} y`;
+    if (onClick !== undefined) {
+      onClick();
     }
-    interval = seconds / 2592000;
-    if (interval > 1) {
-      return `${Math.floor(interval)} m`;
-    }
-    interval = seconds / 86400;
-    if (interval > 1) {
-      return `${Math.floor(interval)} d`;
-    }
-    interval = seconds / 3600;
-    if (interval > 1) {
-      return `${Math.floor(interval)} h`;
-    }
-    interval = seconds / 60;
-    if (interval > 1) {
-      return `${Math.floor(interval)} m`;
-    }
-    return `${Math.floor(seconds)} s`;
   }
 
   return (
-    <div className={`${styles.container} ${selected && styles.selected}`}>
-      <div style={{flex: 0, paddingLeft: "8px", paddingRight: "10px"}}>
+    <ButtonBase style={{background: selected ? "#ECF3FF" : "#FFFFFF", padding: "5px", borderRadius: "5px"}} className={`${styles.container}`}
+                onClick={() => onContainerClick()}>
+      <div className={`${styles.profileBadgeContainer}`}>
         <ProfileBadge active={active} name={name}/>
       </div>
-      <div style={{flex: 1, textAlign: "start", paddingLeft: "5px"}}>
+      <div className={`${styles.textContainer}`}>
         <div>
-          <Typography variant="h6" fontWeight="600"
-                      style={{display: "flex", alignItems: "flex-end"}}>{name}</Typography>
+          <Typography variant="h6" fontWeight="600" lineHeight="normal"
+                      className={`${styles.headerText}`}>{name}</Typography>
         </div>
-        <div style={{display: "flex", flexDirection: "row", alignItems: "flex-start", justifyContent: "space-between"}}>
-          <Typography color="#959595" variant="subtitle2">{lastMessageText}</Typography>
-          <Typography color="#959595" variant="subtitle2">• {timeSince(lastMessageTime)}</Typography>
+        <div className={`${styles.subText}`}>
+          <Typography color="#959595" variant="subtitle2" lineHeight="normal">{lastMessageText}</Typography>
+          <Typography color="#959595" variant="subtitle2" lineHeight="normal">• {timeSince(lastMessageTime)}</Typography>
         </div>
       </div>
-    </div>)
+    </ButtonBase>)
 }
 
 export default ChatItemList;
