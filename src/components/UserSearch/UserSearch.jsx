@@ -16,7 +16,7 @@ const SearchBox = styled(TextField)(() => ({
 
   '& .MuiInputBase-input': {
     width: '250px',
-    color:'black',
+    color: 'black',
   },
 
   '& .MuiOutlinedInput-root': {
@@ -31,6 +31,18 @@ const SearchBox = styled(TextField)(() => ({
 }));
 
 export default function UserSearch() {
+
+  const [searchInput, setSearchInput] = React.useState('');
+
+  const searchItems = (searchValue) => {
+    setSearchInput(searchValue)
+    console.log(searchInput);
+  }
+
+  const handleSearch = () => {
+    console.log('search pressed')
+  };
+
   return (
     <Box className={styles.root}
       component="form"
@@ -43,12 +55,13 @@ export default function UserSearch() {
         id="outlined-basic"
         variant="outlined"
         placeholder="Type a name"
+        onChange={(e) => searchItems(e.target.value)}
         size='small'
         InputProps={{
           startAdornment: (
             <InputAdornment>
               <IconButton>
-                <SearchIcon data-testid="searchIcon" />
+                <SearchIcon data-testid="searchIcon" onClick={handleSearch}/>
               </IconButton>
             </InputAdornment>
           )
