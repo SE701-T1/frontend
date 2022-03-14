@@ -104,47 +104,6 @@ function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }
           </Grid>
         </Grid>
       </Grid>
-
-      {/* <Grid item>
-          <Grid container direction="row" spacing={1}>
-            <Grid item>
-              <PersonIcon className={styles.icons} />
-            </Grid>
-            <Grid item>
-              <Grid container spacing={1}>
-                <Grid item justifyContent="end">
-                  <Typography alignItems="end" variant="subtitle2">
-                    <strong>{numbOfStudents}</strong>
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography alignItems="end" variant="subtitle2">
-                    <strong>Members</strong>
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-          <Grid container direction="row" spacing={1}>
-            <Grid item>
-              <GroupsIcon className={styles.icons} />
-            </Grid>
-            <Grid item>
-              <Grid container spacing={1}>
-                <Grid item justifyContent="end">
-                  <Typography alignItems="end" variant="subtitle2">
-                    <strong>{numOfBuddies}</strong>
-                  </Typography>
-                </Grid>
-                <Grid item>
-                  <Typography alignItems="end" variant="subtitle2">
-                    <strong>Buddies</strong>
-                  </Typography>
-                </Grid>
-              </Grid>
-            </Grid>
-          </Grid>
-        </Grid> */}
     </CardContent>
   );
 
