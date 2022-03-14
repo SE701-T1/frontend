@@ -8,22 +8,26 @@ import styles from './UploadPage.module.css';
  *
  */
 export default function UploadPage() {
-  const [name, setName] = React.useState('');
+  const [calendarURL, setcalendarURL] = React.useState('');
   const handleChange = (event) => {
-    setName(event.target.value);
+    setcalendarURL(event.target.value);
   };
 
   return (
-    <Stack direction="column" spacing={4} className={styles.title}>
+    <Stack direction="column" spacing={3} className={styles.title}>
       <Button variant="contained">Upload Timetable</Button>
       <Typography>OR</Typography>
       <TextField
         id="outlined-input"
         label="Enter your calendar URL"
-        value={name}
+        value={calendarURL}
         onChange={handleChange}
       />
-      <Link href="https://uoacal.auckland.ac.nz/home" underline="hover">
+      <Link
+        href="https://uoacal.auckland.ac.nz/home"
+        underline="hover"
+        target="_blank"
+        rel="noopener noreferrer">
         <Typography>Download your timetable at https://uoacal.auckland.ac.nz/home</Typography>
       </Link>
     </Stack>
