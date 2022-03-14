@@ -5,48 +5,37 @@ import UserSearch from '../UserSearch';
 
 // unit tests
 describe('User search test', () => {
+  test('should display the placeholder text', () => {
+    render(<UserSearch />);
 
-    test('should display the placeholder text', () => {
-        render(
-            <UserSearch />
-        );
+    expect(screen.getByPlaceholderText('Type a name')).toBeInTheDocument();
+  });
 
-        expect(screen.getByPlaceholderText('Type a name')).toBeInTheDocument();
+  it('check that search updates on change', () => {
+    const { queryByPlaceholderText } = render(<UserSearch />);
 
-    });
+    const searchInput = queryByPlaceholderText('Type a name');
 
+    fireEvent.change(searchInput, { target: { value: 'Hiruna Smith' } });
 
-    it('check that search updates on change', () => {
-        const { queryByPlaceholderText } = render(<UserSearch />)
+    expect(searchInput.value).toBe('Hiruna Smith');
+  });
 
-        const searchInput = queryByPlaceholderText('Type a name')
+  test('should display the search icon', () => {
+    render(<UserSearch />);
 
-        fireEvent.change(searchInput, { target: { value: 'Hiruna Smith' } })
+    expect(screen.getByTestId('searchIcon'));
+  });
 
-        expect(searchInput.value).toBe('Hiruna Smith')
-    });
+  test('check that handle submit works after clicking search icon', () => {
+    const mockOnClick = jest.fn();
 
+    const { getByTestId } = render(<UserSearch submitSearch={mockOnClick()} />);
 
-    test('should display the search icon', () => {
-        render(
-            <UserSearch />
-        );
+    const clickIndicator = getByTestId('searchIcon');
 
-        expect(screen.getByTestId('searchIcon'));
+    fireEvent.click(clickIndicator);
 
-    });
-
-    test('check that handle submit works after clicking search icon', () => {
-        const mockOnClick = jest.fn()
-
-        const { getByTestId } = render(<UserSearch submitSearch={mockOnClick()} />)
-      
-        const clickIndicator = getByTestId('searchIcon')
-
-        fireEvent.click(clickIndicator)
-
-        expect(mockOnClick).toHaveBeenCalledTimes(1)
-
-    });
-
+    expect(mockOnClick).toHaveBeenCalledTimes(1);
+  });
 });

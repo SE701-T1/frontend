@@ -1,9 +1,9 @@
 import * as React from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
-import SearchIcon from "@mui/icons-material/Search";
-import InputAdornment from "@mui/material/InputAdornment";
-import IconButton from "@mui/material/IconButton";
+import SearchIcon from '@mui/icons-material/Search';
+import InputAdornment from '@mui/material/InputAdornment';
+import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
 import styles from './UserSearch.module.css';
 
@@ -28,7 +28,6 @@ const SearchBox = styled(TextField)(() => ({
       borderColor: '#BFBFBF',
     },
   },
-
 }));
 
 /**
@@ -36,33 +35,28 @@ const SearchBox = styled(TextField)(() => ({
  *
  */
 export default function UserSearch({ submitSearch }) {
-
   const [searchInput, setSearchInput] = React.useState('');
-  
+
   const handleSearch = (event) => {
     const searchValue = event.target.value;
     setSearchInput(searchValue);
-  }
+  };
 
   const handleSubmit = () => {
     if (searchInput === '') {
       return;
     }
     submitSearch(searchInput);
-  }
+  };
 
   return (
-    <Box className={styles.root}
-      component="form"
-      noValidate
-      autoComplete="off"
-    >
+    <Box className={styles.root} component="form" noValidate autoComplete="off">
       <SearchBox
         id="outlined-basic"
         variant="outlined"
         placeholder="Type a name"
         onChange={handleSearch}
-        size='small'
+        size="small"
         InputProps={{
           startAdornment: (
             <InputAdornment>
@@ -70,7 +64,7 @@ export default function UserSearch({ submitSearch }) {
                 <SearchIcon data-testid="searchIcon" onClick={handleSubmit} />
               </IconButton>
             </InputAdornment>
-          )
+          ),
         }}
       />
     </Box>
