@@ -12,7 +12,8 @@ import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import styles from './CourseCard.module.css';
 
 const SelectedCard = styled(Card)(() => ({
-  border: '4px solid #8896ac',
+  // border: '4px solid #8896ac',
+  boxShadow: '0px 0px 0px 4.5px #8896ac inset',
   borderRadius: '8%',
 
   position: 'relative',
