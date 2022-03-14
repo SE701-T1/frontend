@@ -36,20 +36,17 @@ describe('User search test', () => {
 
     });
 
-    test('check that handle search works after clicking search icon', () => {
-        jest.spyOn(console, 'log');
-        expect(console.log.mock.calls.length).toBe(0);
-        render(
-            <UserSearch />
-        );
-        userEvent.click(screen.getByTestId('searchIcon'));
-        expect(console.log.mock.calls.length).toBe(1);
-        expect(console.log.mock.calls[0][0]).toBe("search pressed");
+    test('check that handle submit works after clicking search icon', () => {
+        const mockOnClick = jest.fn()
+
+        const { getByTestId } = render(<UserSearch submitSearch={mockOnClick()} />)
+      
+        const clickIndicator = getByTestId('searchIcon')
+
+        fireEvent.click(clickIndicator)
+
+        expect(mockOnClick).toHaveBeenCalledTimes(1)
 
     });
 
-    // reset the recorded arguments list
-    afterEach(() => {
-        jest.clearAllMocks();
-    });
 });

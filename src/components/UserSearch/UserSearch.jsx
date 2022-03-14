@@ -31,26 +31,29 @@ const SearchBox = styled(TextField)(() => ({
 
 }));
 
-export default function UserSearch() {
+/**
+ * This component takes in a function as a prop that should handle the behaviour of a user clicking on the search icon.
+ *
+ */
+export default function UserSearch({ submitSearch }) {
 
   const [searchInput, setSearchInput] = React.useState('');
-
-  // log the search input as it's being typed
-  const searchItems = (searchValue) => {
-    setSearchInput(searchValue)
-    console.log(searchInput);
+  
+  const handleSearch = (event) => {
+    const searchValue = event.target.value;
+    setSearchInput(searchValue);
   }
 
-  // placeholder for the handle search method
-  const handleSearch = () => {
-    console.log('search pressed')
-  };
+  const handleSubmit = () => {
+    if (searchInput === '') {
+      return;
+    }
+    submitSearch(searchInput);
+  }
 
   return (
     <Box className={styles.root}
       component="form"
-      sx={{
-      }}
       noValidate
       autoComplete="off"
     >
@@ -58,13 +61,13 @@ export default function UserSearch() {
         id="outlined-basic"
         variant="outlined"
         placeholder="Type a name"
-        onChange={(e) => searchItems(e.target.value)}
+        onChange={handleSearch}
         size='small'
         InputProps={{
           startAdornment: (
             <InputAdornment>
               <IconButton>
-                <SearchIcon data-testid="searchIcon" onClick={handleSearch}/>
+                <SearchIcon data-testid="searchIcon" onClick={handleSubmit} />
               </IconButton>
             </InputAdornment>
           )
