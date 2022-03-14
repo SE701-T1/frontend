@@ -47,8 +47,8 @@ function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }
   const [selected, setSelected] = useState(false);
 
   const cardContent = (
-    <CardContent>
-      <Grid container direction="column" spacing={3}>
+    <CardContent className={styles.cardContent}>
+      <Grid container direction="row" spacing={3}>
         <Grid item>
           <Typography className={styles.courseNameText} variant="h4" fontWeight={550}>
             {courseName}
@@ -57,15 +57,72 @@ function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }
             SEMESTER {semesterNumber} {year}
           </Typography>
         </Grid>
+      </Grid>
+
+      <Grid
+        container
+        direction="row"
+        alignItems="baseline"
+        spacing={1}
+        className={styles.memberNBuddiesText}>
         <Grid item>
+          <Grid container direction="column">
+            <Grid item>
+              <PersonIcon className={styles.icons} />
+            </Grid>
+            <Grid item>
+              <GroupsIcon className={styles.icons} />
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Grid container direction="column" alignItems="flex-end">
+            <Grid item>
+              <Typography variant="subtitle2" className={styles.text} align="right">
+                <strong>{numbOfStudents}</strong>
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="subtitle2" className={styles.text} align="right">
+                <strong>{numOfBuddies}</strong>
+              </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+        <Grid item>
+          <Grid container direction="column">
+            <Grid item>
+              <Typography variant="subtitle2" className={styles.text}>
+                <strong>Members</strong>
+              </Typography>
+            </Grid>
+            <Grid item>
+              <Typography variant="subtitle2" className={styles.text}>
+                <strong>Buddies</strong>
+              </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+      </Grid>
+
+      {/* <Grid item>
           <Grid container direction="row" spacing={1}>
             <Grid item>
               <PersonIcon className={styles.icons} />
             </Grid>
             <Grid item>
-              <Typography alignItems="end" variant="subtitle2">
-                <strong>{numbOfStudents} Members</strong>
-              </Typography>
+              <Grid container spacing={1}>
+                <Grid item justifyContent="end">
+                  <Typography alignItems="end" variant="subtitle2">
+                    <strong>{numbOfStudents}</strong>
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography alignItems="end" variant="subtitle2">
+                    <strong>Members</strong>
+                  </Typography>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
           <Grid container direction="row" spacing={1}>
@@ -73,13 +130,21 @@ function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }
               <GroupsIcon className={styles.icons} />
             </Grid>
             <Grid item>
-              <Typography alignItems="end" variant="subtitle2">
-                <strong>{numOfBuddies} Buddies</strong>
-              </Typography>
+              <Grid container spacing={1}>
+                <Grid item justifyContent="end">
+                  <Typography alignItems="end" variant="subtitle2">
+                    <strong>{numOfBuddies}</strong>
+                  </Typography>
+                </Grid>
+                <Grid item>
+                  <Typography alignItems="end" variant="subtitle2">
+                    <strong>Buddies</strong>
+                  </Typography>
+                </Grid>
+              </Grid>
             </Grid>
           </Grid>
-        </Grid>
-      </Grid>
+        </Grid> */}
     </CardContent>
   );
 
