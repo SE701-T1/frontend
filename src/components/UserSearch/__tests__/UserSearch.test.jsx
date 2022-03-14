@@ -3,6 +3,7 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import UserSearch from '../UserSearch';
 
+// unit tests
 describe('User search test', () => {
 
     test('should display the placeholder text', () => {
@@ -47,6 +48,7 @@ describe('User search test', () => {
 
     });
 
+    // reset the recorded arguments list
     afterEach(() => {
         jest.clearAllMocks();
     });

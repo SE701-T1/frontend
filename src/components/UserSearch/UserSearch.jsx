@@ -7,6 +7,7 @@ import IconButton from "@mui/material/IconButton";
 import { styled } from '@mui/material/styles';
 import styles from './UserSearch.module.css';
 
+// searchbox styling
 const SearchBox = styled(TextField)(() => ({
   '& fieldset': {
     borderRadius: '25px',
@@ -34,11 +35,13 @@ export default function UserSearch() {
 
   const [searchInput, setSearchInput] = React.useState('');
 
+  // log the search input as it's being typed
   const searchItems = (searchValue) => {
     setSearchInput(searchValue)
     console.log(searchInput);
   }
 
+  // placeholder for the handle search method
   const handleSearch = () => {
     console.log('search pressed')
   };
