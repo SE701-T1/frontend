@@ -3,7 +3,7 @@ import ChatInput from "../../components/ChatInput/ChatInput";
 
 function Dashboard() {
   return (
-      <div style={{marginTop:"400px"}}><ChatInput/></div>
+      <div style={{marginTop:"400px"}}><ChatInput onSend={() => console.log("test")}/></div>
   );
 }
 
