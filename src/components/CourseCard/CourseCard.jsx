@@ -89,7 +89,7 @@ function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }
           <SelectedCard className={styles.card}>
             <CardActionArea onClick={() => setSelected(!selected)}>{cardContent}</CardActionArea>
           </SelectedCard>
-          <CheckCircleOutlinedIcon className={styles.tickIcon} />
+          <CheckCircleOutlinedIcon data-testid="tickIcon" className={styles.tickIcon} />
         </Box>
       ) : (
         <StyledCard className={styles.card}>
