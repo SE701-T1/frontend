@@ -1,6 +1,6 @@
+/* eslint-disable testing-library/prefer-screen-queries */
 import React from 'react';
 import { render, screen, fireEvent } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import UserSearch from '../UserSearch';
 
 // unit tests
