@@ -1,0 +1,63 @@
+.message-container {
+    display: flex;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-family: 'Inter';
+    font-style: normal;
+    font-size: 16px;
+    align-items: center;
+    font-weight: 400;
+    line-height: 24px;
+    /* identical to box height, or 150% */
+    letter-spacing: 0.01em;
+}
+
+.bubble-from-right {
+    justify-content: flex-end;
+}
+
+.bubble-from-left {
+    justify-content: flex-start;
+}
+
+.bubble {
+    background-color: #FFFFFF;
+    border-radius: 25px;
+    display: block;
+    padding: 10px 21px;
+    position: relative;
+    vertical-align: top;
+    color: black;
+    word-wrap: break-word;
+}
+
+.bubble-img {
+    max-width: 10%;
+}
+
+.bubble-text {
+    max-width: 40%;
+}
+
+.others {
+    background-color: #ECF3FF;
+    margin-left: 8px;
+}
+
+.me {
+    background-color: #F9F4E4;
+    margin-right: 10px;
+}
+
+.avatar-img {
+    border-radius: 42%;
+    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.16), 0px 2px 4px rgba(0, 0, 0, 0.12), 0px 1px 8px rgba(0, 0, 0, 0.1);
+    height: 44px;
+    width: 44px;
+}
+
+.content-img {
+    width: 100%;
+    cursor: 'pointer';
+    object-fit: 'cover';
+}
