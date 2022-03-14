@@ -1,5 +1,14 @@
 import React from 'react';
-import { Button, Stack, Typography, TextField, Link } from '@mui/material';
+import {
+  Button,
+  Stack,
+  Typography,
+  TextField,
+  Link,
+  InputAdornment,
+  IconButton,
+} from '@mui/material';
+import SendIcon from '@mui/icons-material/Send';
 import styles from './UploadPage.module.css';
 
 /**
@@ -22,6 +31,15 @@ export default function UploadPage() {
         label="Enter your calendar URL"
         value={calendarURL}
         onChange={handleChange}
+        InputProps={{
+          endAdornment: (
+            <InputAdornment position="end">
+              <IconButton edge="end" color="primary" aria-label="submit">
+                <SendIcon />
+              </IconButton>
+            </InputAdornment>
+          ),
+        }}
       />
       <Link
         href="https://uoacal.auckland.ac.nz/home"
