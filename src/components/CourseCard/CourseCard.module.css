@@ -1,0 +1,43 @@
+.root {
+  max-width: 280px;
+  position: relative;
+}
+
+.cardContent {
+  padding-top: 20px;
+
+  margin-bottom: 55px;
+}
+
+.card {
+  position: relative;
+}
+
+.icons {
+  display: inline;
+  color: #666666;
+  vertical-align: middle;
+}
+
+.semesterText {
+  /* font-family: 'inner'; */
+  color: #8896ac;
+}
+
+.memberNBuddiesText {
+  padding-top: 15px;
+}
+
+.text {
+  display: inline;
+
+  vertical-align: text-top;
+}
+
+.tickIcon {
+  color: white;
+  top: 9px;
+  right: 6px;
+  position: absolute;
+  display: block;
+}
