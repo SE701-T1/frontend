@@ -8,6 +8,7 @@ import { CardActionArea, Grid } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 import GroupsIcon from '@mui/icons-material/Groups';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
+import PropTypes from 'prop-types';
 
 import styles from './CourseCard.module.css';
 
@@ -124,5 +125,12 @@ function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }
     </Box>
   );
 }
+
+CourseCard.propTypes = {
+  courseName: PropTypes.string.isRequired,
+  semesterNumber: PropTypes.number.isRequired,
+  numbOfStudents: PropTypes.number.isRequired,
+  numOfBuddies: PropTypes.number.isRequired,
+};
 
 export default CourseCard;
