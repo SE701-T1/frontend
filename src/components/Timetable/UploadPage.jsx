@@ -8,15 +8,17 @@ import {
   InputAdornment,
   IconButton,
 } from '@mui/material';
+import PropTypes from 'prop-types';
 import SendIcon from '@mui/icons-material/Send';
 import styles from './UploadPage.module.css';
 
 /**
  * This component can be used to display the upload page for the app after the user has logged in.
  * Users can input their timetable details into this page. Currenly the page is not functional.
+ * This component takes in a function as a prop that should handle the behaviour of a user clicking on the submit button.
  *
  */
-export default function UploadPage() {
+export default function UploadPage({ sendTimetableURL }) {
   const [calendarURL, setcalendarURL] = React.useState('');
   const handleChange = (event) => {
     setcalendarURL(event.target.value);
@@ -35,7 +37,7 @@ export default function UploadPage() {
         InputProps={{
           endAdornment: (
             <InputAdornment position="end">
-              <IconButton edge="end" color="primary" aria-label="submit">
+              <IconButton edge="end" color="primary" aria-label="submit" onClick={sendTimetableURL}>
                 <SendIcon />
               </IconButton>
             </InputAdornment>
@@ -52,3 +54,7 @@ export default function UploadPage() {
     </Stack>
   );
 }
+
+UploadPage.propTypes = {
+  sendTimetableURL: PropTypes.func.isRequired,
+};
