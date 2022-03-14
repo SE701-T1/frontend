@@ -18,8 +18,8 @@ describe('Course Component test', () => {
 
     expect(screen.getByText('Softeng 701')).toBeInTheDocument();
     expect(screen.getByText(new RegExp(semester, 'i'))).toBeInTheDocument();
-    expect(screen.getByText('20 Members')).toBeInTheDocument();
-    expect(screen.getByText('0 Buddies')).toBeInTheDocument();
+    expect(screen.getByText('20')).toBeInTheDocument();
+    expect(screen.getByText('0')).toBeInTheDocument();
   });
 });
 
