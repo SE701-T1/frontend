@@ -1,0 +1,35 @@
+.container {
+    display: flex;
+    flexDirection: row;
+    alignItems: center;
+    justifyContent: center;
+    padding: 5px;
+}
+
+.selected {
+    background: #ECF3FF;
+}
+
+.profileBadgeContainer {
+    flex: 0;
+    paddingLeft: 8px;
+    paddingRight: 10px;
+}
+
+.textContainer {
+    flex: 1;
+    textAlign: start;
+    paddingLeft: 5px;
+}
+
+.headerText {
+    display: flex;
+    alignItems: flex-end;
+}
+
+.subText {
+    display: flex;
+    flexDirection: row;
+    alignItems: flex-start;
+    justifyContent: space-between;
+}
