@@ -21,6 +21,11 @@ import styles from './Login.module.css'
  * The render prop used is used to set up a customized Google login button.
  * 
  * The "react-icons" package was used to use the google icon "FcGoogle" on the customized sign in button.
+ * 
+ * After clicking on the button, a window that allows the user to sign in with Google opens up.
+ * After signing up the user will be redirected to the same page they login in from (i.e. http://localhost:3000/), 
+ * which can be changed from Google Developer Console later. 
+ * 
  */
 
 const clientId = "158309441002-q8q49tjicngt1tp6p9t7ecvdrn9ar78j.apps.googleusercontent.com";
