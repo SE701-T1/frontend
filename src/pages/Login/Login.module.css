@@ -1,16 +1,16 @@
 .container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     width: 18rem;
     height: 26rem;
-
     position:absolute;
     top:50%;
     left:50%;
     margin-left:-9rem;/* half width*/
     margin-top:-13rem;/* half height*/
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
+    
 }
 
 .carousel{

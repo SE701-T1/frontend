@@ -25,12 +25,12 @@ export default function Login() {
         }
     ]
 
-    // Will be executed if the authentication is successful
+    // Executed if the authentication successful
     const onSuccess = (res) => {
         res.tokenObj();
     }
 
-    // Will be executed if authentication is not successful
+    // Executed if authentication not successful
     const onFailure = (res) => {
         res.tokenObj();
     }
