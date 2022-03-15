@@ -1,0 +1,92 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ChatListItem produces the correct initial snapshot 1`] = `
+<button
+  className="MuiButtonBase-root container css-10d1a0h-MuiButtonBase-root"
+  data-testid="ButtonBase"
+  disabled={false}
+  onBlur={[Function]}
+  onClick={[Function]}
+  onContextMenu={[Function]}
+  onDragLeave={[Function]}
+  onFocus={[Function]}
+  onKeyDown={[Function]}
+  onKeyUp={[Function]}
+  onMouseDown={[Function]}
+  onMouseLeave={[Function]}
+  onMouseUp={[Function]}
+  onTouchEnd={[Function]}
+  onTouchMove={[Function]}
+  onTouchStart={[Function]}
+  style={
+    Object {
+      "background": "#FFFFFF",
+      "borderRadius": "5px",
+      "padding": "5px",
+    }
+  }
+  tabIndex={0}
+  type="button"
+>
+  <div
+    className="profileBadgeContainer"
+  >
+    <div
+      className="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-1p4tas-MuiContainer-root"
+    >
+      <span
+        className="MuiBadge-root css-vn959-MuiBadge-root"
+        data-testid="active"
+      >
+        <div
+          className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
+          data-testid="name_1"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiAvatar-fallback css-10mi8st-MuiSvgIcon-root-MuiAvatar-fallback"
+            data-testid="PersonIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+            />
+          </svg>
+        </div>
+        <span
+          className="MuiBadge-anchorOriginBottomRightCircular MuiBadge-overlapCircular MuiBadge-badge MuiBadge-dot MuiBadge-anchorOriginBottomRight css-ank3r8-MuiBadge-badge"
+        >
+          
+        </span>
+      </span>
+    </div>
+  </div>
+  <div
+    className="textContainer"
+  >
+    <div>
+      <p
+        className="MuiTypography-root MuiTypography-body1 headerText css-1x6dds0-MuiTypography-root"
+      >
+        name_1
+      </p>
+    </div>
+    <div
+      className="subText"
+    >
+      <h6
+        className="MuiTypography-root MuiTypography-subtitle2 css-1i1udgb-MuiTypography-root"
+      >
+        last_message_1
+      </h6>
+      <h6
+        className="MuiTypography-root MuiTypography-subtitle2 css-1i1udgb-MuiTypography-root"
+      >
+        • 
+        0 s
+      </h6>
+    </div>
+  </div>
+</button>
+`;
