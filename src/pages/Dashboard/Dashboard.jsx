@@ -1,9 +1,14 @@
 import React from 'react';
-import ChatInput from "../../components/ChatInput/ChatInput";
+import { Typography } from '@mui/material';
+import Example from '../../components/Example';
 
 function Dashboard() {
   return (
-      <div style={{marginTop:"400px"}}><ChatInput onSend={() => console.log("test")}/></div>
+    <>
+      <Typography>Welcome to the Dashboard</Typography>
+      <Example />
+      <Example />
+    </>
   );
 }
 

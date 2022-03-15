@@ -32,15 +32,15 @@ function ChatInput({onSend}) {
         }
       }} placeholder="Aa" value={inputText} onChange={(e) => setInputText(e.target.value)}/>
       <div className={styles.buttonContainer}>
-        <IconButton className={styles.button} aria-label="directions"
+        <IconButton data-testid = "EmojiButton" className={styles.button} aria-label="directions"
                     onClick={() => setShowEmojiPicker(!showEmojiPicker)}>
           <EmojiEmotionsIcon/>
         </IconButton>
-        {showEmojiPicker && <div className={styles.emojiButton}>
+        {showEmojiPicker && <div data-testid = "EmojiSelector" className={styles.emojiButton}>
           <Picker disableSearchBar disableSkinTonePicker onEmojiClick={onEmojiClick}/>
         </div>}
       </div>
-      <IconButton className={styles.button} aria-label="send" onClick={() => {
+      <IconButton data-testid = "SendButton" className={styles.button} aria-label="send" onClick={() => {
         onSend(inputText);
         setInputText('');
       }}>
