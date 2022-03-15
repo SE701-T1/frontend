@@ -1,32 +1,31 @@
 import React from 'react';
 import PropTypes from "prop-types";
-import './MessageBubble.css';
-
+import styles from  './MessageBubble.module.css';
 
 function MessageBubble({ text, senderAvatar, sender, currentUser, contentType }) {
     let content = null
     let bubbleType = null
 
     const { bubbleSender, messageDirection } = sender === currentUser
-        ? { bubbleSender: "me", messageDirection: "bubble-from-right" }
-        : { bubbleSender: "others", messageDirection: "bubble-from-left" }
+        ? { bubbleSender: styles.me, messageDirection: styles["bubble-from-right"] }
+        : { bubbleSender: styles.others, messageDirection: styles["bubble-from-left"] }
 
     if (contentType === "image") {
-        bubbleType = "bubble-img"
-        content = <img className="content-img" alt="imageMessage" src={senderAvatar} />
+        bubbleType = styles["bubble-img"]
+        content = <img className={styles["content-img"]} alt="imageMessage" src={senderAvatar} />
     }
     else {
         content = text
-        bubbleType = "bubble-text"
+        bubbleType = styles["bubble-text"]
     }
 
     return (
-        bubbleSender === 'others' ?
-            <div className={`message-container ${messageDirection}`}>
-                <img className="avatar-img" alt="avatar" src={senderAvatar} />
-                <div className={`bubble ${bubbleSender} ${bubbleType}`}>{content}</div>
-            </div> : <div className={`message-container ${messageDirection}`}>
-                <div className={`bubble ${bubbleSender} ${bubbleType}`}>{content}</div>
+        bubbleSender === styles.others ?
+            <div className={`${styles["message-container"]} ${messageDirection}`}>
+                <img className= {styles["avatar-img"]} alt="avatar" src={senderAvatar} />
+                <div className={`${styles.bubble} ${bubbleSender} ${bubbleType}`}>{content}</div>
+            </div> : <div className={`${styles["message-container"]} ${messageDirection}`}>
+                <div className={`${styles.bubble} ${bubbleSender} ${bubbleType}`}>{content}</div>
             </div>
     );
 }
