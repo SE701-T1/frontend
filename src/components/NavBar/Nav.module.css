@@ -1,0 +1,30 @@
+.drawerHeader {
+  display: flex;
+  align-items: center;
+  padding: 0px 8px;
+  justify-content: flex-end;
+  -webkit-box-align: center;
+}
+
+@media (min-width: 0px) {
+  .drawerHeader {
+    min-height: 48px;
+  }
+}
+
+@media (min-width: 600px) {
+  .drawerHeader {
+    min-height: 64px;
+  }
+}
+
+.navbarTitle {
+  padding-left: 10px;
+}
+
+.customDrawer {
+  width: 240px;
+  flex-shrink: 0px;
+  white-space: nowrap;
+  box-sizing: border-box;
+}

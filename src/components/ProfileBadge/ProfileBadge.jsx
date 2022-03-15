@@ -42,7 +42,7 @@ const Offline = styled(Badge)(({ theme }) => ({
 
 function ProfileBadge({ active, name }) {
   return (
-    <Container>
+    <Container disableGutters>
       {active ? (
         <Active
           data-testid="active"
