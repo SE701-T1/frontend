@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders correctly 1`] = `
+<div
+  className="message-container bubble-from-left"
+>
+  <img
+    alt="avatar"
+    className="avatar-img"
+    src="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
+  />
+  <div
+    className="bubble others bubble-img"
+  >
+    <img
+      alt="imageMessage"
+      className="content-img"
+      src="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
+    />
+  </div>
+</div>
+`;
