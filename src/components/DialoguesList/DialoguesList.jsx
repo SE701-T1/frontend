@@ -1,4 +1,3 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './DialoguesList.module.css';
