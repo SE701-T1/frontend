@@ -2,7 +2,7 @@
 .root {
   position: absolute;
   bottom: 0;
-  width: 1000px;
+  width: 800px;
   display: inline-block;
   max-height: 800px;
 }

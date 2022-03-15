@@ -5,11 +5,11 @@ import styles from './DialoguesList.module.css';
 import MessageBubble from '../MessageBubble/MessageBubble';
 
 // TODO: display the timestamp of messages
-function DialoguesList({ messages, currentUser, senderAvatar, contentType }) {
+function DialoguesList({ messages, currentUser, senderAvatar }) {
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current?.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
   };
 
   // scroll to bottom when a new message comes
@@ -20,7 +20,7 @@ function DialoguesList({ messages, currentUser, senderAvatar, contentType }) {
   // render the message bubbles from the messages prop
   return (
     <div className={styles.root}>
-      {messages.map(({ text, sender }, key) => (
+      {messages.map(({ text, sender, contentType }, key) => (
         <MessageBubble
           text={text}
           sender={sender}
@@ -43,9 +43,9 @@ DialoguesList.propTypes = {
     PropTypes.shape({
       text: PropTypes.string.isRequired,
       sender: PropTypes.string.isRequired,
+      contentType: PropTypes.string.isRequired,
     }),
   ).isRequired,
-  contentType: PropTypes.string.isRequired,
 };
 
 export default DialoguesList;
