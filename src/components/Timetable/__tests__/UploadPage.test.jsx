@@ -5,17 +5,17 @@ import UploadPage from '../UploadPage';
 
 describe('On UploadPage render', () => {
   test('should display upload button text', () => {
-    render(<UploadPage />);
+    render(<UploadPage sendTimetableURL={() => {}} />);
 
     expect(screen.getByText(/upload timetable/i)).toBeInTheDocument();
   });
   test('should display input text field', () => {
-    render(<UploadPage />);
+    render(<UploadPage sendTimetableURL={() => {}} />);
 
     expect(screen.getByLabelText(/enter url/i)).toBeInTheDocument();
   });
   test('should display download link', () => {
-    render(<UploadPage />);
+    render(<UploadPage sendTimetableURL={() => {}} />);
 
     expect(screen.getByRole(/link/i)).toBeInTheDocument();
   });

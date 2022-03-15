@@ -15,6 +15,8 @@ const SearchBox = styled(TextField)(() => ({
     zIndex: -1,
   },
 
+  // TODO: need to change this to be responsive. we can change this later when we make the buddy list.
+
   '& .MuiInputBase-input': {
     width: '250px',
     color: 'black',
