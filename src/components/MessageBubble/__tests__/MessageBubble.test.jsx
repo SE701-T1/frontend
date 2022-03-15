@@ -57,7 +57,7 @@ describe('SendImageAsMessage', () => {
   });
 });
 
-//Snapshot Testing
+// Snapshot Testing
 it('renders correctly', () => {
   const tree = renderer
     .create(
