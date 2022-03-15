@@ -16,12 +16,12 @@ export default function Login() {
         {
             id:2,
             title: "Collaborative learning is better than solo learning!",
-            description: "Statistics suggest that 78% of people are able to perform well in their courses if they learn with a community."
+            description: "Several researches show students are able to perform well in their courses if they learn with a community."
         },
         {
             id:3,
-            title: "Get teammates to study your courses with collaborative learning is better than solo learning!",
-            description: "Or find awesome people to form a super secret rock band with ;)"
+            title: "Get teammates to study your courses with!",
+            description: "Or find some awesome people to form a super secret rock band with ;)"
         }
     ]
 
