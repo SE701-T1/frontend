@@ -32,24 +32,22 @@ const clientId = "158309441002-q8q49tjicngt1tp6p9t7ecvdrn9ar78j.apps.googleuserc
 
 export default function Login({onSuccess, onFailure}){
 
-    return(
-        <div>
-            <GoogleLogin
-            clientId={clientId}
-            render={renderProps => (
-                <button className={`${styles.loginButton}`} 
-                type="button"
-                onClick={renderProps.onClick} 
-                disabled={renderProps.disabled}>
-                    <FcGoogle size={22} />
-                    <div className={`${styles.loginText}`}>SIGN IN WITH GOOGLE</div>
-                </button>
-              )}
-            onSuccess = {onSuccess}
-            onFailure = {onFailure}
-            cookiePolicy= "single_host_origin"
-            isSignedIn/>
-        </div>
+    return(        
+        <GoogleLogin
+        clientId={clientId}
+        render={renderProps => (
+            <button className={`${styles.loginButton}`} 
+            type="button"
+            onClick={renderProps.onClick} 
+            disabled={renderProps.disabled}>
+                <FcGoogle size={22} />
+                <div className={`${styles.loginText}`}>SIGN IN WITH GOOGLE</div>
+            </button>
+            )}
+        onSuccess = {onSuccess}
+        onFailure = {onFailure}
+        cookiePolicy= "single_host_origin"
+        isSignedIn/>
     )
 }
 
