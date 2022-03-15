@@ -6,7 +6,7 @@ describe('Render Login Button', () => {
   test('should display the login button text', () => {
     render(<Login />);
 
-    expect(screen.getByText('SIGN IN WITH GOOGLE')).toBeInTheDocument();
+    expect(screen.getByText('Sign in with Google')).toBeInTheDocument();
   });
     
 });
