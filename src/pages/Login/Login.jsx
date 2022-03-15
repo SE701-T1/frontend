@@ -4,6 +4,8 @@ import Carousel from '../../components/Carousel/Carousel'
 import styles from './Login.module.css'
 
 export default function Login() {
+
+    // Data to be displayed on carousel
     const data = 
     [
         {
@@ -23,10 +25,20 @@ export default function Login() {
         }
     ]
 
+    // Will be executed if the authentication is successful
+    const onSuccess = (res) => {
+        res.tokenObj();
+    }
+
+    // Will be executed if authentication is not successful
+    const onFailure = (res) => {
+        res.tokenObj();
+    }
+
     return (
     <div className = {`${styles.container}`}>
         <Carousel data={data} className = {`${styles.carousel}`}/>
-        <LoginButton className = {`${styles.login}`}/>        
+        <LoginButton onSuccess={onSuccess} onFailure={onFailure} onclassName = {`${styles.login}`}/>        
     </div>
     )
 }
