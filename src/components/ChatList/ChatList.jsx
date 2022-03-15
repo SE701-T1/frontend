@@ -24,7 +24,7 @@ function ChatList() {
   }];
 
   return (<div>
-    {chatItems.map(chatItem => <div key={chatItem.id} className={`${styles.itemContainer}`}>
+    {chatItems.map(chatItem => <div key={chatItem.id} className={styles.itemContainer}>
       <ChatListItem name={chatItem.name}
                     active={chatItem.active}
                     lastMessageText={chatItem.lastMessage}
