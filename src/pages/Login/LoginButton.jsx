@@ -1,6 +1,5 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
-import env from "react-dotenv";
 import { FcGoogle } from 'react-icons/fc'
 import styles from './LoginButton.module.css'
 
@@ -23,15 +22,14 @@ import styles from './LoginButton.module.css'
  * The render prop is used to set up a customized Google login button.
  * 
  * The "react-icons" package is used to get the google icon "FcGoogle" on the customized sign in button.
- * The "react-dotenv" package is used to load the client ID dynamically.
+ * The "dotenv" is used to load the client ID dynamically.
  * 
  * After clicking on the button, a window that allows the user to sign in with Google opens up.
  * After signing up, the user will be redirected to the same page they login in from (i.e. http://localhost:3000/), 
  * which can be changed from Google Developer Console later. 
  */
 
-const clientId = env.CLIENT_ID;
-
+const clientId = process.env.REACT_APP_CLIENT_ID;
 export default function LoginButton({onSuccess, onFailure}){
 
     return(        
