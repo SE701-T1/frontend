@@ -1,7 +1,7 @@
 import React from "react";
 import GoogleLogin from "react-google-login";
 import { FcGoogle } from 'react-icons/fc'
-import styles from './Login.module.css'
+import styles from './LoginButton.module.css'
 /**
  * The Login button component can be used to authenticate the user using a Google oAuth. 
  * The action of what happens if the user is succesfully authenticates (onSuccess) and 
@@ -30,7 +30,7 @@ import styles from './Login.module.css'
 
 const clientId = "158309441002-q8q49tjicngt1tp6p9t7ecvdrn9ar78j.apps.googleusercontent.com";
 
-export default function Login({onSuccess, onFailure}){
+export default function LoginButton({onSuccess, onFailure}){
 
     return(        
         <GoogleLogin
