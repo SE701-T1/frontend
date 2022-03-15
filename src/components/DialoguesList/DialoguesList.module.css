@@ -1,0 +1,11 @@
+.root {
+  position: absolute;
+  bottom: 0;
+  width: 1000px;
+  display: inline-block;
+  max-height: 800px;
+}
+
+.bottom {
+  padding-top: 10px;
+}
