@@ -28,7 +28,7 @@ export function AuthContextProvider({ children }) {
     }
 
     // Triggering a backend call to verify the integrity of the current JWT.
-    const response = await fetch(`${process.env.API_HOST}:${process.env.API_PORT}/login`, {
+    const response = await fetch(`${process.env.API_HOST}:${process.env.API_PORT}/verify`, {
       method: 'GET',
       headers: new Headers({
         Authorization: jwt,
