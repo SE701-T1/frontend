@@ -5,6 +5,15 @@ import styles from './ChatBuddyDetail.module.css';
 
 import ProfileBadge from '../ProfileBadge/ProfileBadge';
 
+/**
+ * ChatBuddyDetail component displays the name of the buddy and the courses they share.
+ * commonCourses is an array of objects with courseName and courseLink properties.
+ * Example:
+ *  {
+ *    courseName: 'SOFTENG 701',
+ *    courseLink: 'https://random.link',
+ *  }
+ */
 function ChatBuddyDetail({ active, name, removeBuddy, commonCourses }) {
   return (
     <Box className={styles.container}>

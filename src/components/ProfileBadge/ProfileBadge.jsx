@@ -3,6 +3,9 @@ import { Avatar, Badge, Container } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import PropTypes from 'prop-types';
 
+/**
+ * Active Badge has a active prop that changes the style of the button
+ */
 const Active = styled(Badge, {
   shouldForwardProp: (prop) => prop !== 'active',
 })(({ theme, active }) => ({
@@ -26,6 +29,10 @@ const Active = styled(Badge, {
   },
 }));
 
+/**
+ * ProfileBadge component display the profile picture and shows if they are active
+ * @param {number} size - the size of the avatar
+ */
 function ProfileBadge({ active, name, size, src }) {
   return (
     <Container sx={{ height: size, width: size }} disableGutters>
@@ -50,7 +57,7 @@ ProfileBadge.propTypes = {
 
 ProfileBadge.defaultProps = {
   active: false,
-  size: 52,
+  size: 52, // Default size is set to 52px to match figma design
   src: '',
 };
 
