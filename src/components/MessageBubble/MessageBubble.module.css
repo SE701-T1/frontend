@@ -30,7 +30,7 @@
   word-wrap: break-word;
 }
 
-@media (max-width: 0px) {
+@media (min-width: 0px) {
   .bubble-img {
     max-width: 70%;
   }
@@ -39,7 +39,7 @@
   }
 }
 
-@media (max-width: 600px) {
+@media (min-width: 600px) {
   .bubble-img {
     max-width: 50%;
   }
@@ -48,7 +48,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (min-width: 768px) {
   .bubble-img {
     max-width: 40%;
   }
@@ -57,7 +57,7 @@
   }
 }
 
-@media (max-width: 992px) {
+@media (min-width: 992px) {
   .bubble-img {
     max-width: 30%;
   }
