@@ -9,11 +9,8 @@ import ChatHeader from '../ChatHeader';
 describe('TestChatHeader', () => {
   test('should display buddy name', () => {
     render(
-      
       <ThemeProvider theme={theme}>
-        <ChatHeader
-            name="Amy" callBuddy={() => {}}
-        />
+        <ChatHeader name="Amy" callBuddy={() => {}} />
       </ThemeProvider>,
     );
 
@@ -23,10 +20,7 @@ describe('TestChatHeader', () => {
   test('should display active text', () => {
     render(
       <ThemeProvider theme={theme}>
-        <ChatHeader
-          active
-          name="Amy" callBuddy={() => {}}
-        />
+        <ChatHeader active name="Amy" callBuddy={() => {}} />
       </ThemeProvider>,
     );
 
@@ -38,10 +32,7 @@ describe('TestChatHeader', () => {
 
     render(
       <ThemeProvider theme={theme}>
-        <ChatHeader
-          name="Amy"
-          callBuddy={mockCallBuddy}
-        />
+        <ChatHeader name="Amy" callBuddy={mockCallBuddy} />
       </ThemeProvider>,
     );
 
@@ -54,7 +45,7 @@ it('renders correctly', () => {
   const tree = renderer
     .create(
       <ThemeProvider theme={theme}>
-        <ChatHeader name="Amy" callBuddy={() => {}}/>
+        <ChatHeader name="Amy" callBuddy={() => {}} />
       </ThemeProvider>,
     )
     .toJSON();

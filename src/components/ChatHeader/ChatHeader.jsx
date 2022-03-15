@@ -39,7 +39,7 @@ ChatHeader.propTypes = {
 };
 
 ChatHeader.defaultProps = {
-  active: false,
+  active: true,
 };
 
 export default ChatHeader;
