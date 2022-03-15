@@ -1,0 +1,31 @@
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.activeText {
+  color: #8896ac;
+  font-weight: 500;
+}
+
+.removeButton {
+  text-transform: none !important;
+  margin-top: 50px !important;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  padding: 5px 20px 5px 20px;
+}
+
+.commonCourseTitle {
+  margin-top: 30px !important;
+  margin-bottom: 5px !important;
+  color: #8896ac;
+  font-weight: 600;
+}
+
+.commonCourseText {
+  text-decoration: underline;
+}

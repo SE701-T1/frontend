@@ -32,14 +32,14 @@ exports[`ChatListItem produces the correct initial snapshot 1`] = `
     className="profileBadgeContainer"
   >
     <div
-      className="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-1p4tas-MuiContainer-root"
+      className="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-6ch1n3-MuiContainer-root"
     >
       <span
-        className="MuiBadge-root css-vn959-MuiBadge-root"
+        className="MuiBadge-root css-1srwgqi-MuiBadge-root"
         data-testid="active"
       >
         <div
-          className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-2s90m6-MuiAvatar-root"
+          className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-1pl8iwh-MuiAvatar-root"
           data-testid="name_1"
         >
           <svg

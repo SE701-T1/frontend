@@ -1,0 +1,26 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.buttonContainer {
+    position: relative;
+}
+
+.button {
+    margin-left: 10px
+}
+
+.emojiButton {
+    position: absolute;
+    bottom: 50px;
+    right: 10px;
+}
+
+.input {
+    border-radius: 25px;
+    background-color: #F0F0F0;
+    padding: 5px 15px;
+    flex: 1;
+}
