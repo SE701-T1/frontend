@@ -1,4 +1,5 @@
-import React, { useEffect, useMemo, useState } from 'react';
+import axios from 'axios';
+import React, { useEffect, useState } from 'react';
 import createPersistedState from 'use-persisted-state';
 
 const useJwtState = createPersistedState('jwt');
@@ -13,7 +14,7 @@ export const AuthContext = React.createContext({});
  * the browser.
  */
 export function AuthContextProvider({ children }) {
-  const [jwt, setJwt] = useJwtState();
+  const [jwt, setJwt] = useJwtState('');
   const [authenticated, setAuthenticated] = useState(false);
 
   // Clears the JWT, which triggers the useEffect() below to set authenticated to false.
@@ -24,29 +25,31 @@ export function AuthContextProvider({ children }) {
   useEffect(async () => {
     if (jwt === '') {
       setAuthenticated(false);
+      axios.defaults.headers.common = {
+        Authorization: '',
+      };
       return;
     }
 
     // Triggering a backend call to verify the integrity of the current JWT.
-    const response = await fetch(`${process.env.API_HOST}:${process.env.API_PORT}/verify`, {
-      method: 'GET',
-      headers: new Headers({
-        Authorization: jwt,
-      }),
-    });
+    try {
+      await axios.get(`${process.env.API_HOST}:${process.env.API_PORT}/verify`, {
+        headers: {
+          Authorization: jwt,
+        },
+      });
 
-    if (response.ok) {
       setAuthenticated(true);
-      return;
+      axios.defaults.headers.common = {
+        Authorization: jwt,
+      };
+    } catch (error) {
+      setJwt('');
     }
-
-    /*
-    If the server determines that the currently stored JWT is invalid, then we are resetting the
-    current state - there's no point in persisting the invalid token.
-    */
-    setJwt('');
   }, [jwt]);
 
-  const context = useMemo(() => ({ jwt, setJwt, authenticated, logout }), [jwt, authenticated]);
+  // eslint-disable-next-line react/jsx-no-constructed-context-values
+  const context = { jwt, authenticated, setJwt, logout };
+
   return <AuthContext.Provider value={context}>{children}</AuthContext.Provider>;
 }
