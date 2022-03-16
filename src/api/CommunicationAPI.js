@@ -28,18 +28,6 @@ export const getMessages = async (userId) => {
 };
 
 /**
- * Sends a message from one user to another
- * @param {string} sender id of the sender
- * @param {string} receiver id of the receiver
- * @param {string} content content of the message
- * @return {Promise} data entry of the message sent
- */
-export const sendMessage = async ({ sender, receiver, content }) => {
-  const timestamp = Date.now();
-  console.log(sender, receiver, content, timestamp);
-};
-
-/**
  * Fetches data of the current users buddy chat list
  * @return {Promise} current users buddy chat list
  */
