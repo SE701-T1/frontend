@@ -20,7 +20,7 @@ export const removeBuddy = async (userId, buddyId) => {
 
 /**
  * Finds users for pairing who take the given courses
- * @param {number} courseIds array of course ids to find pairing for.
+ * @param {Array} courseIds array of course ids to find pairing for.
  * @return {Promise} users who take the course
  */
 export const findPairing = async (courseIds) => {
