@@ -49,9 +49,6 @@ const StyledButton = styled(Button)(() => ({
   '&.MuiButton-root': {
     border: '2px #666666 solid',
   },
-  '&.MuiButton-text': {
-    color: '#666666',
-  },
   '&.MuiButton-outlined': {
     color: '#666666',
   },
@@ -75,6 +72,7 @@ function Pairing() {
   };
 
   const handleFindBuddy = () => {
+    // eslint-disable-next-line no-console
     console.log(selectedCourses);
   };
 
@@ -93,11 +91,7 @@ function Pairing() {
         </Grid>
       </Grid>
       <Grid item>
-        <StyledButton
-          variant="outlined"
-          color="primaryDark"
-          className={styles.button}
-          onClick={() => handleFindBuddy()}>
+        <StyledButton variant="outlined" onClick={() => handleFindBuddy()}>
           <Typography color="primaryDark">FIND MY BUDDY</Typography>
           <ArrowForwardIcon />
         </StyledButton>
