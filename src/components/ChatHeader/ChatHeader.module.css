@@ -16,30 +16,18 @@
   margin-top: 0;
   margin-bottom: 0;
   padding-left: 10px;
-  font-family: 'Inter';
-  font-style: normal;
-}
-
-.buddyName {
-  font-weight: 600;
-  font-size: 20px;
-  line-height: 28px;
+  padding-bottom: 0px;
 }
 
 .onlinePadding {
-  padding-top: 6px;
+  padding-top:10px;
 }
 
 .offlinePadding {
-  padding-top: 12px;
-}
-
-.detailsText {
-  height: 52px;
+  padding-top: 0px;
 }
 
 .status {
   color: #959595;
   font-weight: 500;
-  font-size: 14px;
 }
