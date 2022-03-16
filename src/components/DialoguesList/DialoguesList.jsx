@@ -1,10 +1,22 @@
-/* eslint-disable react/jsx-props-no-spreading */
 import React, { useRef, useEffect } from 'react';
 import PropTypes from 'prop-types';
 import styles from './DialoguesList.module.css';
 import MessageBubble from '../MessageBubble/MessageBubble';
 
 // TODO: display the timestamp of messages
+
+/**
+ * DialoguesList component displays messages in the form of MessageBubbles between users.
+ * This component takes in an array of objects (messages) which contain properties sender id, text,
+ * and content type.
+ * Example:
+ *  {
+ *   sender: 'id3333',
+ *   text: 'hello there',
+ *   contentType: 'text',
+ *  }
+ */
+
 function DialoguesList({ messages, currentUser, senderAvatar }) {
   const messagesEndRef = useRef(null);
 
