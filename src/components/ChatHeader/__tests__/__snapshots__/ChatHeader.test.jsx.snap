@@ -2,17 +2,17 @@
 
 exports[`renders correctly 1`] = `
 <div
-  className="chatHeader"
+  className="chatHeader MuiBox-root css-0"
 >
   <div
-    className="userDetails"
+    className="userDetails MuiBox-root css-0"
   >
     <div
       className="MuiContainer-root MuiContainer-maxWidthLg MuiContainer-disableGutters css-6ch1n3-MuiContainer-root"
     >
       <span
-        className="MuiBadge-root css-wd6a4w-MuiBadge-root"
-        data-testid="offline"
+        className="MuiBadge-root css-1srwgqi-MuiBadge-root"
+        data-testid="active"
       >
         <div
           className="MuiAvatar-root MuiAvatar-circular MuiAvatar-colorDefault css-1pl8iwh-MuiAvatar-root"
@@ -38,17 +38,17 @@ exports[`renders correctly 1`] = `
       </span>
     </div>
     <div
-      className="detailsText"
+      className="MuiBox-root css-0"
     >
-      <p
-        className="headerText buddyName offlinePadding"
+      <h6
+        className="MuiTypography-root MuiTypography-h6 headerText buddyName onlinePadding css-1sf6w7j-MuiTypography-root"
       >
         Amy
-      </p>
+      </h6>
       <p
-        className="headerText status"
+        className="MuiTypography-root MuiTypography-body2 headerText status css-1fri0cs-MuiTypography-root"
       >
-         
+        Active now
       </p>
     </div>
   </div>
