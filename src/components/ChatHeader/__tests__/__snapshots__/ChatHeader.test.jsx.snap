@@ -41,7 +41,7 @@ exports[`renders correctly 1`] = `
       className="MuiBox-root css-0"
     >
       <h6
-        className="MuiTypography-root MuiTypography-h6 headerText buddyName onlinePadding css-1sf6w7j-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-h6 headerText onlinePadding css-1sf6w7j-MuiTypography-root"
       >
         Amy
       </h6>

@@ -20,7 +20,7 @@ function ChatHeader({ active, name, callBuddy }) {
             variant="h6"
             fontWeight={600}
             lineHeight={1}
-            className={`${styles.headerText} ${styles.buddyName} ${
+            className={`${styles.headerText} ${
               active ? styles.onlinePadding : styles.offlinePadding
             }`}>
             {name}
