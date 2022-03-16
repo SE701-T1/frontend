@@ -1,49 +1,12 @@
 import { Button, Container, Grid, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import CourseCard from '../../components/CourseCard/CourseCard';
 
 import styles from './Pairing.module.css';
-
-const data = [
-  {
-    courseId: 0,
-    name: 'Softeng 701',
-    semester: 1,
-    studentCount: 10,
-    buddyCount: 0,
-  },
-  {
-    courseId: 1,
-    name: 'Softeng 750',
-    semester: 1,
-    studentCount: 9,
-    buddyCount: 5,
-  },
-  {
-    courseId: 2,
-    name: 'Softeng 764',
-    semester: 2,
-    studentCount: 60,
-    buddyCount: 50,
-  },
-  {
-    courseId: 3,
-    name: 'Softeng 731',
-    semester: 2,
-    studentCount: 10,
-    buddyCount: 0,
-  },
-  {
-    courseId: 4,
-    name: 'Softeng 711',
-    semester: 2,
-    studentCount: 10,
-    buddyCount: 100,
-  },
-];
+import { getCourses } from '../../api/TimetableAPI';
 
 const StyledButton = styled(Button)(() => ({
   '&.MuiButton-root': {
@@ -57,6 +20,7 @@ const StyledButton = styled(Button)(() => ({
 function Pairing() {
   const [numOfSelectedCourses, setNumOfSelectedCourses] = useState(0);
   const [selectedCourses, setSelectedCourses] = useState([]);
+  const [courses, setCourses] = useState([]);
 
   const handleSelectedCourse = (courseName) => {
     const numberOfCourse = selectedCourses.length;
@@ -75,6 +39,15 @@ function Pairing() {
     // eslint-disable-next-line no-console
     console.log(selectedCourses);
   };
+
+  useEffect(() => {
+    const fetchCourses = async () => {
+      const response = await getCourses();
+      setCourses(response);
+    };
+
+    fetchCourses();
+  }, []);
 
   const header = (
     <Grid container direction="row" justifyContent="space-between" alignItems="center">
@@ -107,7 +80,7 @@ function Pairing() {
         </Grid>
         <Grid item>
           <Grid container justifyContent="space-between">
-            {data.map(({ courseId, name, semester, studentCount, buddyCount }) => (
+            {courses.map(({ courseId, name, semester, studentCount, buddyCount }) => (
               <Grid
                 item
                 xs={12}
@@ -117,6 +90,7 @@ function Pairing() {
                 className={styles.card}
                 onClick={() => handleSelectedCourse(name)}>
                 <CourseCard
+                  data-testid={courseId}
                   key={courseId}
                   courseName={name}
                   semesterNumber={semester}
