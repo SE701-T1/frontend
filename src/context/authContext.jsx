@@ -13,13 +13,14 @@ export const AuthContext = React.createContext({});
  * A library called 'use-persisted-state' is being used to store the token in the local storage of
  * the browser.
  */
-export function AuthContextProvider({ children }) {
+export function AuthContextProvider({ children, socket }) {
   const [jwt, setJwt] = useJwtState('');
   const [authenticated, setAuthenticated] = useState(false);
 
   // Clears the JWT, which triggers the useEffect() below to set authenticated to false.
   function logout() {
     setJwt('');
+    socket.disconnect();
   }
 
   useEffect(async () => {
@@ -43,6 +44,10 @@ export function AuthContextProvider({ children }) {
       axios.defaults.headers.common = {
         Authorization: jwt,
       };
+
+      // Socket connection is being established here.
+      socket.connect(jwt);
+
     } catch (error) {
       setJwt('');
     }
