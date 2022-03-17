@@ -22,6 +22,11 @@ function Pairing() {
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [courses, setCourses] = useState([]);
 
+  /**
+   * If the course is not selected, add to the selectedCourses list.
+   * If the course is selected, remove from the list.
+   * @param {*} courseName
+   */
   const handleSelectedCourse = (courseName) => {
     const numberOfCourse = selectedCourses.length;
     const filteredSelectedCourse = selectedCourses.filter((value) => courseName !== value);
@@ -37,8 +42,14 @@ function Pairing() {
     }
   };
 
+  /**
+   * Send selected course to popup componenet
+   */
   const handleFindBuddy = () => {};
 
+  /**
+   * Fetch course timetable
+   */
   useEffect(() => {
     const fetchCourses = async () => {
       const response = await getCourses();
