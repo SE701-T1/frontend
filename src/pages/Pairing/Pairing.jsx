@@ -28,17 +28,16 @@ function Pairing() {
 
     if (filteredSelectedCourse.length === numberOfCourse) {
       setSelectedCourses([...filteredSelectedCourse, courseName]);
-      setNumOfSelectedCourses(numOfSelectedCourses + 1);
+      const prev = numOfSelectedCourses;
+      setNumOfSelectedCourses(prev + 1);
     } else {
       setSelectedCourses(filteredSelectedCourse);
-      setNumOfSelectedCourses(numOfSelectedCourses - 1);
+      const prev = numOfSelectedCourses;
+      setNumOfSelectedCourses(prev - 1);
     }
   };
 
-  const handleFindBuddy = () => {
-    // eslint-disable-next-line no-console
-    console.log(selectedCourses);
-  };
+  const handleFindBuddy = () => {};
 
   useEffect(() => {
     const fetchCourses = async () => {
