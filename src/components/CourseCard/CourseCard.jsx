@@ -34,8 +34,8 @@ const SelectedCard = styled(Card)(() => ({
   '&::after': {
     borderRadius: '0%',
     borderWidth: '30px',
-    borderRightColor: '#8896ac' /* color of the triangle */,
-    borderTopColor: '#8896ac' /* color of the triangle */,
+    borderRightColor: '#8896ac',
+    borderTopColor: '#8896ac',
   },
 }));
 

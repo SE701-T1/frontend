@@ -78,7 +78,6 @@ describe('Render Pairing page', () => {
 
       await waitFor(() => {
         button1 = screen.getByText('SOFTENG 701').closest('button');
-        // button = screen.getByText('SOFTENG 756').closest('button');
       });
       await waitFor(() => {
         button2 = screen.getByText('SOFTENG 756').closest('button');
