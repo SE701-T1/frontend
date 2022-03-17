@@ -13,7 +13,6 @@ import PropTypes from 'prop-types';
 import styles from './CourseCard.module.css';
 
 const SelectedCard = styled(Card)(() => ({
-  // border: '4px solid #8896ac',
   boxShadow: '0px 0px 0px 4.5px #8896ac inset',
   borderRadius: '15px',
 
