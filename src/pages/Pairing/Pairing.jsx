@@ -90,7 +90,6 @@ function Pairing() {
                 className={styles.card}
                 onClick={() => handleSelectedCourse(name)}>
                 <CourseCard
-                  data-testid={courseId}
                   key={courseId}
                   courseName={name}
                   semesterNumber={semester}

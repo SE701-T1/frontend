@@ -9,7 +9,7 @@ describe('Course Component test', () => {
     render(
       <CourseCard
         courseName="Softeng 701"
-        semesterNumber={1}
+        semesterNumber="1"
         numbOfStudents={20}
         numOfBuddies={0}
       />,
@@ -28,7 +28,7 @@ describe('Selected Course Component test', () => {
     render(
       <CourseCard
         courseName="Softeng 701"
-        semesterNumber={1}
+        semesterNumber="1"
         numbOfStudents={20}
         numOfBuddies={0}
       />,
