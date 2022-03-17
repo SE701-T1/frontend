@@ -44,18 +44,17 @@ const StyledCard = styled(Card)(() => ({
 }));
 
 function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }) {
-  const year = new Date().getFullYear();
   const [selected, setSelected] = useState(false);
 
   const cardContent = (
     <CardContent className={styles.cardContent}>
       <Grid container direction="row" spacing={3}>
         <Grid item>
-          <Typography className={styles.courseNameText} variant="h4" fontWeight={550}>
+          <Typography variant="h4" fontWeight={550} className={styles.title}>
             {courseName}
           </Typography>
           <Typography className={styles.semesterText} fontSize={14}>
-            SEMESTER {semesterNumber} {year}
+            {semesterNumber}
           </Typography>
         </Grid>
       </Grid>

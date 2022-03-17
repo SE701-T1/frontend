@@ -9,15 +9,14 @@ describe('Course Component test', () => {
     render(
       <CourseCard
         courseName="Softeng 701"
-        semesterNumber="1"
+        semesterNumber="2022 sem 1"
         numbOfStudents={20}
         numOfBuddies={0}
       />,
     );
-    const semester = `SEMESTER 1 2022`;
 
     expect(screen.getByText('Softeng 701')).toBeInTheDocument();
-    expect(screen.getByText(new RegExp(semester, 'i'))).toBeInTheDocument();
+    expect(screen.getByText('2022 sem 1')).toBeInTheDocument();
     expect(screen.getByText('20')).toBeInTheDocument();
     expect(screen.getByText('0')).toBeInTheDocument();
   });

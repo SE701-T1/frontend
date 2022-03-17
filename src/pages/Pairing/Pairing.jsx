@@ -79,13 +79,14 @@ function Pairing() {
           {header}
         </Grid>
         <Grid item>
-          <Grid container justifyContent="space-between">
+          <Grid container>
             {courses.map(({ courseId, name, semester, studentCount, buddyCount }) => (
               <Grid
                 item
                 xs={12}
                 sm={6}
                 md={3}
+                col={4}
                 key={courseId}
                 className={styles.card}
                 onClick={() => handleSelectedCourse(name)}>

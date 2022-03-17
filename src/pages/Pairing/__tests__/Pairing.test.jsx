@@ -70,16 +70,22 @@ describe('Render Pairing page', () => {
       ]),
     );
 
-    act(async () => {
+    await act(async () => {
       render(<Pairing />);
 
-      let button;
+      let button1;
+      let button2;
+
       await waitFor(() => {
-        button = screen.getByText('SOFTENG 701').closest('button');
-        button = screen.getByText('SOFTENG 756').closest('button');
+        button1 = screen.getByText('SOFTENG 701').closest('button');
+        // button = screen.getByText('SOFTENG 756').closest('button');
+      });
+      await waitFor(() => {
+        button2 = screen.getByText('SOFTENG 756').closest('button');
       });
 
-      fireEvent.click(button);
+      fireEvent.click(button1);
+      fireEvent.click(button2);
     });
 
     await waitFor(() => expect(screen.getByText('2 Courses Selected')));
