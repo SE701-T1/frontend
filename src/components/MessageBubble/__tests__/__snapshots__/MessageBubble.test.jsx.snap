@@ -12,11 +12,15 @@ exports[`renders correctly 1`] = `
   <div
     className="bubble others bubble-img"
   >
-    <img
-      alt="imageMessage"
-      className="content-img"
-      src="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
-    />
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+    >
+      <img
+        alt="imageMessage"
+        className="content-img"
+        src="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
+      />
+    </p>
   </div>
 </div>
 `;
