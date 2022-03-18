@@ -1,5 +1,6 @@
 import axios from 'axios';
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
+import { SocketContext } from '../api/sockets/Sockets';
 
 export const AuthContext = React.createContext({});
 
@@ -11,41 +12,41 @@ export const AuthContext = React.createContext({});
  * A library called 'use-persisted-state' is being used to store the token in the local storage of
  * the browser.
  */
-export function AuthContextProvider({ children, socket }) {
-  const [jwt, setJwt] = useJwtState('');
+export function AuthContextProvider({ children }) {
+  const socket = useContext(SocketContext);
+  const [jwt, setJwt] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
 
   // Clears the JWT, which triggers the useEffect() below to set authenticated to false.
   function logout() {
     setJwt('');
-    socket.disconnect();
   }
 
   useEffect(async () => {
     if (jwt === '') {
       setAuthenticated(false);
       axios.defaults.headers.common = {
-        Authorization: '',
+        Authorization: null,
       };
+      socket.disconnect();
       return;
     }
 
     // Triggering a backend call to verify the integrity of the current JWT.
     try {
-      await axios.get(`${process.env.API_HOST}:${process.env.API_PORT}/verify`, {
+      await axios.get(`${process.env.REACT_APP_BACKEND_ENDPOINT}/api/validate`, {
         headers: {
-          Authorization: jwt,
+          Authorization: `Bearer ${jwt}`,
         },
       });
 
       setAuthenticated(true);
       axios.defaults.headers.common = {
-        Authorization: jwt,
+        Authorization: `Bearer ${jwt}`,
       };
 
       // Socket connection is being established here.
       socket.connect(jwt);
-
     } catch (error) {
       setJwt('');
     }
