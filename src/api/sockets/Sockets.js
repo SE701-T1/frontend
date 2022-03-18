@@ -7,7 +7,7 @@ class Socket {
     this.socket = null;
   }
 
-  sendMessage(senderId, receiverId, message) {
+  sendMessageEvent(senderId, receiverId, message) {
     this.socket.emit("message", {
       senderId,
       receiverId,
@@ -16,7 +16,7 @@ class Socket {
     })
   }
 
-  onMessage(callback) {
+  onMessageEvent(callback) {
     this.socket.on("message", callback);
   }
 
@@ -27,11 +27,17 @@ class Socket {
     })
   }
 
-  sendOnlineEvent(callback) {
-    this.socket.emit("online", callback);
+  onOnlineEvent(callback) {
+    this.socket.on("online", callback);
   }
 
-  onDisconnect(callback) {
+  sendOnlineEvent() {
+    this.socket.emit("online", {
+      timestamp: Date.now()
+    })
+  }
+
+  onDisconnectEvent(callback) {
     this.socket.on("disconnect", callback);
   }
 
