@@ -4,6 +4,7 @@ import { Route, Routes as Switch } from 'react-router-dom';
 import Login from '../Login/Login';
 import AuthRoute from './AuthRoute';
 import Dashboard from '../Dashboard';
+import Pairing from '../Pairing/Pairing';
 import Example from '../../components/Example';
 
 function Routes() {
@@ -12,7 +13,7 @@ function Routes() {
       <Route path="/login" element={<Login />} />
       <Route element={<AuthRoute />}>
         <Route path="/courses" element={<Example />} />
-        <Route path="/find-matches" element={<Example />} />
+        <Route path="/find-matches" element={<Pairing />} />
         <Route path="/chat" element={<Example />} />
         <Route path="/accounts" element={<Example />} />
         <Route path="/" element={<Dashboard />} />
