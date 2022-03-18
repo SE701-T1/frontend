@@ -1,5 +1,6 @@
 import React, { useContext } from 'react';
-import Redirect from 'react-router-dom';
+import { Navigate } from 'react-router-dom';
+import Nav from '../../components/NavBar';
 import { AuthContext } from '../../context/authContext';
 
 /**
@@ -7,12 +8,12 @@ import { AuthContext } from '../../context/authContext';
  * 'AuthContext' to check whether the user is authenticated. If yes, then it will continue to show
  * the requested components, otherewise the user is redirected to '/login' which is the login screen.
  */
-export default function AuthRoutes({ children }) {
+export default function AuthRoute({ children }) {
   const { authenticated } = useContext(AuthContext);
 
   if (authenticated) {
-    return children;
+    return <Nav>{children}</Nav>;
   }
 
-  return <Redirect to="/login" />;
+  return <Navigate to="/login" />;
 }
