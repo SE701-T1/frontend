@@ -18,18 +18,20 @@ import styles from './UploadPage.module.css';
  * This component takes in a function as a prop that should handle the behaviour of a user clicking on the submit button.
  *
  */
-export default function UploadPage({ sendTimetableURL }) {
+export default function UploadPage({ sendTimetableURL, userID }) {
   const [calendarURL, setcalendarURL] = React.useState('');
   const handleChange = (event) => {
     setcalendarURL(event.target.value);
   };
   const handleSubmit = () => {
-    sendTimetableURL(calendarURL);
+    sendTimetableURL(calendarURL, userID);
   };
 
   return (
     <Stack direction="column" spacing={3} className={styles.title}>
-      <Button variant="contained">Upload Timetable</Button>
+      <Button variant="contained" onClick={handleSubmit}>
+        Upload Timetable
+      </Button>
       <Typography>OR</Typography>
       <TextField
         id="outlined-input"
@@ -51,7 +53,8 @@ export default function UploadPage({ sendTimetableURL }) {
         href="https://uoacal.auckland.ac.nz/home"
         underline="hover"
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+        className={styles.link}>
         <Typography>Download your timetable at https://uoacal.auckland.ac.nz/home</Typography>
       </Link>
     </Stack>
@@ -60,4 +63,5 @@ export default function UploadPage({ sendTimetableURL }) {
 
 UploadPage.propTypes = {
   sendTimetableURL: PropTypes.func.isRequired,
+  userID: PropTypes.string.isRequired,
 };

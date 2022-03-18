@@ -39,3 +39,13 @@ export const getUserCourses = async (userId) => {
   const response = await getData(`api/timetable/users/courses/${userId}`);
   return response?.map(convertCourse);
 };
+
+/**
+ * Sends the unique timetable URL of a user to be parsed
+ * @param {number} userId id of the user for the courses to retrieve
+ * @param {URL} URL of the users timetable
+ * @return {Promise}
+ */
+export const addTimetableURL = async (userId, URL) => {
+  console.log(URL, userId);
+};
