@@ -1,0 +1,60 @@
+.icon {
+  margin-top: 50px;
+  display: flex;
+  text-transform: capitalize;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.title {
+  display: flex;
+  text-transform: capitalize;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.courses {
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
+}
+
+.buddies {
+  display: flex;
+  text-transform: capitalize;
+  margin-top: 10px;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.message-button {
+  position: relative;
+  display: flex;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 10px;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.skip-button {
+  display: flex;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
