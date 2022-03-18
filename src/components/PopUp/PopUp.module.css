@@ -1,60 +1,60 @@
-.pop-up {
-    display: flex;
-}
-
-.message-button {
-    position: relative;
-    display: flex;
-    margin: 10px;
-    align-items: center;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    color: white;
-    font-size: 12px;
-    -webkit-align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
-}
-
-.skip-button {
-    display: flex;
-    margin: 10px;
-    align-items: center;
-    font-family: 'Inter';
-    font-style: normal;
-    font-weight: 400;
-    -webkit-align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
+.icon {
+  margin-top: 50px;
+  display: flex;
+  text-transform: capitalize;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
 }
 
 .title {
-    display: flex;
-    text-transform: capitalize;
-    align-items: center;
-    margin: 10px;
-    -webkit-align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
+  display: flex;
+  text-transform: capitalize;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
 }
 
 .courses {
-    display: flex;
-    align-items: center;
-    margin: 10px;
-    -webkit-align-items: center;
-    -webkit-justify-content: center;
-    justify-content: center;
+  display: flex;
+  align-items: center;
+  -webkit-align-items: center;
+  -webkit-justify-content: center;
+  justify-content: center;
 }
 
-.popup-background {
-   top: 50%;
-   left: 50%;
-   width: 70vh;
-   height: 70vh;
-   background-color: white;
-   border-radius: 5px;
-   position: absolute;
-   display: flex;
+.buddies {
+  display: flex;
+  text-transform: capitalize;
+  margin-top: 10px;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.message-button {
+  position: relative;
+  display: flex;
+  font-style: normal;
+  font-weight: 400;  
+  margin-top: 10px;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
+}
+
+.skip-button {
+  display: flex;
+  font-style: normal;
+  font-weight: 400;
+  margin-top: 10px;
+  margin-bottom: 50px;
+  align-items: center;
+  -webkit-align-items: center;
+  justify-content: center;
+  -webkit-justify-content: center;
 }
