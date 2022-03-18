@@ -1,0 +1,51 @@
+.chat {
+    height: calc(100vh - 65px);
+    display: flex;
+    margin: -24px;
+  }
+  
+  .chatRight {
+    display: flex;
+    flex-direction: column;
+    flex: 3;
+    padding-top: 40px;
+    height: 100%;
+  }
+  .chatMiddle {
+    flex: 5.5;
+    border-left: 1px solid #8896ac;
+    border-right: 1px solid #8896ac;
+    position: relative;
+    padding-bottom: 2px;
+    height: 100%;
+  }
+  .chatLeft {
+    flex: 3.5;
+    height: 100%;
+    padding-right: 10px;
+  }
+  
+  .searchBar{
+    padding-top: 18px;
+    padding-bottom: 12px;
+  }
+  
+  .header {
+    position: relative;
+    z-index: 10;
+  }
+  
+  .chatList{
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 88px);
+    overflow-y: scroll;
+  }
+  
+  .dialogueList {
+    display: flex;
+    flex-direction: column;
+    height: calc(100% - 120px);
+    overflow-y: scroll;
+    padding-left: 10px;
+  }

@@ -1,3 +1,4 @@
 .root {
-  position: relative;
+  display: flex;
+  padding-left: 13px;
 }
