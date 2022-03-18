@@ -56,8 +56,8 @@ function Chat() {
               messages={mockMessage}
               currentUser="id5678"
               senderAvatar="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
-            /></div>       
-           <ChatInput/>
+            /></div>    
+            <div className={styles.input}> <ChatInput/> </div>   
         </div>
         <div className={styles.chatRight}>
            <ChatBuddyDetail name="test name" removeBuddy={() => {}} commonCourses={mockCourse} />

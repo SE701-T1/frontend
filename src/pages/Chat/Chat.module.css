@@ -34,6 +34,10 @@
     position: relative;
     z-index: 10;
   }
+
+  .input {
+      padding-left:8px;
+  }
   
   .chatList{
     display: flex;
