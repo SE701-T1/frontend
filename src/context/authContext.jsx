@@ -1,8 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import createPersistedState from 'use-persisted-state';
 
-const useJwtState = createPersistedState('jwt');
 export const AuthContext = React.createContext({});
 
 /**
@@ -14,7 +12,7 @@ export const AuthContext = React.createContext({});
  * the browser.
  */
 export function AuthContextProvider({ children }) {
-  const [jwt, setJwt] = useJwtState('');
+  const [jwt, setJwt] = useState('');
   const [authenticated, setAuthenticated] = useState(false);
 
   // Clears the JWT, which triggers the useEffect() below to set authenticated to false.
