@@ -1,12 +1,10 @@
 import React from 'react';
-// import PropTypes from 'prop-types';
 import { Button, Dialog, Typography } from '@mui/material';
 import PeopleIcon from '@mui/icons-material/People';
 import styles from './PopUp.module.css';
 import ProfileBadge from '../ProfileBadge/ProfileBadge';
 
 function PopUp({ name, buddyNumber, open }) {
-
   const sharedCourses = ['course1', 'course2'];
   const courses = sharedCourses.join(', ');
 
@@ -22,7 +20,7 @@ function PopUp({ name, buddyNumber, open }) {
         <Typography>Also takes {courses.toUpperCase()}</Typography>
       </div>
       <div className={styles.buddies}>
-            <PeopleIcon style={{ marginRight: '5px'}}/>
+        <PeopleIcon style={{ marginRight: '5px' }} />
         {buddyNumber} Buddies
       </div>
       <div className={styles['message-button']}>
