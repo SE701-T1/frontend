@@ -17,14 +17,11 @@ const convertMessage = (message) => {
 
 /**
  * Fetches the data of the users messages given user id
- * @param {number} userId id of the user
  * @param {number} buddyId id of the buddy
  * @return {Promise} data of the users messages
  */
-const getMessages = async (userId, buddyId) =>
-  getData(`api/communication/messages/${userId}?buddyId=${buddyId}`)?.map((message) =>
-    convertMessage(message),
-  );
+const getMessages = async (buddyId) =>
+  getData(`api/communication/messages/${buddyId}`)?.map((message) => convertMessage(message));
 
 /**
  * Fetches data of the current users buddy chat list

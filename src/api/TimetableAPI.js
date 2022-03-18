@@ -1,9 +1,6 @@
 import moment from 'moment';
 import { getData } from './APIUtils';
 
-// temporarily using userId as backend is not implemented
-const USERID = 1;
-
 const convertCourse = (course) => {
   if (course === null) {
     return null;
@@ -20,7 +17,7 @@ const convertCourse = (course) => {
  * @return {Promise} data of all the courses
  */
 export const getCourses = async () =>
-  getData(`api/timetable/users/courses/${USERID}`)?.map((course) => convertCourse(course));
+  getData(`api/timetable/users/courses`)?.map((course) => convertCourse(course));
 
 /**
  * Fetches the data of the course with the course id

@@ -19,7 +19,7 @@ const convertBuddy = (buddy) => {
  * @return {Promise} users who take the course
  */
 // eslint-disable-next-line import/prefer-default-export
-export const findPairing = async (userId, courseIds) =>
-  getData(`api/pairing/matchBuddy/${userId}?courseIds=${courseIds}`)?.map((buddy) =>
-    convertBuddy(buddy),
-  );
+export const findPairing = async (courseIds) =>
+  getData(`api/pairing/matchBuddy/`, {
+    courseIds,
+  })?.map((buddy) => convertBuddy(buddy));
