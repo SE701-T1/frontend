@@ -10,46 +10,13 @@ function Routes() {
   return (
     <Switch>
       <Route path="/login" element={<Login />} />
-      <Route
-        path="/courses"
-        element={
-          <AuthRoute>
-            <Example />
-          </AuthRoute>
-        }
-      />
-      <Route
-        path="/find-matches"
-        element={
-          <AuthRoute>
-            <Example />
-          </AuthRoute>
-        }
-      />
-      <Route
-        path="/chat"
-        element={
-          <AuthRoute>
-            <Example />
-          </AuthRoute>
-        }
-      />
-      <Route
-        path="/accounts"
-        element={
-          <AuthRoute>
-            <Example />
-          </AuthRoute>
-        }
-      />
-      <Route
-        path="/"
-        element={
-          <AuthRoute>
-            <Dashboard />
-          </AuthRoute>
-        }
-      />
+      <Route element={<AuthRoute />}>
+        <Route path="/courses" element={<Example />} />
+        <Route path="/find-matches" element={<Example />} />
+        <Route path="/chat" element={<Example />} />
+        <Route path="/accounts" element={<Example />} />
+        <Route path="/" element={<Dashboard />} />
+      </Route>
     </Switch>
   );
 }
