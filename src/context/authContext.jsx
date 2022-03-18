@@ -1,8 +1,6 @@
 import axios from 'axios';
 import React, { useEffect, useState } from 'react';
-import createPersistedState from 'use-persisted-state';
 
-const useJwtState = createPersistedState('jwt');
 export const AuthContext = React.createContext({});
 
 /**

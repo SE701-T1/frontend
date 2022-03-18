@@ -1,11 +1,9 @@
 .root {
-  max-width: 280px;
   position: relative;
 }
 
 .cardContent {
   padding-top: 20px;
-
   margin-bottom: 55px;
 }
 
@@ -40,4 +38,16 @@
   right: 6px;
   position: absolute;
   display: block;
+}
+
+@media only screen and (max-width: 1080px) {
+  .title {
+    font-size: 1.8rem;
+  }
+}
+
+@media only screen and (max-width: 360px) {
+  .title {
+    font-size: 1.5rem;
+  }
 }

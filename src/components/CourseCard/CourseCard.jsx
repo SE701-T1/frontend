@@ -13,7 +13,6 @@ import PropTypes from 'prop-types';
 import styles from './CourseCard.module.css';
 
 const SelectedCard = styled(Card)(() => ({
-  // border: '4px solid #8896ac',
   boxShadow: '0px 0px 0px 4.5px #8896ac inset',
   borderRadius: '15px',
 
@@ -34,8 +33,8 @@ const SelectedCard = styled(Card)(() => ({
   '&::after': {
     borderRadius: '0%',
     borderWidth: '30px',
-    borderRightColor: '#8896ac' /* color of the triangle */,
-    borderTopColor: '#8896ac' /* color of the triangle */,
+    borderRightColor: '#8896ac',
+    borderTopColor: '#8896ac',
   },
 }));
 
@@ -44,18 +43,17 @@ const StyledCard = styled(Card)(() => ({
 }));
 
 function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }) {
-  const year = new Date().getFullYear();
   const [selected, setSelected] = useState(false);
 
   const cardContent = (
     <CardContent className={styles.cardContent}>
       <Grid container direction="row" spacing={3}>
         <Grid item>
-          <Typography className={styles.courseNameText} variant="h4" fontWeight={550}>
+          <Typography variant="h4" fontWeight={550} className={styles.title}>
             {courseName}
           </Typography>
           <Typography className={styles.semesterText} fontSize={14}>
-            SEMESTER {semesterNumber} {year}
+            {semesterNumber}
           </Typography>
         </Grid>
       </Grid>
@@ -128,7 +126,7 @@ function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }
 
 CourseCard.propTypes = {
   courseName: PropTypes.string.isRequired,
-  semesterNumber: PropTypes.number.isRequired,
+  semesterNumber: PropTypes.string.isRequired,
   numbOfStudents: PropTypes.number.isRequired,
   numOfBuddies: PropTypes.number.isRequired,
 };
