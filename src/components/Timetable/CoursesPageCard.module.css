@@ -1,0 +1,19 @@
+.cardContainer {
+  max-width: fit-content;
+  min-height: 500px;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.cardContent {
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  border-color: red;
+}
