@@ -5,12 +5,7 @@ import PeopleIcon from '@mui/icons-material/People';
 import styles from './PopUp.module.css';
 import ProfileBadge from '../ProfileBadge/ProfileBadge';
 
-// const [open, setOpen] = React.useState(true);
-//
 function PopUp({ name, buddyNumber, open }) {
-  // const handleClose = () => {
-  //     onClose();
-  // };
 
   const sharedCourses = ['course1', 'course2'];
   const courses = sharedCourses.join(', ');
@@ -47,11 +42,5 @@ function PopUp({ name, buddyNumber, open }) {
     </Dialog>
   );
 }
-
-// PopUp.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   sameCourses: PropTypes.array,
-//   numBuddies: PropTypes.number,
-// };
 
 export default PopUp;
