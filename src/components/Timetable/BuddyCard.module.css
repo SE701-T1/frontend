@@ -1,0 +1,13 @@
+.cardContainer {
+  background-color: #c5d3e9;
+  max-width: 250px;
+  align-items: center;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.button {
+  color: black;
+  border-color: black;
+}
