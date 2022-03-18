@@ -7,7 +7,7 @@ import MessageBubble from '../MessageBubble/MessageBubble';
 
 /**
  * DialoguesList component displays messages in the form of MessageBubbles between users.
- * This component takes in an array of objects (messages) which contain properties sender id, text, 
+ * This component takes in an array of objects (messages) which contain properties sender id, text,
  * and content type.
  * Example:
  *  {
@@ -30,7 +30,7 @@ function DialoguesList({ messages, currentUser, senderAvatar }) {
 
   // render the message bubbles from the messages prop
   return (
-    <div className={styles.root}>
+    <div>
       {messages.map(({ text, sender, contentType }, key) => (
         <MessageBubble
           text={text}

@@ -9,16 +9,15 @@ import styles from './UserSearch.module.css';
 
 // searchbox styling
 const SearchBox = styled(TextField)(() => ({
+  width: '100%',
   '& fieldset': {
     borderRadius: '25px',
     backgroundColor: '#FAFAFC',
     zIndex: -1,
   },
 
-  // TODO: need to change this to be responsive. we can change this later when we make the buddy list.
-
   '& .MuiInputBase-input': {
-    width: '250px',
+    width: '100%',
     color: 'black',
   },
 

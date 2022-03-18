@@ -1,9 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`DialoguesList produces correct snapshot of multiple messages 1`] = `
-<div
-  className="root"
->
+<div>
   <div
     className="message-container bubble-from-left"
   >
@@ -15,7 +13,11 @@ exports[`DialoguesList produces correct snapshot of multiple messages 1`] = `
     <div
       className="bubble others bubble-text"
     >
-      random message
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        random message
+      </p>
     </div>
   </div>
   <div
@@ -24,11 +26,15 @@ exports[`DialoguesList produces correct snapshot of multiple messages 1`] = `
     <div
       className="bubble me bubble-img"
     >
-      <img
-        alt="imageMessage"
-        className="content-img"
-        src="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
-      />
+      <p
+        className="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+      >
+        <img
+          alt="imageMessage"
+          className="content-img"
+          src="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
+        />
+      </p>
     </div>
   </div>
   <div

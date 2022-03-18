@@ -7,37 +7,38 @@
     border-radius: 5px;
     width: 100%;
     height: 100%;
-}
-
-.selected {
-    background: #ECF3FF;
-}
-
-.profileBadgeContainer {
+  }
+  
+  .selected {
+    background: #ecf3ff;
+  }
+  
+  .profileBadgeContainer {
     flex: 0;
     padding-left: 8px;
     padding-right: 10px;
-}
-
-.textContainer {
+  }
+  
+  .textContainer {
     flex: 1;
     text-align: start;
     padding-left: 5px;
+    padding-right: 13px;
     display: flex;
     flex-direction: column;
     align-items: flex-start;
     justify-content: center;
-}
-
-.headerText {
+  }
+  
+  .headerText {
     display: flex;
     align-items: flex-end;
-}
-
-.subText {
+  }
+  
+  .subText {
     display: flex;
     flex-direction: row;
     align-items: flex-start;
     justify-content: space-between;
     width: 100%;
-}
+  }
