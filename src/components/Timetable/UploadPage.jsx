@@ -53,8 +53,7 @@ export default function UploadPage({ sendTimetableURL, userID }) {
         href="https://uoacal.auckland.ac.nz/home"
         underline="hover"
         target="_blank"
-        rel="noopener noreferrer"
-        className={styles.link}>
+        rel="noopener noreferrer">
         <Typography>Download your timetable at https://uoacal.auckland.ac.nz/home</Typography>
       </Link>
     </Stack>
