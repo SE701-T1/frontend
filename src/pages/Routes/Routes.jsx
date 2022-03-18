@@ -1,17 +1,20 @@
 import React from 'react';
 import { Route, Routes as Switch } from 'react-router-dom';
 
-import Login from '../Login/Login';
+import Example from '../../components/Example';
 import AuthRoute from './AuthRoute';
+import GoogleRedirectRoute from './GoogleRedirectRoute';
+
+import Login from '../Login/Login';
 import Dashboard from '../Dashboard';
 import Pairing from '../Pairing/Pairing';
-import Example from '../../components/Example';
 import Chat from '../Chat/Chat';
 
 function Routes() {
   return (
     <Switch>
       <Route path="/login" element={<Login />} />
+      <Route exact path="/google-oauth" element={<GoogleRedirectRoute />} />
       <Route element={<AuthRoute />}>
         <Route path="/courses" element={<Example />} />
         <Route path="/find-matches" element={<Pairing />} />
