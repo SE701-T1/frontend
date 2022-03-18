@@ -5,7 +5,6 @@ import Login from '../Login/Login';
 import AuthRoute from './AuthRoute';
 import Dashboard from '../Dashboard';
 import Pairing from '../Pairing/Pairing';
-import Chat from '../Chat/Chat';
 import Example from '../../components/Example';
 
 function Routes() {
