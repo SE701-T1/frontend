@@ -1,31 +1,30 @@
+import moment from 'moment';
+import { getData } from './APIUtils';
+
+// convert buddy by adding buddyCount which is missing from backend
+const convertMessage = (message) => {
+  if (message === null) {
+    return null;
+  }
+
+  return {
+    ...message,
+    sender: message.senderId,
+    receiver: message.receiverId,
+    timestamp: moment(message.timestamp).toDate(),
+  };
+};
+
 /**
  * Fetches the data of the users messages given user id
  * @param {number} userId id of the user
+ * @param {number} buddyId id of the buddy
  * @return {Promise} data of the users messages
  */
-export const getMessages = async (userId) => {
-  console.log(userId);
-  return [
-    {
-      sender: 'senderid',
-      receiver: 'receiverid',
-      timestamp: 1647383521,
-      content: 'test message 1',
-    },
-    {
-      sender: 'receiverid',
-      receiver: 'receiverid',
-      timestamp: 1647383522,
-      content: 'test message 2',
-    },
-    {
-      sender: 'senderid',
-      receiver: 'receiverid',
-      timestamp: 1647383523,
-      content: 'test message 3',
-    },
-  ];
-};
+const getMessages = async (userId, buddyId) =>
+  getData(`api/communication/messages/${userId}?buddyId=${buddyId}`)?.map((message) =>
+    convertMessage(message),
+  );
 
 /**
  * Fetches data of the current users buddy chat list
@@ -36,18 +35,20 @@ export const getBuddyChatList = async () => [
     id: 1211,
     name: 'Sam',
     lastMessage: 'hey',
-    timestamp: 1647383523,
+    timestamp: moment('2022-03-18T07:19:16.780Z').toDate(),
   },
   {
     id: 1212,
     name: 'Ben',
     lastMessage: 'hello',
-    timestamp: 1647383522,
+    timestamp: moment('2022-03-18T07:19:16.780Z').toDate(),
   },
   {
     id: 1213,
     name: 'Tom',
     lastMessage: 'whats up',
-    timestamp: 1647383521,
+    timestamp: moment('2022-03-18T07:19:16.780Z').toDate(),
   },
 ];
+
+export default getMessages;
