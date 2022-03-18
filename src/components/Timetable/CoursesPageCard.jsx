@@ -4,6 +4,7 @@ import CardActions from '@mui/material/CardActions';
 import CardContent from '@mui/material/CardContent';
 import Button from '@mui/material/Button';
 import Typography from '@mui/material/Typography';
+import PropTypes from 'prop-types';
 import BuddyCard from './BuddyCard';
 import styles from './CoursesPageCard.module.css';
 
@@ -19,12 +20,12 @@ import styles from './CoursesPageCard.module.css';
  * as required
  */
 
-export default function CoursesPageCard() {
+export default function CoursesPageCard({ buddyName, courseName }) {
   return (
     <Card className={styles.cardContainer}>
       <CardContent className={styles.cardContent}>
-        <Typography variant="h5">Softeng750</Typography>
-        <BuddyCard buddyName="Example idk" courseName="SE750" />
+        <Typography variant="h5">{courseName}</Typography>
+        <BuddyCard buddyName={buddyName} courseName={courseName} />
       </CardContent>
       <CardActions>
         <Button size="Large" color="warning" variant="outlined" className={styles.button}>
@@ -34,3 +35,12 @@ export default function CoursesPageCard() {
     </Card>
   );
 }
+
+CoursesPageCard.propTypes = {
+  buddyName: PropTypes.string,
+  courseName: PropTypes.string.isRequired,
+};
+
+CoursesPageCard.defaultProps = {
+  buddyName: '',
+};
