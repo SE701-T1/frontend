@@ -16,8 +16,10 @@ const convertCourse = (course) => {
  * Fetches the data of all courses in the timetable
  * @return {Promise} data of all the courses
  */
-export const getCourses = async () =>
-  getData(`api/timetable/users/courses`)?.map((course) => convertCourse(course));
+export const getCourses = async () => {
+  const response = await getData('api/timetable/users/courses');
+  return response?.map(convertCourse);
+};
 
 /**
  * Fetches the data of the course with the course id
@@ -25,7 +27,7 @@ export const getCourses = async () =>
  * @return {Promise} data of the given course
  */
 export const getCourse = async (courseId) =>
-  convertCourse(getData(`api/timetable/courses/${courseId}`));
+  convertCourse(await getData(`api/timetable/courses/${courseId}`));
 
 /**
  * Fetches the data of a specific users courses
@@ -34,5 +36,6 @@ export const getCourse = async (courseId) =>
  */
 
 export const getUserCourses = async (userId) => {
-  getData(`api/timetable/users/courses/${userId}`)?.map((course) => convertCourse(course));
+  const response = await getData(`api/timetable/users/courses/${userId}`);
+  return response?.map(convertCourse);
 };
