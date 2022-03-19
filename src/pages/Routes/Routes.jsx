@@ -8,13 +8,14 @@ import Login from '../Login/Login';
 import Dashboard from '../Dashboard';
 import Pairing from '../Pairing/Pairing';
 import Chat from '../Chat/Chat';
+import Upload from '../Upload/UploadPage';
 
 function Routes() {
   return (
     <Switch>
       <Route path="/login" element={<Login />} />
       <Route element={<AuthRoute />}>
-        <Route path="/courses" element={<Example />} />
+        <Route path="/courses" element={<Upload />} />
         <Route path="/find-matches" element={<Pairing />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/accounts" element={<Example />} />
