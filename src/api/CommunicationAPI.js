@@ -25,11 +25,23 @@ export const getMessages = async (buddyId) => {
   return response?.map(convertMessage);
 };
 
+// convert buddy by adding buddyCount which is missing from backend
+const convertChat = (chat) => {
+  if (chat === null) {
+    return null;
+  }
+
+  return {
+    ...chat,
+    timestamp: chat.timestamp ? moment(chat.timestamp).toDate() : null,
+  };
+};
+
 /**
  * Fetches data of the current users buddy chat list
  * @return {Promise} current users buddy chat list
  */
 export const getBuddyChatList = async () => {
   const response = await getData(`api/communication/chatlist`);
-  return response;
+  return response.map(convertChat);
 };
