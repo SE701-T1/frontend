@@ -1,10 +1,11 @@
 import React, { useState } from 'react';
-import { io } from 'socket.io-client';
+import io from 'socket.io-client';
 
 export const SocketContext = React.createContext();
 
 export function SocketContextProvider({ children }) {
   const [socket, setSocket] = useState(null);
+  const [connected, setConnected] = useState(false);
 
   const onMessageEvent = (callback) => {
     socket.on('message', callback);
@@ -31,23 +32,26 @@ export function SocketContextProvider({ children }) {
   };
 
   const connect = (jwt) => {
-    const newSocket = io(process.env.REACT_APP_BACKEND_SOCKETIO, {
-      auth: {
-        token: jwt,
-      },
+    const newSocket = io(`${process.env.REACT_APP_BACKEND_SOCKETIO}?jwt=${jwt}`, {
+      transports: ['websocket'],
     });
 
     setSocket(newSocket);
+    setConnected(true);
   };
 
   const disconnect = () => {
     socket?.disconnect();
     setSocket(null);
+    setConnected(false);
   };
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const context = {
-    // methods
+    // values
+    connected,
+
+    // functions
     connect,
     disconnect,
     sendMessageEvent,
