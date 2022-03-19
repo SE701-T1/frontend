@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import createPersistedState from 'use-persisted-state';
 import { SocketContext } from '../api/sockets/Sockets';
 
 const useJWTState = createPersistedState('jwt');
-export const AuthContext = React.createContext({});
+export const AuthContext = createContext({});
 
 /**
  * The main application is wrapped around this {@link AuthContextProvider} so that other modules of

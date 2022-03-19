@@ -1,4 +1,4 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
@@ -34,18 +34,19 @@ const SearchBox = styled(TextField)(() => ({
  * This component takes in a function as a prop that should handle the behaviour of a user clicking on the search icon.
  *
  */
-export default function UserSearch({ handleSearch }) {
-  const [searchInput, setSearchInput] = React.useState('');
+export default function UserSearch({ onSearch }) {
+  const [searchInput, setSearchInput] = useState('');
 
   const handleSearching = (event) => {
     const searchValue = event.target.value;
     setSearchInput(searchValue);
-    handleSearch(searchValue);
+    onSearch(searchValue);
   };
 
   return (
     <Box className={styles.root} component="form" noValidate autoComplete="off">
       <SearchBox
+        onKeyPress={(e) => e.key === 'Enter' && e.preventDefault()}
         id="outlined-basic"
         variant="outlined"
         placeholder="Type a name"

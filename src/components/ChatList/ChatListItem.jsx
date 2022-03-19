@@ -35,7 +35,11 @@ function ChatItemList({ selected, name, active, lastMessageText, lastMessageTime
           </Typography>
         </div>
         <div className={styles.subText}>
-          <Typography color="#959595" variant="subtitle2" lineHeight="normal">
+          <Typography
+            className={styles.lastMessageText}
+            color="#959595"
+            variant="subtitle2"
+            lineHeight="normal">
             {lastMessageText}
           </Typography>
           <Typography color="#959595" variant="subtitle2" lineHeight="normal">

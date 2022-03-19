@@ -1,11 +1,10 @@
 import React from 'react';
-import { Route, Routes as Switch } from 'react-router-dom';
+import { Route, Routes as Switch, Navigate } from 'react-router-dom';
 
 import Example from '../../components/Example';
 import AuthRoute from './AuthRoute';
 
 import Login from '../Login/Login';
-import Dashboard from '../Dashboard';
 import Pairing from '../Pairing/Pairing';
 import Chat from '../Chat/Chat';
 import Upload from '../Upload/UploadPage';
@@ -19,7 +18,7 @@ function Routes() {
         <Route path="/find-matches" element={<Pairing />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/accounts" element={<Example />} />
-        <Route path="/" element={<Dashboard />} />
+        <Route path="/" element={<Navigate to="/courses" />} />
       </Route>
     </Switch>
   );

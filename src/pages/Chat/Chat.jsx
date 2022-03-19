@@ -39,7 +39,7 @@ function Chat() {
     <div className={styles.chat}>
       <div className={styles.chatLeft}>
         <div className={styles.searchBar}>
-          <UserSearch setSearchInput={handleSearch} />
+          <UserSearch onSearch={handleSearch} />
         </div>
         <div className={styles.chatList}>
           {' '}

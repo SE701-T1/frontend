@@ -76,7 +76,7 @@ exports[`ChatListItem produces the correct initial snapshot 1`] = `
       className="subText"
     >
       <h6
-        className="MuiTypography-root MuiTypography-subtitle2 css-1i1udgb-MuiTypography-root"
+        className="MuiTypography-root MuiTypography-subtitle2 lastMessageText css-1i1udgb-MuiTypography-root"
       >
         last_message_1
       </h6>

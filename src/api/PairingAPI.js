@@ -1,4 +1,4 @@
-import { getData } from './APIUtils';
+import { postData } from './APIUtils';
 
 /**
  * Finds users for pairing who take the given courses
@@ -7,7 +7,9 @@ import { getData } from './APIUtils';
  * @return {Promise} users who take the course
  */
 // eslint-disable-next-line import/prefer-default-export
-export const findPairing = async (courseIds) =>
-  getData(`api/pairing/matchBuddy/`, {
+export const findPairing = async (courseIds) => {
+  const response = await postData(`api/pairing/matchBuddy`, {
     courseIds,
   });
+  return response;
+};

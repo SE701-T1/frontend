@@ -1,12 +1,12 @@
 /* eslint-disable no-console */
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import { getMessages, getBuddyChatList } from '../api/CommunicationAPI';
 import { SocketContext } from '../api/sockets/Sockets';
 import { getSelf, getUser } from '../api/UserAPI';
 import { AuthContext } from './AuthContext';
 
-export const ChatContext = React.createContext({});
+export const ChatContext = createContext({});
 
 export function ChatContextProvider({ children }) {
   const { jwt } = useContext(AuthContext);
@@ -27,9 +27,8 @@ export function ChatContextProvider({ children }) {
     if (search.length === 0) {
       setSearchResult(chatList);
     }
-
     const filtered = chatList.filter((item) =>
-      item.buddyName.toLowerCase().includes(search.toLowerCase()),
+      item.name.toLowerCase().includes(search.toLowerCase()),
     );
 
     setSearchResult(filtered);
@@ -37,8 +36,8 @@ export function ChatContextProvider({ children }) {
 
   // Update ChatList when a buddy sends a message
   const updateChatList = (userId, { lastMessage, timestamp }) => {
-    setChatList((prevState) =>
-      prevState
+    setChatList((prevState) => {
+      const prev = prevState
         ?.map((chat) =>
           chat.userId === userId
             ? {
@@ -48,8 +47,10 @@ export function ChatContextProvider({ children }) {
               }
             : chat,
         )
-        .sort((a, b) => a.timestamp > b.timestamp),
-    );
+        .sort((a, b) => a.timestamp > b.timestamp);
+      setSearchResult(prev);
+      return prev;
+    });
   };
 
   // Check if userId is online
@@ -83,13 +84,14 @@ export function ChatContextProvider({ children }) {
       if (!list) {
         return;
       }
-      setChatList(
-        list.map((chat) => ({
-          ...chat,
-          userId: chat.id,
-          active: false,
-        })),
-      );
+
+      const c = list.map((chat) => ({
+        ...chat,
+        userId: chat.id,
+        active: false,
+      }));
+      setChatList(c);
+      setSearchResult(c);
 
       if (list.length === 0) {
         return;
@@ -106,7 +108,7 @@ export function ChatContextProvider({ children }) {
         ...prevState,
         userId,
         buddyId: userId,
-        buddyName: user.name ?? 'Empty',
+        buddyName: user?.name ?? 'Empty',
       }));
     } catch (err) {
       console.error(err);
@@ -147,12 +149,14 @@ export function ChatContextProvider({ children }) {
       buddyActive: isOnline(prevState.buddyId),
     }));
 
-    setChatList((prevState) =>
-      prevState?.map((chat) => ({
+    setChatList((prevState) => {
+      const state = prevState?.map((chat) => ({
         ...chat,
         active: !!isActive[chat.userId],
-      })),
-    );
+      }));
+      setSearchResult(state);
+      return state;
+    });
   }, [isActive]);
 
   // Append Message to message list

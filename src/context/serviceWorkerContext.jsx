@@ -1,5 +1,5 @@
 /* eslint-disable no-console */
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import * as serviceWorkerRegistration from '../serviceWorkerRegistration';
 
 const ServiceWorkerContext = React.createContext();
@@ -8,7 +8,7 @@ export function ServiceWorkerProvider({ children }) {
   const [waitingServiceWorker, setWaitingServiceWorker] = useState(null);
   const [isUpdateAvailable, setUpdateAvailable] = useState(false);
 
-  React.useEffect(() => {
+  useEffect(() => {
     serviceWorkerRegistration.register({
       onUpdate: (registration) => {
         setWaitingServiceWorker(registration.waiting);
@@ -21,7 +21,7 @@ export function ServiceWorkerProvider({ children }) {
     });
   }, []);
 
-  React.useEffect(() => {
+  useEffect(() => {
     // We setup an event listener to automatically reload the page
     // after the Service Worker has been updated, this will trigger
     // on all the open tabs of our application, so that we don't leave

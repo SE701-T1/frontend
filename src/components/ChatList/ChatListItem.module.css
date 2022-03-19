@@ -1,44 +1,61 @@
 .container {
-    display: flex;
-    flex-direction: row;
-    align-items: center;
-    justify-content: center;
-    padding: 5px;
-    border-radius: 5px;
-    width: 100%;
-    height: 100%;
-  }
-  
-  .selected {
-    background: #ecf3ff;
-  }
-  
-  .profileBadgeContainer {
-    flex: 0;
-    padding-left: 8px;
-    padding-right: 10px;
-  }
-  
-  .textContainer {
-    flex: 1;
-    text-align: start;
-    padding-left: 5px;
-    padding-right: 13px;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    justify-content: center;
-  }
-  
-  .headerText {
-    display: flex;
-    align-items: flex-end;
-  }
-  
-  .subText {
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    justify-content: space-between;
-    width: 100%;
-  }
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+  padding: 5px;
+  border-radius: 5px;
+  width: 100%;
+  height: 100%;
+}
+
+.selected {
+  background: #ecf3ff;
+}
+
+.profileBadgeContainer {
+  flex: 0;
+  padding-left: 8px;
+  padding-right: 10px;
+}
+
+.textContainer {
+  flex: 1;
+  text-align: start;
+  padding-left: 5px;
+  padding-right: 13px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+}
+
+.headerText {
+  display: flex;
+  align-items: flex-end;
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}
+
+.subText {
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.lastMessageText {
+  text-align: left;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 1; /* number of lines to show */
+  line-clamp: 1;
+  -webkit-box-orient: vertical;
+}

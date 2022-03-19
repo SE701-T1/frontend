@@ -2,6 +2,7 @@
 import React from 'react';
 import { screen, render, fireEvent, waitFor } from '@testing-library/react';
 import { act } from 'react-dom/test-utils';
+import { BrowserRouter } from 'react-router-dom';
 import * as timetableAPI from '../../../api/TimetableAPI';
 
 import Pairing from '../Pairing';
@@ -33,7 +34,11 @@ describe('Render Pairing page', () => {
 
     // eslint-disable-next-line testing-library/no-unnecessary-act
     act(() => {
-      render(<Pairing />);
+      render(
+        <BrowserRouter>
+          <Pairing />
+        </BrowserRouter>,
+      );
     });
 
     await waitFor(() => expect(screen.getByText('SOFTENG 701')).toBeInTheDocument());
@@ -71,7 +76,11 @@ describe('Render Pairing page', () => {
     );
 
     await act(async () => {
-      render(<Pairing />);
+      render(
+        <BrowserRouter>
+          <Pairing />
+        </BrowserRouter>,
+      );
 
       let button1;
       let button2;
