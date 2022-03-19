@@ -1,4 +1,4 @@
-# SOFTENG 701 Team 1 (Frontend)
+# SOFTENG 701 Team 1 (Frontend) .
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
