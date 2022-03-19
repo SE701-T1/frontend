@@ -1,0 +1,35 @@
+# workflow name
+name: React Testing
+
+# execute on events
+on:
+  pull_request:
+    branches: [ main ]
+
+# jobs to run
+jobs:
+  
+  # install dependencies and run test command
+  test:
+    name: Test
+    runs-on: ubuntu-latest
+    steps:
+
+      # 1: setup node
+      - name: Setup Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16.x'
+          cache: npm
+
+      # 2: Checkout repository in the CWD
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # 3: install NPM dependencies
+      - name: Install dependencies
+        run: npm install
+      
+      # 4: run test command
+      - name: Run test command
+        run: npm run test
