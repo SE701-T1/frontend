@@ -1,5 +1,5 @@
 # workflow name
-name: React Unit Testing
+name: React Testing
 
 # execute on events
 on:
