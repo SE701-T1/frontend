@@ -1,4 +1,4 @@
-import Carousel from "../carousel";
+import Carousel from "../Carousel";
 import { fireEvent, render, screen } from "@testing-library/react";
 import { act } from "react-test-renderer";
 import renderer from 'react-test-renderer';
