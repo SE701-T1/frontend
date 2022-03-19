@@ -53,9 +53,9 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <button
-    className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+    className="MuiButtonBase-root Mui-disabled MuiIconButton-root Mui-disabled MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
     data-testid="call-buddy"
-    disabled={false}
+    disabled={true}
     onBlur={[Function]}
     onClick={[Function]}
     onContextMenu={[Function]}
@@ -69,7 +69,7 @@ exports[`renders correctly 1`] = `
     onTouchEnd={[Function]}
     onTouchMove={[Function]}
     onTouchStart={[Function]}
-    tabIndex={0}
+    tabIndex={-1}
     type="button"
   >
     <svg

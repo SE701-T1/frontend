@@ -5,11 +5,15 @@ exports[`DialoguesList produces correct snapshot of multiple messages 1`] = `
   <div
     className="message-container bubble-from-left"
   >
-    <img
-      alt="avatar"
-      className="avatar-img"
-      src="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
-    />
+    <div
+      className="MuiAvatar-root MuiAvatar-circular css-1u8q9pb-MuiAvatar-root"
+    >
+      <img
+        alt="id3333-image"
+        className="MuiAvatar-img css-1pqm26d-MuiAvatar-img"
+        src="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
+      />
+    </div>
     <div
       className="bubble others bubble-text"
     >
