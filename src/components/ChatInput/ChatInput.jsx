@@ -16,7 +16,7 @@ const CustomInput = styled(InputBase)(() => ({
   },
 }));
 
-function ChatInput({ onSend }) {
+function ChatInput({ onSend, disable }) {
   const [inputText, setInputText] = useState('');
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
@@ -27,6 +27,7 @@ function ChatInput({ onSend }) {
   return (
     <div className={styles.container}>
       <CustomInput
+        disabled={disable}
         className={styles.input}
         inputRef={(input) => {
           if (input != null) {
@@ -39,6 +40,7 @@ function ChatInput({ onSend }) {
       />
       <div className={styles.buttonContainer}>
         <IconButton
+          disabled={disable}
           data-testid="EmojiButton"
           className={styles.button}
           aria-label="directions"
@@ -52,6 +54,7 @@ function ChatInput({ onSend }) {
         )}
       </div>
       <IconButton
+        disabled={disable}
         data-testid="SendButton"
         className={styles.button}
         aria-label="send"

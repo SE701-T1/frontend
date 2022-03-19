@@ -13,7 +13,7 @@ function ChatList({ chatId, chatItems, onChatItemClick }) {
             selected={chatId === chatItem.userId}
             active={chatItem.active}
             lastMessageText={chatItem.lastMessage ?? ''}
-            lastMessageTime={chatItem.timestamp}
+            lastMessageTime={chatItem.timestamp ?? new Date()}
             onClick={() => onChatItemClick(chatItem.userId)}
           />
         </div>
@@ -26,8 +26,8 @@ ChatList.propTypes = {
   chatItems: PropTypes.arrayOf(
     PropTypes.shape({
       name: PropTypes.string.isRequired,
-      lastMessage: PropTypes.string.isRequired,
-      timestamp: PropTypes.instanceOf(Date).isRequired,
+      lastMessage: PropTypes.string,
+      timestamp: PropTypes.instanceOf(Date),
     }),
   ).isRequired,
 };
