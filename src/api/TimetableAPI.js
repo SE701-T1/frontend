@@ -1,5 +1,5 @@
 import moment from 'moment';
-import { getData } from './APIUtils';
+import { getData, postData } from './APIUtils';
 
 const convertCourse = (course) => {
   if (course === null) {
@@ -38,4 +38,14 @@ export const getCourse = async (courseId) =>
 export const getUserCourses = async (userId) => {
   const response = await getData(`api/timetable/users/courses/${userId}`);
   return response?.map(convertCourse);
+};
+
+/**
+ * Sends the unique timetable URL of a user to be parsed
+ * @param {URL} URL of the users timetable
+ * @return {Promise}
+ */
+export const uploadTimetableURL = async (URL) => {
+  const response = await postData(`api/timetable/users/upload/`, URL);
+  return response;
 };
