@@ -11,7 +11,7 @@ const convertMessage = (message) => {
     ...message,
     sender: message.senderId,
     receiver: message.receiverId,
-    timestamp: moment(message.timestamp).toDate(),
+    timestamp: message.timestamp ? moment(message.timestamp).toDate() : null,
   };
 };
 
@@ -20,7 +20,7 @@ const convertMessage = (message) => {
  * @param {number} buddyId id of the buddy
  * @return {Promise} data of the users messages
  */
-const getMessages = async (buddyId) => {
+export const getMessages = async (buddyId) => {
   const response = await getData(`api/communication/messages/${buddyId}`);
   return response?.map(convertMessage);
 };
@@ -29,25 +29,7 @@ const getMessages = async (buddyId) => {
  * Fetches data of the current users buddy chat list
  * @return {Promise} current users buddy chat list
  */
-export const getBuddyChatList = async () => [
-  {
-    id: 1211,
-    name: 'Sam',
-    lastMessage: 'hey',
-    timestamp: moment('2022-03-18T07:19:16.780Z').toDate(),
-  },
-  {
-    id: 1212,
-    name: 'Ben',
-    lastMessage: 'hello',
-    timestamp: moment('2022-03-18T07:19:16.780Z').toDate(),
-  },
-  {
-    id: 1213,
-    name: 'Tom',
-    lastMessage: 'whats up',
-    timestamp: moment('2022-03-18T07:19:16.780Z').toDate(),
-  },
-];
-
-export default getMessages;
+export const getBuddyChatList = async () => {
+  const response = await getData(`api/communication/chatlist`);
+  return response;
+};
