@@ -1,7 +1,7 @@
 import React, { useContext } from 'react';
 import { Navigate, Outlet } from 'react-router-dom';
 import Nav from '../../components/NavBar/Nav';
-import { AuthContext } from '../../context/authContext';
+import { AuthContext } from '../../context/AuthContext';
 
 /**
  * This component will be used to wrap everything that needs Authentication to access. It uses the
