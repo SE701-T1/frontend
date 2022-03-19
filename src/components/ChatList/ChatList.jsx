@@ -1,21 +1,25 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import ChatListItem from "./ChatListItem";
+import ChatListItem from './ChatListItem';
 import styles from './ChatList.module.css';
 
-function ChatList({chatItems}) {
-
+function ChatList({ chatId, chatItems, onChatItemClick }) {
   return (
-  
-  <div>
-    {chatItems.map(chatItem => <div key={chatItem.id} className={styles.itemContainer}>
-      <ChatListItem name={chatItem.name}
-                    active={chatItem.active}
-                    lastMessageText={chatItem.lastMessage}
-                    lastMessageTime={chatItem.lastMessageTime}
-                    onClick={() => console.log(chatItem.id)}/>
-    </div>)}
-  </div>);
+    <div>
+      {chatItems.map((chatItem) => (
+        <div key={chatItem.id} className={styles.itemContainer}>
+          <ChatListItem
+            name={chatItem.name}
+            selected={chatId === chatItem.userId}
+            active={chatItem.active}
+            lastMessageText={chatItem.lastMessage ?? ''}
+            lastMessageTime={chatItem.timestamp}
+            onClick={() => onChatItemClick(chatItem.userId)}
+          />
+        </div>
+      ))}
+    </div>
+  );
 }
 
 ChatList.propTypes = {
@@ -27,6 +31,5 @@ ChatList.propTypes = {
     }),
   ).isRequired,
 };
-
 
 export default ChatList;

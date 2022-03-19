@@ -20,12 +20,14 @@ function DialoguesList({ messages, currentUser, senderAvatar }) {
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current.scrollIntoView({ behavior: 'auto' });
   };
 
   // scroll to bottom when a new message comes
   useEffect(() => {
     scrollToBottom();
+    console.log(currentUser);
+    console.log(messages);
   }, [messages]);
 
   // render the message bubbles from the messages prop
