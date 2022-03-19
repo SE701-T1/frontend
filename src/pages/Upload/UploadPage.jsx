@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import {
   Button,
   Stack,
@@ -9,6 +9,7 @@ import {
   IconButton,
 } from '@mui/material';
 import SendIcon from '@mui/icons-material/Send';
+import { useNavigate } from 'react-router-dom';
 import styles from './UploadPage.module.css';
 import { uploadTimetableURL } from '../../api/TimetableAPI';
 
@@ -19,12 +20,25 @@ import { uploadTimetableURL } from '../../api/TimetableAPI';
  *
  */
 export default function UploadPage() {
-  const [calendarURL, setcalendarURL] = React.useState('');
+  const [calendarURL, setCalendarURL] = useState('');
+  const [disable, setDisable] = useState(false);
+  const navigate = useNavigate();
+
   const handleChange = (event) => {
-    setcalendarURL(event.target.value);
+    setCalendarURL(event.target.value);
   };
   const handleSubmit = () => {
-    uploadTimetableURL(calendarURL);
+    const upload = async () => {
+      try {
+        await uploadTimetableURL(calendarURL);
+        navigate('/find-matches');
+      } catch (err) {
+        setCalendarURL('');
+        setDisable(false);
+      }
+    };
+    setDisable(true);
+    upload();
   };
 
   return (
@@ -37,6 +51,7 @@ export default function UploadPage() {
         id="outlined-input"
         aria-label="Enter URL"
         label="Enter your calendar URL"
+        disabled={disable}
         value={calendarURL}
         onChange={handleChange}
         InputProps={{

@@ -4,7 +4,7 @@ import PopUp from '../PopUp';
 
 describe('Render PopUp component', () => {
   test('PopUp test', () => {
-    render(<PopUp name="Test" buddyNumber="1" open={true} size={250}/>);
+    render(<PopUp name="Test" sharedCourses={[]} buddyNumber="1" open size={250} />);
     expect(screen.getByTestId('popup'));
   });
 });

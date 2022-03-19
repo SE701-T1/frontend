@@ -9,7 +9,7 @@ export default function Login() {
   const { setTokenId, authenticated } = useContext(AuthContext);
 
   if (authenticated) {
-    return <Navigate to="/accounts" />;
+    return <Navigate to="/" />;
   }
 
   // Data to be displayed on carousel

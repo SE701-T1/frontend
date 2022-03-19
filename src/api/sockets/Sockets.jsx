@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useState, createContext } from 'react';
 import io from 'socket.io-client';
 
-export const SocketContext = React.createContext();
+export const SocketContext = createContext();
 
 export function SocketContextProvider({ children }) {
   const [socket, setSocket] = useState(null);

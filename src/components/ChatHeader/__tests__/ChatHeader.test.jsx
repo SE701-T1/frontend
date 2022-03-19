@@ -37,7 +37,7 @@ describe('TestChatHeader', () => {
     );
 
     fireEvent.click(screen.getByTestId('call-buddy'));
-    expect(mockCallBuddy).toHaveBeenCalledTimes(1);
+    expect(mockCallBuddy).toHaveBeenCalledTimes(0);
   });
 });
 

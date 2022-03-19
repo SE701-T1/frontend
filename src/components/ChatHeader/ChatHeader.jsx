@@ -34,7 +34,7 @@ function ChatHeader({ active, name, callBuddy }) {
           </Typography>
         </Box>
       </Box>
-      <IconButton onClick={callBuddy} data-testid="call-buddy">
+      <IconButton onClick={callBuddy} data-testid="call-buddy" disabled>
         <CallIcon fontSize="large" />
       </IconButton>
     </Box>

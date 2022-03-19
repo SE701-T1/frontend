@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext } from 'react';
 import styles from './Chat.module.css';
 import UserSearch from '../../components/UserSearch/UserSearch';
 import ChatList from '../../components/ChatList/ChatList';
@@ -6,21 +6,11 @@ import ChatHeader from '../../components/ChatHeader/ChatHeader';
 import DialogueList from '../../components/DialoguesList/DialoguesList';
 import ChatInput from '../../components/ChatInput/ChatInput';
 import ChatBuddyDetail from '../../components/ChatBuddyDetail/ChatBuddyDetail';
-import { getBuddyChatList } from '../../api/CommunicationAPI';
+import { ChatContext } from '../../context/ChatContext';
+import { removeBuddy } from '../../api/UserAPI';
+import { SocketContext } from '../../api/sockets/Sockets';
 
-const mockMessage = [
-  {
-    sender: 'id3333',
-    text: 'random message',
-    contentType: 'text',
-  },
-  {
-    sender: 'id5678',
-    text: 'https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512',
-    contentType: 'image',
-  },
-];
-
+// TODO get courses from a user
 const mockCourse = [
   {
     courseName: 'SOFTENG 701',
@@ -29,49 +19,80 @@ const mockCourse = [
 ];
 
 function Chat() {
-  const [chatList, setChatList] = useState([]);
+  const {
+    currentChat,
+    searchResult,
+    handleSearch,
+    messages,
+    selectChat,
+    getChatList,
+    updateChatList,
+    appendMessage,
+  } = useContext(ChatContext);
+  const { sendMessageEvent } = useContext(SocketContext);
 
-  useEffect(() => {
-    const getChatList = async () => {
-      try {
-        const response = await getBuddyChatList();
-        setChatList(response);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getChatList();
-  }, []);
+  const handleSelectChat = (buddyId) => {
+    selectChat(buddyId);
+  };
 
   return (
     <div className={styles.chat}>
       <div className={styles.chatLeft}>
         <div className={styles.searchBar}>
-          <UserSearch />
+          <UserSearch onSearch={handleSearch} />
         </div>
         <div className={styles.chatList}>
           {' '}
-          <ChatList chatItems={chatList} />{' '}
+          <ChatList
+            chatId={currentChat.buddyId}
+            chatItems={searchResult}
+            onChatItemClick={handleSelectChat}
+          />{' '}
         </div>
       </div>
       <div className={styles.chatMiddle}>
         <div className={styles.header}>
-          <ChatHeader name="Amy" callBuddy={() => {}} />
+          <ChatHeader
+            active={currentChat.buddyActive}
+            name={currentChat.buddyName}
+            callBuddy={() => {}}
+          />
         </div>
         <div className={styles.dialogueList}>
           <DialogueList
-            messages={mockMessage}
-            currentUser="id5678"
-            senderAvatar="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
+            messages={messages?.map((message) => ({
+              ...message,
+              text: message.content,
+              contentType: 'text',
+            }))}
+            currentUser={currentChat.userId ?? 0}
           />
         </div>
         <div className={styles.input}>
           {' '}
-          <ChatInput />{' '}
+          <ChatInput
+            disable={currentChat.buddyId === currentChat.userId}
+            onSend={(message) => {
+              if (message === '') {
+                return;
+              }
+              sendMessageEvent(currentChat.userId, currentChat.buddyId, message);
+              updateChatList(currentChat.userId, { lastMessage: message, timestamp: Date.now() });
+              appendMessage(currentChat.userId, currentChat.buddyId, message);
+            }}
+          />{' '}
         </div>
       </div>
       <div className={styles.chatRight}>
-        <ChatBuddyDetail name="test name" removeBuddy={() => {}} commonCourses={mockCourse} />
+        <ChatBuddyDetail
+          active={currentChat.buddyActive}
+          name={currentChat.buddyName}
+          removeBuddy={async () => {
+            await removeBuddy(currentChat.buddyId);
+            getChatList();
+          }}
+          commonCourses={mockCourse}
+        />
       </div>
     </div>
   );

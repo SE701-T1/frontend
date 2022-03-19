@@ -1,10 +1,10 @@
-import React, { useContext, useEffect, useState } from 'react';
+import React, { useContext, createContext, useEffect, useState } from 'react';
 import axios from 'axios';
 import createPersistedState from 'use-persisted-state';
 import { SocketContext } from '../api/sockets/Sockets';
 
 const useJWTState = createPersistedState('jwt');
-export const AuthContext = React.createContext({});
+export const AuthContext = createContext({});
 
 /**
  * The main application is wrapped around this {@link AuthContextProvider} so that other modules of
@@ -46,34 +46,40 @@ export function AuthContextProvider({ children }) {
       });
   }, [tokenId]);
 
-  useEffect(async () => {
-    if (jwt === '') {
-      setAuthenticated(false);
-      axios.defaults.headers.common = {};
-      socket.disconnect();
-      return;
-    }
+  useEffect(() => {
+    const startup = async () => {
+      if (jwt === '') {
+        setAuthenticated(false);
+        axios.defaults.headers.common = {};
+        socket.disconnect();
+        return;
+      }
 
-    // Triggering a backend call to verify the integrity of the current JWT.
-    try {
-      await axios.get(`${process.env.REACT_APP_BACKEND_ENDPOINT}/api/validate`, {
-        headers: {
+      // Triggering a backend call to verify the integrity of the current JWT.
+      try {
+        await axios.get(`${process.env.REACT_APP_BACKEND_ENDPOINT}/api/validate`, {
+          headers: {
+            Authorization: `Bearer ${jwt}`,
+          },
+        });
+
+        setAuthenticated(true);
+        axios.defaults.headers.common = {
           Authorization: `Bearer ${jwt}`,
-        },
-      });
+        };
 
-      setAuthenticated(true);
-      axios.defaults.headers.common = {
-        Authorization: `Bearer ${jwt}`,
-      };
-
-      // Socket connection is being established here.
-      socket.connect(jwt);
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
-      setJwt('');
-    }
+        // Socket connection is being established here.
+        socket.connect(jwt);
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        setJwt('');
+      }
+    };
+    startup();
+    return () => {
+      socket.disconnect();
+    };
   }, [jwt]);
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values

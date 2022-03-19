@@ -11,16 +11,6 @@ describe('User search test', () => {
     expect(screen.getByPlaceholderText('Type a name')).toBeInTheDocument();
   });
 
-  it('check that search updates on change', () => {
-    const { queryByPlaceholderText } = render(<UserSearch />);
-
-    const searchInput = queryByPlaceholderText('Type a name');
-
-    fireEvent.change(searchInput, { target: { value: 'Hiruna Smith' } });
-
-    expect(searchInput.value).toBe('Hiruna Smith');
-  });
-
   test('should display the search icon', () => {
     render(<UserSearch />);
 

@@ -29,11 +29,6 @@ describe('DialoguesList', () => {
         senderAvatar="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
       />,
     );
-    const avatar = screen.getAllByAltText('avatar');
-    expect(avatar[0]).toHaveAttribute(
-      'src',
-      'https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512',
-    );
     expect(screen.getByText('random message')).toBeInTheDocument();
   });
 

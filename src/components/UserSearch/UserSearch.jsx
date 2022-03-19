@@ -1,9 +1,8 @@
-import * as React from 'react';
+import React, { useState } from 'react';
 import Box from '@mui/material/Box';
 import TextField from '@mui/material/TextField';
 import SearchIcon from '@mui/icons-material/Search';
 import InputAdornment from '@mui/material/InputAdornment';
-import IconButton from '@mui/material/IconButton';
 import { styled } from '@mui/material/styles';
 import styles from './UserSearch.module.css';
 
@@ -35,35 +34,29 @@ const SearchBox = styled(TextField)(() => ({
  * This component takes in a function as a prop that should handle the behaviour of a user clicking on the search icon.
  *
  */
-export default function UserSearch({ submitSearch }) {
-  const [searchInput, setSearchInput] = React.useState('');
+export default function UserSearch({ onSearch }) {
+  const [searchInput, setSearchInput] = useState('');
 
-  const handleSearch = (event) => {
+  const handleSearching = (event) => {
     const searchValue = event.target.value;
     setSearchInput(searchValue);
-  };
-
-  const handleSubmit = () => {
-    if (searchInput === '') {
-      return;
-    }
-    submitSearch(searchInput);
+    onSearch(searchValue);
   };
 
   return (
     <Box className={styles.root} component="form" noValidate autoComplete="off">
       <SearchBox
+        onKeyPress={(e) => e.key === 'Enter' && e.preventDefault()}
         id="outlined-basic"
         variant="outlined"
         placeholder="Type a name"
-        onChange={handleSearch}
+        value={searchInput}
+        onChange={handleSearching}
         size="small"
         InputProps={{
           startAdornment: (
-            <InputAdornment>
-              <IconButton>
-                <SearchIcon data-testid="searchIcon" onClick={handleSubmit} />
-              </IconButton>
+            <InputAdornment position="start">
+              <SearchIcon data-testid="searchIcon" />
             </InputAdornment>
           ),
         }}

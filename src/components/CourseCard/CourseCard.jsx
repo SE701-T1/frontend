@@ -49,7 +49,7 @@ function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }
     <CardContent className={styles.cardContent}>
       <Grid container direction="row" spacing={3}>
         <Grid item>
-          <Typography variant="h4" fontWeight={550} className={styles.title}>
+          <Typography variant="h5" fontWeight={550} className={styles.title}>
             {courseName}
           </Typography>
           <Typography className={styles.semesterText} fontSize={14}>

@@ -1,5 +1,5 @@
 import React from 'react';
-import { Typography } from '@mui/material';
+import { Typography, Avatar } from '@mui/material';
 import PropTypes from 'prop-types';
 import styles from './MessageBubble.module.css';
 
@@ -22,7 +22,7 @@ function MessageBubble({ text, senderAvatar, sender, currentUser, contentType })
 
   return bubbleSender === styles.others ? (
     <div className={`${styles['message-container']} ${messageDirection}`}>
-      <img className={styles['avatar-img']} alt="avatar" src={senderAvatar} />
+      <Avatar sx={{ height: 44, width: 44 }} alt={`${sender}-image`} src={senderAvatar} />
       <div className={`${styles.bubble} ${bubbleSender} ${bubbleType}`}>
         <Typography>{content}</Typography>
       </div>

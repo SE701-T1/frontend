@@ -20,7 +20,7 @@ function DialoguesList({ messages, currentUser, senderAvatar }) {
   const messagesEndRef = useRef(null);
 
   const scrollToBottom = () => {
-    messagesEndRef.current.scrollIntoView({ behavior: 'smooth' });
+    messagesEndRef.current.scrollIntoView({ behavior: 'auto' });
   };
 
   // scroll to bottom when a new message comes
@@ -34,8 +34,8 @@ function DialoguesList({ messages, currentUser, senderAvatar }) {
       {messages.map(({ text, sender, contentType }, key) => (
         <MessageBubble
           text={text}
-          sender={sender}
-          currentUser={currentUser}
+          sender={`${sender}`}
+          currentUser={`${currentUser}`}
           senderAvatar={senderAvatar}
           contentType={contentType}
           // eslint-disable-next-line react/no-array-index-key
@@ -48,15 +48,19 @@ function DialoguesList({ messages, currentUser, senderAvatar }) {
 }
 
 DialoguesList.propTypes = {
-  currentUser: PropTypes.string.isRequired,
-  senderAvatar: PropTypes.string.isRequired,
+  currentUser: PropTypes.number.isRequired,
+  senderAvatar: PropTypes.string,
   messages: PropTypes.arrayOf(
     PropTypes.shape({
       text: PropTypes.string.isRequired,
-      sender: PropTypes.string.isRequired,
+      sender: PropTypes.number.isRequired,
       contentType: PropTypes.string.isRequired,
     }),
   ).isRequired,
+};
+
+DialoguesList.defaultProps = {
+  senderAvatar: '',
 };
 
 export default DialoguesList;
