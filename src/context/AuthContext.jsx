@@ -46,34 +46,40 @@ export function AuthContextProvider({ children }) {
       });
   }, [tokenId]);
 
-  useEffect(async () => {
-    if (jwt === '') {
-      setAuthenticated(false);
-      axios.defaults.headers.common = {};
-      socket.disconnect();
-      return;
-    }
+  useEffect(() => {
+    const startup = async () => {
+      if (jwt === '') {
+        setAuthenticated(false);
+        axios.defaults.headers.common = {};
+        socket.disconnect();
+        return;
+      }
 
-    // Triggering a backend call to verify the integrity of the current JWT.
-    try {
-      await axios.get(`${process.env.REACT_APP_BACKEND_ENDPOINT}/api/validate`, {
-        headers: {
+      // Triggering a backend call to verify the integrity of the current JWT.
+      try {
+        await axios.get(`${process.env.REACT_APP_BACKEND_ENDPOINT}/api/validate`, {
+          headers: {
+            Authorization: `Bearer ${jwt}`,
+          },
+        });
+
+        setAuthenticated(true);
+        axios.defaults.headers.common = {
           Authorization: `Bearer ${jwt}`,
-        },
-      });
+        };
 
-      setAuthenticated(true);
-      axios.defaults.headers.common = {
-        Authorization: `Bearer ${jwt}`,
-      };
-
-      // Socket connection is being established here.
-      socket.connect(jwt);
-    } catch (error) {
-      // eslint-disable-next-line no-console
-      console.error(error);
-      setJwt('');
-    }
+        // Socket connection is being established here.
+        socket.connect(jwt);
+      } catch (error) {
+        // eslint-disable-next-line no-console
+        console.error(error);
+        setJwt('');
+      }
+    };
+    startup();
+    return () => {
+      socket.disconnect();
+    };
   }, [jwt]);
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values
