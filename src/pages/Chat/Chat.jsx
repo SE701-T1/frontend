@@ -10,6 +10,7 @@ import { ChatContext } from '../../context/ChatContext';
 import { removeBuddy } from '../../api/UserAPI';
 import { SocketContext } from '../../api/sockets/Sockets';
 
+// TODO get courses from a user
 const mockCourse = [
   {
     courseName: 'SOFTENG 701',
@@ -20,7 +21,8 @@ const mockCourse = [
 function Chat() {
   const {
     currentChat,
-    chatList,
+    searchResult,
+    handleSearch,
     messages,
     selectChat,
     getChatList,
@@ -30,7 +32,6 @@ function Chat() {
   const { sendMessageEvent } = useContext(SocketContext);
 
   const handleSelectChat = (buddyId) => {
-    console.log('select chat', buddyId);
     selectChat(buddyId);
   };
 
@@ -38,13 +39,13 @@ function Chat() {
     <div className={styles.chat}>
       <div className={styles.chatLeft}>
         <div className={styles.searchBar}>
-          <UserSearch />
+          <UserSearch setSearchInput={handleSearch} />
         </div>
         <div className={styles.chatList}>
           {' '}
           <ChatList
             chatId={currentChat.buddyId}
-            chatItems={chatList}
+            chatItems={searchResult}
             onChatItemClick={handleSelectChat}
           />{' '}
         </div>
@@ -64,12 +65,13 @@ function Chat() {
               text: message.content,
               contentType: 'text',
             }))}
-            currentUser={currentChat.userId}
+            currentUser={currentChat.userId ?? 0}
           />
         </div>
         <div className={styles.input}>
           {' '}
           <ChatInput
+            disable={currentChat.buddyId === currentChat.userId}
             onSend={(message) => {
               if (message === '') {
                 return;
@@ -83,6 +85,7 @@ function Chat() {
       </div>
       <div className={styles.chatRight}>
         <ChatBuddyDetail
+          active={currentChat.buddyActive}
           name={currentChat.buddyName}
           removeBuddy={async () => {
             await removeBuddy(currentChat.buddyId);

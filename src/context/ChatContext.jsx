@@ -17,9 +17,23 @@ export function ChatContextProvider({ children }) {
     buddyActive: false,
     buddyId: null,
   });
+  const [searchResult, setSearchResult] = useState([]);
   const [chatList, setChatList] = useState([]);
   const [messages, setMessages] = useState([]);
   const [isActive, setIsActive] = useState({});
+
+  // Handle filter search here
+  const handleSearch = (search) => {
+    if (search.length === 0) {
+      setSearchResult(chatList);
+    }
+
+    const filtered = chatList.filter((item) =>
+      item.buddyName.toLowerCase().includes(search.toLowerCase()),
+    );
+
+    setSearchResult(filtered);
+  };
 
   // Update ChatList when a buddy sends a message
   const updateChatList = (userId, { lastMessage, timestamp }) => {
@@ -81,21 +95,19 @@ export function ChatContextProvider({ children }) {
         return;
       }
 
-      const buddy = await getUser(list[0].id);
+      let { userId } = currentChat;
+      let user;
+      if (!userId) {
+        user = await getSelf();
+        userId = user.id;
+      }
 
-      setCurrentChat(async (prevState) => {
-        let { userId } = currentChat;
-        if (userId) {
-          const user = await getSelf();
-          userId = user.id;
-        }
-        return {
-          ...prevState,
-          userId,
-          buddyId: buddy.id,
-          buddyName: buddy.name ?? 'Empty',
-        };
-      });
+      setCurrentChat((prevState) => ({
+        ...prevState,
+        userId,
+        buddyId: userId,
+        buddyName: user.name ?? 'Empty',
+      }));
     } catch (err) {
       console.error(err);
     }
@@ -112,19 +124,24 @@ export function ChatContextProvider({ children }) {
 
     getChatList();
 
-    // GetSelf to get userId
-    getSelf().then((user) => {
+    const getUserId = async () => {
+      // GetSelf to get userId
+      let { userId } = currentChat;
+      if (!userId) {
+        const user = await getSelf();
+        console.log(user);
+        userId = user.id;
+      }
       setCurrentChat((prevState) => ({
         ...prevState,
-        userId: user.id,
+        userId,
       }));
-    });
+    };
+    getUserId();
   }, [jwt]);
 
   // useEffect to update chatlist when isActive is updated
   useEffect(() => {
-    console.log(chatList);
-
     setCurrentChat((prevState) => ({
       ...prevState,
       buddyActive: isOnline(prevState.buddyId),
@@ -166,7 +183,11 @@ export function ChatContextProvider({ children }) {
     });
 
     onOnlineEvent((userIds) => {
-      const newIsActive = userIds.reduce((actives, userId) => ({ ...actives, [userId]: true }), {});
+      console.log('Online:', userIds);
+      const newIsActive = userIds.reduce(
+        (actives, user) => ({ ...actives, [`${user.userId}`]: true }),
+        {},
+      );
       setIsActive(newIsActive);
     });
   }, [connected]);
@@ -184,6 +205,7 @@ export function ChatContextProvider({ children }) {
   // eslint-disable-next-line react/jsx-no-constructed-context-values
   const context = {
     // values
+    searchResult,
     currentChat,
     chatList,
     messages,
@@ -193,6 +215,7 @@ export function ChatContextProvider({ children }) {
     selectChat,
     getChatList,
     appendMessage,
+    handleSearch,
   };
 
   return <ChatContext.Provider value={context}>{children}</ChatContext.Provider>;
