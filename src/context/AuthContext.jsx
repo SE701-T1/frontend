@@ -1,7 +1,9 @@
-import axios from 'axios';
 import React, { useContext, useEffect, useState } from 'react';
+import axios from 'axios';
+import createPersistedState from 'use-persisted-state';
 import { SocketContext } from '../api/sockets/Sockets';
 
+const useJWTState = createPersistedState('jwt');
 export const AuthContext = React.createContext({});
 
 /**
@@ -14,20 +16,40 @@ export const AuthContext = React.createContext({});
  */
 export function AuthContextProvider({ children }) {
   const socket = useContext(SocketContext);
-  const [jwt, setJwt] = useState('');
+  const [jwt, setJwt] = useJWTState('');
   const [authenticated, setAuthenticated] = useState(false);
+  const [tokenId, setTokenId] = useState('');
 
   // Clears the JWT, which triggers the useEffect() below to set authenticated to false.
   function logout() {
     setJwt('');
   }
 
+  useEffect(() => {
+    if (tokenId === '' || authenticated === true) {
+      return;
+    }
+    axios.defaults.headers.common = {};
+    axios
+      .get(`${process.env.REACT_APP_BACKEND_ENDPOINT}/api/users/login`, {
+        headers: {
+          id_token: tokenId,
+        },
+      })
+      .then(({ data }) => {
+        setTokenId('');
+        setJwt(data);
+      })
+      .catch(() => {
+        setTokenId('');
+        setJwt('');
+      });
+  }, [tokenId]);
+
   useEffect(async () => {
     if (jwt === '') {
       setAuthenticated(false);
-      axios.defaults.headers.common = {
-        Authorization: null,
-      };
+      axios.defaults.headers.common = {};
       socket.disconnect();
       return;
     }
@@ -48,12 +70,14 @@ export function AuthContextProvider({ children }) {
       // Socket connection is being established here.
       socket.connect(jwt);
     } catch (error) {
+      // eslint-disable-next-line no-console
+      console.error(error);
       setJwt('');
     }
   }, [jwt]);
 
   // eslint-disable-next-line react/jsx-no-constructed-context-values
-  const context = { jwt, authenticated, setJwt, logout };
+  const context = { jwt, authenticated, setJwt, setTokenId, logout };
 
   return <AuthContext.Provider value={context}>{children}</AuthContext.Provider>;
 }

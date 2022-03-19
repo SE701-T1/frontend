@@ -3,10 +3,10 @@ import { Navigate } from 'react-router-dom';
 import LoginButton from './LoginButton';
 import Carousel from '../../components/Carousel/Carousel';
 import styles from './Login.module.css';
-import { AuthContext } from '../../context/authContext';
+import { AuthContext } from '../../context/AuthContext';
 
 export default function Login() {
-  const { setJwt, authenticated } = useContext(AuthContext);
+  const { setTokenId, authenticated } = useContext(AuthContext);
 
   if (authenticated) {
     return <Navigate to="/accounts" />;
@@ -35,7 +35,7 @@ export default function Login() {
 
   // Executed if the authentication successful
   const onSuccess = (res) => {
-    setJwt(res.tokenId);
+    setTokenId(res.tokenId);
   };
 
   // Executed if authentication not successful

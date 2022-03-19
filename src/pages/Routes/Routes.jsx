@@ -3,7 +3,6 @@ import { Route, Routes as Switch } from 'react-router-dom';
 
 import Example from '../../components/Example';
 import AuthRoute from './AuthRoute';
-import GoogleRedirectRoute from './GoogleRedirectRoute';
 
 import Login from '../Login/Login';
 import Dashboard from '../Dashboard';
@@ -14,7 +13,6 @@ function Routes() {
   return (
     <Switch>
       <Route path="/login" element={<Login />} />
-      <Route exact path="/google-oauth" element={<GoogleRedirectRoute />} />
       <Route element={<AuthRoute />}>
         <Route path="/courses" element={<Example />} />
         <Route path="/find-matches" element={<Pairing />} />
