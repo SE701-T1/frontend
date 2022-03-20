@@ -5,12 +5,12 @@ import DialoguesList from '../DialoguesList';
 
 const mockMessage = [
   {
-    sender: 'id3333',
+    sender: 3333,
     text: 'random message',
     contentType: 'text',
   },
   {
-    sender: 'id5678',
+    sender: 5678,
     text: 'https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512',
     contentType: 'image',
   },
@@ -25,7 +25,7 @@ describe('DialoguesList', () => {
     render(
       <DialoguesList
         messages={mockMessage}
-        currentUser="id5678"
+        currentUser={5678}
         senderAvatar="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
       />,
     );
@@ -36,7 +36,7 @@ describe('DialoguesList', () => {
     render(
       <DialoguesList
         messages={mockMessage}
-        currentUser="id5678"
+        currentUser={5678}
         senderAvatar="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
       />,
     );
@@ -51,7 +51,7 @@ describe('DialoguesList', () => {
     render(
       <DialoguesList
         messages={mockMessage}
-        currentUser="id5678"
+        currentUser={5678}
         senderAvatar="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
       />,
     );
@@ -65,7 +65,7 @@ describe('DialoguesList', () => {
       .create(
         <DialoguesList
           messages={mockMessage}
-          currentUser="id5678"
+          currentUser={5678}
           senderAvatar="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
         />,
       )
