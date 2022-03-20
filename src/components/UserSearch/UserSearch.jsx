@@ -40,13 +40,19 @@ export default function UserSearch({ onSearch }) {
   const handleSearching = (event) => {
     const searchValue = event.target.value;
     setSearchInput(searchValue);
-    onSearch(searchValue);
+  };
+
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      event.preventDefault();
+      onSearch(searchInput);
+    }
   };
 
   return (
     <Box className={styles.root} component="form" noValidate autoComplete="off">
       <SearchBox
-        onKeyPress={(e) => e.key === 'Enter' && e.preventDefault()}
+        onKeyPress={handleKeyPress}
         id="outlined-basic"
         variant="outlined"
         placeholder="Type a name"

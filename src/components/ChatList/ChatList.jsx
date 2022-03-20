@@ -3,6 +3,11 @@ import PropTypes from 'prop-types';
 import ChatListItem from './ChatListItem';
 import styles from './ChatList.module.css';
 
+/**
+ * ChatList is the component that handles the list of chats.
+ * This component display each user with their last message and the date of the last message.
+ * The user can click on the user to open the chat.
+ */
 function ChatList({ chatId, chatItems, onChatItemClick }) {
   return (
     <div>
