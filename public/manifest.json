@@ -1,6 +1,6 @@
 {
-  "short_name": "React App",
-  "name": "Create React App Sample",
+  "short_name": "Buddy Matcher",
+  "name": "Class Buddy Matcher",
   "icons": [
     {
       "src": "favicon.ico",

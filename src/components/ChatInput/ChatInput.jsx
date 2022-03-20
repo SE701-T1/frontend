@@ -16,12 +16,27 @@ const CustomInput = styled(InputBase)(() => ({
   },
 }));
 
+/**
+ * ChatInput is the component that handles the input of the user in the chat.
+ * This component includes the emoji selector and submit button.
+ */
 function ChatInput({ onSend, disable }) {
   const [inputText, setInputText] = useState('');
   const [showEmojiPicker, setShowEmojiPicker] = useState(false);
 
   const onEmojiClick = (event, emojiObject) => {
     setInputText(inputText + emojiObject.emoji);
+  };
+
+  const onSubmit = () => {
+    onSend(inputText);
+    setInputText('');
+  };
+
+  const onKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      onSubmit();
+    }
   };
 
   return (
@@ -37,6 +52,7 @@ function ChatInput({ onSend, disable }) {
         placeholder="Aa"
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
+        onKeyDown={onKeyPress}
       />
       <div className={styles.buttonContainer}>
         <IconButton
@@ -59,11 +75,7 @@ function ChatInput({ onSend, disable }) {
         data-testid="SendButton"
         className={styles.button}
         aria-label="send"
-        onClick={() => {
-          onSend(inputText);
-          setInputText('');
-        }}
-      >
+        onClick={onSubmit}>
         <SendIcon />
       </IconButton>
     </div>
