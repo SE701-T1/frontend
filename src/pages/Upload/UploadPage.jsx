@@ -68,7 +68,8 @@ export default function UploadPage() {
         href="https://uoacal.auckland.ac.nz/home"
         underline="hover"
         target="_blank"
-        rel="noopener noreferrer">
+        rel="noopener noreferrer"
+      >
         <Typography>Download your timetable at https://uoacal.auckland.ac.nz/home</Typography>
       </Link>
     </Stack>

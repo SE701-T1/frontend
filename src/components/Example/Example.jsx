@@ -1,10 +1,22 @@
-import { Typography } from '@mui/material';
 import React from 'react';
+import PropTypes from 'prop-types';
 
-function Example() {
+import { Typography } from '@mui/material';
 
-
-  return <Typography>This is an example component.</Typography>;
+/**
+ * Here is an Example component that follows our component conventions
+ * @returns
+ */
+function Example({ text }) {
+  return <Typography>{text}</Typography>;
 }
+
+Example.propTypes = {
+  text: PropTypes.string,
+};
+
+Example.defaultProps = {
+  text: 'This is an example component.',
+};
 
 export default Example;

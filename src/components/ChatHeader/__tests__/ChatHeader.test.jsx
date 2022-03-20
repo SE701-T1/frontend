@@ -7,7 +7,7 @@ import theme from '../../Theme';
 import ChatHeader from '../ChatHeader';
 
 describe('TestChatHeader', () => {
-  test('should display buddy name', () => {
+  it('should display buddy name', () => {
     render(
       <ThemeProvider theme={theme}>
         <ChatHeader name="Amy" callBuddy={() => {}} />
@@ -17,7 +17,7 @@ describe('TestChatHeader', () => {
     expect(screen.getByText('Amy')).toBeInTheDocument();
   });
 
-  test('should display active text', () => {
+  it('should display active text', () => {
     render(
       <ThemeProvider theme={theme}>
         <ChatHeader active name="Amy" callBuddy={() => {}} />
@@ -27,7 +27,7 @@ describe('TestChatHeader', () => {
     expect(screen.getByText('Active now')).toBeInTheDocument();
   });
 
-  test('should call buddy when pressed', () => {
+  it('should call buddy when pressed', () => {
     const mockCallBuddy = jest.fn();
 
     render(

@@ -3,12 +3,12 @@ import { render, screen, fireEvent } from '@testing-library/react';
 import NavBar from '../NavBar';
 
 describe('Navigation Wrapper', () => {
-  test('should display app name in app bar', () => {
+  it('should display app name in app bar', () => {
     render(<NavBar open={false} handleOpen={() => {}} drawerWidth={240} />);
     expect(screen.getByText('Class Buddy Matcher')).toBeInTheDocument();
   });
 
-  test('should open when pressing open button', () => {
+  it('should open when pressing open button', () => {
     const mockHandleOpen = jest.fn();
 
     render(<NavBar open={false} handleOpen={mockHandleOpen} drawerWidth={240} />);

@@ -1,0 +1,261 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navigation Bar produces correct snapshot of the Nav 1`] = `
+<div
+  className="MuiBox-root css-k008qs"
+>
+  <header
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation4 MuiAppBar-root MuiAppBar-colorSecondary MuiAppBar-positionFixed mui-fixed css-9zwuf2-MuiPaper-root-MuiAppBar-root"
+  >
+    <div
+      className="MuiToolbar-root MuiToolbar-gutters MuiToolbar-regular css-1t29gy6-MuiToolbar-root"
+    >
+      <button
+        aria-label="open drawer"
+        className="MuiButtonBase-root MuiIconButton-root MuiIconButton-colorInherit MuiIconButton-edgeStart MuiIconButton-sizeMedium css-p55zm9-MuiButtonBase-root-MuiIconButton-root"
+        disabled={false}
+        onBlur={[Function]}
+        onClick={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        <svg
+          aria-hidden={true}
+          className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+          data-testid="MenuIcon"
+          focusable="false"
+          viewBox="0 0 24 24"
+        >
+          <path
+            d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z"
+          />
+        </svg>
+      </button>
+      <img
+        alt="logo"
+        src="logo.svg"
+      />
+      <div
+        className="MuiTypography-root MuiTypography-h6 MuiTypography-noWrap navbarTitle css-8u39c-MuiTypography-root"
+      >
+        Class Buddy Matcher
+      </div>
+    </div>
+  </header>
+  <div
+    className="MuiDrawer-root MuiDrawer-docked customDrawer css-8qg47x-MuiDrawer-docked"
+  >
+    <div
+      className="MuiPaper-root MuiPaper-elevation MuiPaper-elevation0 MuiDrawer-paper MuiDrawer-paperAnchorLeft MuiDrawer-paperAnchorDockedLeft css-12i7wg6-MuiPaper-root-MuiDrawer-paper"
+    >
+      <div
+        className="drawerHeader"
+      >
+        <button
+          className="MuiButtonBase-root MuiIconButton-root MuiIconButton-sizeMedium css-78trlr-MuiButtonBase-root-MuiIconButton-root"
+          disabled={false}
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="button"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="ChevronLeftIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+            />
+          </svg>
+        </button>
+      </div>
+      <hr
+        className="MuiDivider-root MuiDivider-fullWidth css-9mgopn-MuiDivider-root"
+      />
+      <ul
+        className="MuiList-root MuiList-padding css-h4y409-MuiList-root"
+      >
+        <a
+          className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-padding MuiListItem-button css-1o6gq15-MuiButtonBase-root-MuiListItem-root"
+          href="/courses"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="MuiListItemIcon-root css-1ddsiuw-MuiListItemIcon-root"
+          >
+            <img
+              alt="Courses"
+              src="courses.svg"
+            />
+          </div>
+          <div
+            className="MuiListItemText-root css-1cag644-MuiListItemText-root"
+          >
+            <span
+              className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+            >
+              Courses
+            </span>
+          </div>
+        </a>
+        <a
+          className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-padding MuiListItem-button css-1o6gq15-MuiButtonBase-root-MuiListItem-root"
+          href="/find-matches"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="MuiListItemIcon-root css-1ddsiuw-MuiListItemIcon-root"
+          >
+            <img
+              alt="Find Matches"
+              src="find-matches.svg"
+            />
+          </div>
+          <div
+            className="MuiListItemText-root css-1cag644-MuiListItemText-root"
+          >
+            <span
+              className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+            >
+              Find Matches
+            </span>
+          </div>
+        </a>
+        <a
+          className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-padding MuiListItem-button css-1o6gq15-MuiButtonBase-root-MuiListItem-root"
+          href="/chat"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="MuiListItemIcon-root css-1ddsiuw-MuiListItemIcon-root"
+          >
+            <img
+              alt="Chat"
+              src="chat.svg"
+            />
+          </div>
+          <div
+            className="MuiListItemText-root css-1cag644-MuiListItemText-root"
+          >
+            <span
+              className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+            >
+              Chat
+            </span>
+          </div>
+        </a>
+        <a
+          className="MuiButtonBase-root MuiListItem-root MuiListItem-gutters MuiListItem-padding MuiListItem-button css-1o6gq15-MuiButtonBase-root-MuiListItem-root"
+          href="/settings"
+          onBlur={[Function]}
+          onClick={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+        >
+          <div
+            className="MuiListItemIcon-root css-1ddsiuw-MuiListItemIcon-root"
+          >
+            <img
+              alt="Settings"
+              src="settings.svg"
+            />
+          </div>
+          <div
+            className="MuiListItemText-root css-1cag644-MuiListItemText-root"
+          >
+            <span
+              className="MuiTypography-root MuiTypography-body1 MuiListItemText-primary css-10hburv-MuiTypography-root"
+            >
+              Settings
+            </span>
+          </div>
+        </a>
+      </ul>
+    </div>
+  </div>
+  <main
+    className="MuiBox-root css-zxdg2z"
+  >
+    <div
+      className="drawerHeader"
+    />
+    <div>
+      Child
+    </div>
+  </main>
+</div>
+`;

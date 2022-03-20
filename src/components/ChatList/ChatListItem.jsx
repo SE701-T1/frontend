@@ -20,7 +20,8 @@ function ChatItemList({ selected, name, active, lastMessageText, lastMessageTime
       data-testid="ButtonBase"
       style={{ background: selected ? '#ECF3FF' : '#FFFFFF', padding: '5px', borderRadius: '5px' }}
       className={styles.container}
-      onClick={() => onContainerClick()}>
+      onClick={() => onContainerClick()}
+    >
       <div className={styles.profileBadgeContainer}>
         <ProfileBadge active={active} name={name} />
       </div>
@@ -33,7 +34,8 @@ function ChatItemList({ selected, name, active, lastMessageText, lastMessageTime
               fontWeight: '600',
               lineHeight: '28px',
             }}
-            className={styles.headerText}>
+            className={styles.headerText}
+          >
             {name}
           </Typography>
         </div>
@@ -42,7 +44,8 @@ function ChatItemList({ selected, name, active, lastMessageText, lastMessageTime
             className={styles.lastMessageText}
             color="#959595"
             variant="subtitle2"
-            lineHeight="normal">
+            lineHeight="normal"
+          >
             {lastMessageText}
           </Typography>
           <Typography color="#959595" variant="subtitle2" lineHeight="normal">

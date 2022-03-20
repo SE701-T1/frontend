@@ -40,7 +40,8 @@ export default function Settings() {
         className={`${styles.container}`}
         value={pairingEnabled}
         exclusive
-        onChange={handleChange}>
+        onChange={handleChange}
+      >
         <ToggleButton value={true}>On</ToggleButton>
         <ToggleButton value={false}>Off</ToggleButton>
       </ToggleButtonGroup>

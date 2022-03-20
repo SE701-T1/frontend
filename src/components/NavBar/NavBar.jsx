@@ -39,7 +39,8 @@ function NavBar({ open, handleOpen, drawerWidth }) {
             sx={{
               marginRight: 5,
               ...(open && { display: 'none' }),
-            }}>
+            }}
+          >
             <MenuIcon />
           </IconButton>
           <img src={LogoSVG} alt="logo" />

@@ -14,7 +14,7 @@ const mockCourse = [
 ];
 
 describe('ChatBuddyDetail', () => {
-  test('should display member', () => {
+  it('should display member', () => {
     render(
       <ThemeProvider theme={theme}>
         <ChatBuddyDetail name="test name" removeBuddy={() => {}} commonCourses={mockCourse} />
@@ -25,7 +25,7 @@ describe('ChatBuddyDetail', () => {
     expect(screen.getByText('SOFTENG 701')).toBeInTheDocument();
   });
 
-  test('should display active', () => {
+  it('should display active', () => {
     render(
       <ThemeProvider theme={theme}>
         <ChatBuddyDetail
@@ -40,7 +40,7 @@ describe('ChatBuddyDetail', () => {
     expect(screen.getByText('test name')).toBeInTheDocument();
   });
 
-  test('should removeBuddy when pressed', () => {
+  it('should removeBuddy when pressed', () => {
     const mockRemoveBuddy = jest.fn();
 
     render(

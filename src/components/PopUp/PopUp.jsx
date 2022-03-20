@@ -4,16 +4,27 @@ import PeopleIcon from '@mui/icons-material/People';
 import styles from './PopUp.module.css';
 import ProfileBadge from '../ProfileBadge/ProfileBadge';
 
-function PopUp({ name, buddyNumber, sharedCourses, open, size, onClose, onChat, onNext }) {
+function PopUp({
+  name,
+  active,
+  src,
+  buddyNumber,
+  sharedCourses,
+  open,
+  size,
+  onClose,
+  onChat,
+  onNext,
+}) {
   const courses = sharedCourses.join(', ');
 
   return (
     <Dialog open={open} onClose={onClose} fullWidth data-testid="popup">
       <div className={styles.icon}>
-        <ProfileBadge name={name} size={size} />
+        <ProfileBadge name={name} size={size} src={src} active={active} />
       </div>
       <div className={styles.title}>
-        <h1> {name} </h1>
+        <h1>{name}</h1>
       </div>
       <div className={styles.courses}>
         <Typography>Also takes {courses}</Typography>
