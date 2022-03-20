@@ -1,35 +1,49 @@
-import * as React from 'react';
+/* eslint-disable react/jsx-boolean-value */
+import React, { useEffect, useState } from 'react';
 import ToggleButton from '@mui/material/ToggleButton';
 import ToggleButtonGroup from '@mui/material/ToggleButtonGroup';
-import styles from './Settings.module.css'
+import { Typography } from '@mui/material';
+import styles from './Settings.module.css';
+import { getSelf, updateUser } from '../../api/UserAPI';
 
 /**
  * The settings page displays a toggle button that the user can click on to enable or disable pairing.
- *  If the off option is selected, then the value of newPairing value is set to "off" and it is set to "on" otherwise.
- * 
- * Default value of pairing will be set to on.
- * 
- * More information about the toggle button can be found here: https://mui.com/components/toggle-button/
- * 
+ * If the off option is selected, then the value of pairingEnabled is set to false and it is set to
+ * true otherwise.
+ *
+ * The component populates the initial value of the component based on the response received from the
+ * request using the getSelf() function call.
+ *
  */
 
 export default function Settings() {
-  const [pairing, setPairing] = React.useState('on');
+  const [pairingEnabled, setPairingEnabled] = useState();
 
-  const handleChange = (event, newPairing) => {
-    setPairing(newPairing);
+  useEffect(async () => {
+    const userInfo = await getSelf();
+    setPairingEnabled(userInfo.pairingEnabled);
+  }, []);
+
+  const handleChange = async (event, pairingStatus) => {
+    if (pairingStatus !== null) {
+      setPairingEnabled(pairingStatus);
+      await updateUser(pairingStatus);
+    }
   };
 
   return (
-    <ToggleButtonGroup
-      className={`${styles.container}`}
-      value={pairing}
-      exclusive
-      onChange={handleChange} 
-    >
-      <span className={`${styles.pairing}`} >Pairing: </span>
-      <ToggleButton value="on">On</ToggleButton>
-      <ToggleButton value="off">Off</ToggleButton>
-    </ToggleButtonGroup>
+    <>
+      <Typography sx={{ marginRight: '10px', display: 'inline' }} variant="body1">
+        Pairing Mode:
+      </Typography>
+      <ToggleButtonGroup
+        className={`${styles.container}`}
+        value={pairingEnabled}
+        exclusive
+        onChange={handleChange}>
+        <ToggleButton value={true}>On</ToggleButton>
+        <ToggleButton value={false}>Off</ToggleButton>
+      </ToggleButtonGroup>
+    </>
   );
 }
