@@ -44,7 +44,8 @@ function ChatInput({ onSend, disable }) {
           data-testid="EmojiButton"
           className={styles.button}
           aria-label="directions"
-          onClick={() => setShowEmojiPicker(!showEmojiPicker)}>
+          onClick={() => setShowEmojiPicker(!showEmojiPicker)}
+        >
           <EmojiEmotionsIcon />
         </IconButton>
         {showEmojiPicker && (
@@ -61,7 +62,8 @@ function ChatInput({ onSend, disable }) {
         onClick={() => {
           onSend(inputText);
           setInputText('');
-        }}>
+        }}
+      >
         <SendIcon />
       </IconButton>
     </div>

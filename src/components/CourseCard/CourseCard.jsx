@@ -63,7 +63,8 @@ function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }
         direction="row"
         alignItems="baseline"
         spacing={1}
-        className={styles.memberNBuddiesText}>
+        className={styles.memberNBuddiesText}
+      >
         <Grid item>
           <Grid container direction="column">
             <Grid item>

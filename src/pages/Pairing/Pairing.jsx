@@ -144,7 +144,8 @@ function Pairing() {
         <StyledButton
           disabled={numOfSelectedCourses === 0}
           variant="outlined"
-          onClick={() => handleFindBuddy()}>
+          onClick={() => handleFindBuddy()}
+        >
           <Typography color="primaryDark">FIND MY BUDDY</Typography>
           <ArrowForwardIcon />
         </StyledButton>
@@ -179,7 +180,8 @@ function Pairing() {
                 col={4}
                 key={courseId}
                 className={styles.card}
-                onClick={() => handleSelectedCourse(courseId)}>
+                onClick={() => handleSelectedCourse(courseId)}
+              >
                 <CourseCard
                   key={courseId}
                   courseName={name}

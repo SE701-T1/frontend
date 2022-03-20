@@ -22,14 +22,16 @@ function ChatHeader({ active, name, callBuddy }) {
             lineHeight={1}
             className={`${styles.headerText} ${
               active ? styles.onlinePadding : styles.offlinePadding
-            }`}>
+            }`}
+          >
             {name}
           </Typography>
           <Typography
             variant="body2"
             fontWeight={500}
             lineHeight={1.5}
-            className={`${styles.headerText} ${styles.status}`}>
+            className={`${styles.headerText} ${styles.status}`}
+          >
             {active ? 'Active now' : ' '}
           </Typography>
         </Box>

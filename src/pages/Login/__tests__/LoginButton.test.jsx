@@ -8,5 +8,4 @@ describe('Render Login Button', () => {
 
     expect(screen.getByText('Sign in with Google')).toBeInTheDocument();
   });
-    
 });

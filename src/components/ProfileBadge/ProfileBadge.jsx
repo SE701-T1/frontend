@@ -41,7 +41,8 @@ function ProfileBadge({ active, name, size, src }) {
         data-testid={active ? 'active' : 'offline'}
         overlap="circular"
         anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-        variant="dot">
+        variant="dot"
+      >
         <Avatar data-testid={name} alt={name} src={src} sx={{ height: size, width: size }} />
       </Active>
     </Container>

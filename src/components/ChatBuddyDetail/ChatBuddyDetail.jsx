@@ -27,7 +27,8 @@ function ChatBuddyDetail({ active, name, removeBuddy, commonCourses }) {
         color="primaryDark"
         variant="outlined"
         data-testid="remove-buddy"
-        onClick={removeBuddy}>
+        onClick={removeBuddy}
+      >
         Remove Buddy
       </Button>
       <Typography className={styles.commonCourseTitle}>Common Courses</Typography>

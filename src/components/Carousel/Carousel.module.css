@@ -1,28 +1,28 @@
 .container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 .buttonContainer {
-    display: flex;
-    flex-direction: row;
-    margin-top: 20px;
+  display: flex;
+  flex-direction: row;
+  margin-top: 20px;
 }
 
 .buttonContainer > *:not(:first-child) {
-    margin-left: 5px;
+  margin-left: 5px;
 }
 
 .circle {
-    width: 10px;
-    height: 10px;
-    border-radius: 50%;
-    border: 1px solid #8896AC;
-    cursor: pointer;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid #8896ac;
+  cursor: pointer;
 }
 
 .active {
-    background-color: #8896AC;
+  background-color: #8896ac;
 }

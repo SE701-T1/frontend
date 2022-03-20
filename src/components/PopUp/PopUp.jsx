@@ -26,7 +26,8 @@ function PopUp({ name, buddyNumber, sharedCourses, open, size, onClose, onChat, 
         <Button
           onClick={onChat}
           variant="contained"
-          sx={{ maxWidth: '120px', maxHeight: '40px', minWidth: '120px', minHeight: '40px' }}>
+          sx={{ maxWidth: '120px', maxHeight: '40px', minWidth: '120px', minHeight: '40px' }}
+        >
           say hi
         </Button>
       </div>
@@ -34,7 +35,8 @@ function PopUp({ name, buddyNumber, sharedCourses, open, size, onClose, onChat, 
         <Button
           onClick={onNext}
           variant="outlined"
-          sx={{ maxWidth: '120px', maxHeight: '40px', minWidth: '120px', minHeight: '40px' }}>
+          sx={{ maxWidth: '120px', maxHeight: '40px', minWidth: '120px', minHeight: '40px' }}
+        >
           skip
         </Button>
       </div>

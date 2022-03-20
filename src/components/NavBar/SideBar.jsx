@@ -87,7 +87,8 @@ function SideBar({ open, handleClose, drawerWidth }) {
       className={styles.customDrawer}
       variant="permanent"
       open={open}
-      drawerWidth={drawerWidth}>
+      drawerWidth={drawerWidth}
+    >
       <div className={styles.drawerHeader}>
         <IconButton onClick={handleClose}>
           <ChevronLeftIcon />
@@ -105,13 +106,15 @@ function SideBar({ open, handleClose, drawerWidth }) {
             }}
             button
             component={Link}
-            to={link}>
+            to={link}
+          >
             <ListItemIcon
               sx={{
                 minWidth: 0,
                 mr: open ? 3 : 'auto',
                 justifyContent: 'center',
-              }}>
+              }}
+            >
               <img src={icon} alt={title} />
             </ListItemIcon>
             <ListItemText primary={title} sx={{ opacity: open ? 1 : 0 }} />
