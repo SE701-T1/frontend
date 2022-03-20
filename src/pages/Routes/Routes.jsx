@@ -8,6 +8,7 @@ import Login from '../Login/Login';
 import Pairing from '../Pairing/Pairing';
 import Chat from '../Chat/Chat';
 import Upload from '../Upload/UploadPage';
+import Settings from '../Settings/Settings';
 
 function Routes() {
   return (
@@ -18,6 +19,7 @@ function Routes() {
         <Route path="/find-matches" element={<Pairing />} />
         <Route path="/chat" element={<Chat />} />
         <Route path="/accounts" element={<Example />} />
+        <Route path="/settings" element={<Settings />} />
         <Route path="/" element={<Navigate to="/courses" />} />
       </Route>
     </Switch>
