@@ -8,11 +8,11 @@ import { getSelf, updateUser } from '../../api/UserAPI';
 
 /**
  * The settings page displays a toggle button that the user can click on to enable or disable pairing.
- *  If the off option is selected, then the value of newPairing value is set to "off" and it is set to "on" otherwise.
+ * If the off option is selected, then the value of pairingEnabled is set to false and it is set to
+ * true otherwise.
  *
- * Default value of pairing will be set to on.
- *
- * More information about the toggle button can be found here: https://mui.com/components/toggle-button/
+ * The component populates the initial value of the component based on the response received from the
+ * request using the getSelf() function call.
  *
  */
 
