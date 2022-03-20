@@ -1,3 +1,4 @@
+/* eslint-disable import/prefer-default-export */
 import { postData } from './APIUtils';
 
 /**
@@ -6,7 +7,6 @@ import { postData } from './APIUtils';
  * @param {Array} courseIds array of course ids to find pairing for.
  * @return {Promise} users who take the course
  */
-// eslint-disable-next-line import/prefer-default-export
 export const findPairing = async (courseIds) => {
   const response = await postData(`api/pairing/matchBuddy`, {
     courseIds,

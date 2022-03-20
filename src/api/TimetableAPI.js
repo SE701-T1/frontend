@@ -1,6 +1,9 @@
 import moment from 'moment';
 import { getData, postData } from './APIUtils';
 
+/**
+ * Convert course by changing timestamp to new Date object
+ */
 const convertCourse = (course) => {
   if (course === null) {
     return null;

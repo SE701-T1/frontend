@@ -1,7 +1,9 @@
 import moment from 'moment';
 import { getData } from './APIUtils';
 
-// convert buddy by adding buddyCount which is missing from backend
+/**
+ * Convert buddy by adding buddyCount which is missing from backend
+ */
 const convertMessage = (message) => {
   if (message === null) {
     return null;
@@ -25,7 +27,9 @@ export const getMessages = async (buddyId) => {
   return response?.map(convertMessage);
 };
 
-// convert buddy by adding buddyCount which is missing from backend
+/**
+ * Convert buddy by adding buddyCount which is missing from backend
+ */
 const convertChat = (chat) => {
   if (chat === null) {
     return null;
