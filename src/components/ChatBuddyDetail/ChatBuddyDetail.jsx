@@ -14,7 +14,7 @@ import ProfileBadge from '../ProfileBadge/ProfileBadge';
  *    courseLink: 'https://random.link',
  *  }
  */
-function ChatBuddyDetail({ active, name, removeBuddy, commonCourses }) {
+function ChatBuddyDetail({ self, active, name, removeBuddy, commonCourses }) {
   return (
     <Box className={styles.container}>
       <ProfileBadge active={active} name={name} />
@@ -22,15 +22,19 @@ function ChatBuddyDetail({ active, name, removeBuddy, commonCourses }) {
         {name}
       </Typography>
       {active && <Typography className={styles.activeText}> Active now</Typography>}
-      <Button
-        className={styles.removeButton}
-        color="primaryDark"
-        variant="outlined"
-        data-testid="remove-buddy"
-        onClick={removeBuddy}>
-        Remove Buddy
-      </Button>
-      <Typography className={styles.commonCourseTitle}>Common Courses</Typography>
+      {!self && (
+        <Button
+          className={styles.removeButton}
+          color="primaryDark"
+          variant="outlined"
+          data-testid="remove-buddy"
+          onClick={removeBuddy}>
+          Remove Buddy
+        </Button>
+      )}
+      <Typography className={styles.commonCourseTitle}>
+        {self ? 'My Courses' : 'Common Courses'}
+      </Typography>
       {commonCourses.map(({ courseName, courseLink }) => (
         <Typography className={styles.commonCourseText} key={courseName + courseLink}>
           {courseName}

@@ -1,4 +1,4 @@
-import React, { useContext } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import styles from './Chat.module.css';
 import UserSearch from '../../components/UserSearch/UserSearch';
 import ChatList from '../../components/ChatList/ChatList';
@@ -8,15 +8,8 @@ import ChatInput from '../../components/ChatInput/ChatInput';
 import ChatBuddyDetail from '../../components/ChatBuddyDetail/ChatBuddyDetail';
 import { ChatContext } from '../../context/ChatContext';
 import { removeBuddy } from '../../api/UserAPI';
+import { getCourses, getUserCourses } from '../../api/TimetableAPI';
 import { SocketContext } from '../../api/sockets/Sockets';
-
-// TODO get courses from a user
-const mockCourse = [
-  {
-    courseName: 'SOFTENG 701',
-    courseLink: 'https://random.link',
-  },
-];
 
 function Chat() {
   const {
@@ -30,10 +23,41 @@ function Chat() {
     appendMessage,
   } = useContext(ChatContext);
   const { sendMessageEvent } = useContext(SocketContext);
+  const [sharedCourses, setSharedCourses] = useState([]);
+  const [courses, setCourses] = useState([]);
 
   const handleSelectChat = (buddyId) => {
     selectChat(buddyId);
   };
+
+  // Update shared courses when the chat changes
+  useEffect(async () => {
+    if (courses.length === 0) {
+      return;
+    }
+    const userCourses = await getUserCourses(currentChat.buddyId);
+
+    const newSharedCourses = userCourses
+      .filter((course) => courses.map((c) => c.courseId).includes(course.courseId))
+      .map((course) => ({
+        courseName: course.name,
+        courseLink: `/find-matches`, // TODO add links to courses
+      }));
+
+    setSharedCourses(newSharedCourses);
+  }, [currentChat]);
+
+  // Get courses from the user at startup
+  useEffect(async () => {
+    const newCourses = await getCourses();
+    setCourses(newCourses);
+    setSharedCourses(
+      newCourses.map((course) => ({
+        courseName: course.name,
+        courseLink: `/find-matches`, // TODO add links to courses
+      })),
+    );
+  }, []);
 
   return (
     <div className={styles.chat}>
@@ -85,13 +109,14 @@ function Chat() {
       </div>
       <div className={styles.chatRight}>
         <ChatBuddyDetail
+          self={currentChat.buddyId === currentChat.userId}
           active={currentChat.buddyActive}
           name={currentChat.buddyName}
           removeBuddy={async () => {
             await removeBuddy(currentChat.buddyId);
             getChatList();
           }}
-          commonCourses={mockCourse}
+          commonCourses={sharedCourses}
         />
       </div>
     </div>

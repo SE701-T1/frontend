@@ -5,12 +5,15 @@ import ProfileBadge from '../ProfileBadge/ProfileBadge';
 import styles from './ChatListItem.module.css';
 import timeSince from '../../Util/TimeFormater';
 
+/**
+ * ChatItemList is the component that display each of the messages in the chat.
+ */
 function ChatItemList({ selected, name, active, lastMessageText, lastMessageTime, onClick }) {
-  function onContainerClick() {
+  const onContainerClick = () => {
     if (onClick !== undefined) {
       onClick();
     }
-  }
+  };
 
   return (
     <ButtonBase
