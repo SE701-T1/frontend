@@ -17,7 +17,6 @@ import styles from './Nav.module.css';
 import CoursesIcon from '../../assets/menu-icons/courses.svg';
 import FindMatchesIcon from '../../assets/menu-icons/find-matches.svg';
 import ChatIcon from '../../assets/menu-icons/chat.svg';
-import AccountsIcon from '../../assets/menu-icons/accounts.svg';
 import SettingsIcon from '../../assets/menu-icons/settings.svg';
 
 // Sidebar menu is set here and corresponds to pages/Routes
@@ -36,11 +35,6 @@ const menu = [
     title: 'Chat',
     icon: ChatIcon,
     link: '/chat',
-  },
-  {
-    title: 'Accounts',
-    icon: AccountsIcon,
-    link: '/accounts',
   },
   {
     title: 'Settings',

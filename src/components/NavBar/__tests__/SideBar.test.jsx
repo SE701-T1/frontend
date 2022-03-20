@@ -15,7 +15,7 @@ describe('Navigation Wrapper', () => {
     expect(screen.getByText('Courses')).toBeInTheDocument();
     expect(screen.getByText('Find Matches')).toBeInTheDocument();
     expect(screen.getByText('Chat')).toBeInTheDocument();
-    expect(screen.getByText('Accounts')).toBeInTheDocument();
+    expect(screen.getByText('Settings')).toBeInTheDocument();
   });
 
   test('should change route to course when course is selected', () => {

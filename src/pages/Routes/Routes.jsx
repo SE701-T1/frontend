@@ -1,7 +1,5 @@
 import React from 'react';
 import { Route, Routes as Switch, Navigate } from 'react-router-dom';
-
-import Example from '../../components/Example';
 import AuthRoute from './AuthRoute';
 
 import Login from '../Login/Login';
