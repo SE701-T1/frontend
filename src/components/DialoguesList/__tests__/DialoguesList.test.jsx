@@ -21,7 +21,7 @@ const scrollIntoViewMock = jest.fn();
 window.HTMLElement.prototype.scrollIntoView = scrollIntoViewMock;
 
 describe('DialoguesList', () => {
-  test('display message sent to me', () => {
+  it('display message sent to me', () => {
     render(
       <DialoguesList
         messages={mockMessage}
@@ -32,7 +32,7 @@ describe('DialoguesList', () => {
     expect(screen.getByText('random message')).toBeInTheDocument();
   });
 
-  test('display image message sent by me', () => {
+  it('display image message sent by me', () => {
     render(
       <DialoguesList
         messages={mockMessage}

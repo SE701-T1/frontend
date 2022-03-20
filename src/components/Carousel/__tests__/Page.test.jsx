@@ -1,8 +1,8 @@
 import React from 'react';
 import renderer from 'react-test-renderer';
-import Page from '../Page';
+import { render, screen } from '@testing-library/react';
 
-const { render, screen } = require('@testing-library/react');
+import Page from '../Page';
 
 describe('Carousel Page', () => {
   /**

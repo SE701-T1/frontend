@@ -10,7 +10,7 @@ import Pairing from '../Pairing';
 jest.mock('../../../api/TimetableAPI');
 
 describe('Render Pairing page', () => {
-  test('should display course card test', async () => {
+  it('should display course card test', async () => {
     timetableAPI.getCourses.mockImplementation(() =>
       Promise.resolve([
         {
@@ -45,7 +45,7 @@ describe('Render Pairing page', () => {
     await waitFor(() => expect(screen.getByText('SOFTENG 754')).toBeInTheDocument());
   });
 
-  test('should show increased selected course', async () => {
+  it('should show increased selected course', async () => {
     timetableAPI.getCourses.mockImplementation(() =>
       Promise.resolve([
         {

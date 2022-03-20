@@ -6,10 +6,6 @@ export default function timeSince(date) {
 
   let interval = seconds / 31536000;
 
-  if (interval > 50) {
-    return '';
-  }
-
   if (interval > 1) {
     return `${Math.floor(interval)} y`;
   }
@@ -28,6 +24,11 @@ export default function timeSince(date) {
   interval = seconds / 60;
   if (interval > 1) {
     return `${Math.floor(interval)} m`;
+  }
+
+  // returns empty string if the time is zero
+  if (seconds === 0) {
+    return ``;
   }
   return `${Math.floor(seconds)} s`;
 }

@@ -84,7 +84,7 @@ exports[`ChatListItem produces the correct initial snapshot 1`] = `
         className="MuiTypography-root MuiTypography-subtitle2 css-1i1udgb-MuiTypography-root"
       >
         • 
-        0 s
+        
       </h6>
     </div>
   </div>

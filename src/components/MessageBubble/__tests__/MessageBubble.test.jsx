@@ -5,7 +5,7 @@ import renderer from 'react-test-renderer';
 import MessageBubble from '../MessageBubble';
 
 describe('MessageSentToMe', () => {
-  test('should display message Content', () => {
+  it('should display message Content', () => {
     render(
       <MessageBubble
         text="Hi"
@@ -20,7 +20,7 @@ describe('MessageSentToMe', () => {
 });
 
 describe('MessageSentFromMe', () => {
-  test('should display message Content', () => {
+  it('should display message Content', () => {
     render(
       <MessageBubble
         text="I love your profile pic!"
@@ -34,7 +34,7 @@ describe('MessageSentFromMe', () => {
 });
 
 describe('SendImageAsMessage', () => {
-  test('should display messageContent', () => {
+  it('should display messageContent', () => {
     render(
       <MessageBubble
         text="https://play-lh.googleusercontent.com/zepWGavYYErAIBXFZb6OT14I6b-m4TyaG3yjqZy6Hnsmi64vL3upQ3KUsV6Wnsm-e9M=w512"
