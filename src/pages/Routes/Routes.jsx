@@ -18,7 +18,6 @@ function Routes() {
         <Route path="/courses" element={<Upload />} />
         <Route path="/find-matches" element={<Pairing />} />
         <Route path="/chat" element={<Chat />} />
-        <Route path="/accounts" element={<Example />} />
         <Route path="/settings" element={<Settings />} />
         <Route path="/" element={<Navigate to="/courses" />} />
       </Route>
