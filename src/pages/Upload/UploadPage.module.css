@@ -2,4 +2,28 @@
   display: flex;
   align-items: center;
   text-align: center;
+  margin-top: 50px;
+}
+
+.uploadButton{
+ padding: 10px;
+ padding-left: 20px;
+padding-right: 20px;
+}
+
+.textColour{
+  color: grey;
+}
+
+.textBox{
+  width:500px;
+  border-radius: 30px;
+}
+
+.button{
+  border-radius: 30px;
+  padding: 10px;
+  padding-left: 20px;
+  padding-right: 20px;
+  border-width: 1px;
 }
