@@ -6,10 +6,8 @@ import {
   Link,
   InputAdornment,
   FormControl,
-
   InputLabel,
   OutlinedInput,
-
 } from '@mui/material';
 
 import { useNavigate } from 'react-router-dom';
@@ -64,7 +62,6 @@ export default function UploadPage() {
               <button type="button" variant="contained" aria-label="submit" onClick={handleSubmit} className={styles.button}>
                 <b className={styles.textColour}>Submit</b>
               </button>
-
             </InputAdornment>
           }
         />
