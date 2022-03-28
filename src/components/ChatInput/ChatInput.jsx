@@ -44,11 +44,6 @@ function ChatInput({ onSend, disable }) {
       <CustomInput
         disabled={disable}
         className={styles.input}
-        inputRef={(input) => {
-          if (input != null) {
-            input.focus();
-          }
-        }}
         placeholder="Aa"
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
@@ -60,8 +55,7 @@ function ChatInput({ onSend, disable }) {
           data-testid="EmojiButton"
           className={styles.button}
           aria-label="directions"
-          onClick={() => setShowEmojiPicker(!showEmojiPicker)}
-        >
+          onClick={() => setShowEmojiPicker(!showEmojiPicker)}>
           <EmojiEmotionsIcon />
         </IconButton>
         {showEmojiPicker && (

@@ -18,6 +18,7 @@ export function ChatContextProvider({ children }) {
     buddyId: null,
   });
   const [searchResult, setSearchResult] = useState([]);
+  const [chatSearchResult, setChatSearchResult] = useState([]);
   const [chatList, setChatList] = useState([]);
   const [messages, setMessages] = useState([]);
   const [isActive, setIsActive] = useState({});
@@ -32,6 +33,18 @@ export function ChatContextProvider({ children }) {
     );
 
     setSearchResult(filtered);
+  };
+
+  const handleChatSearch = (searchQuery) => {
+    let search = searchQuery.target.value;
+    if (!search) {
+      search = '';
+    }
+    const filtered = messages.filter((item) =>
+      item.content.toLowerCase().includes(search.toLowerCase()),
+    );
+
+    setChatSearchResult(filtered);
   };
 
   // Update ChatList when a buddy sends a message
@@ -60,6 +73,7 @@ export function ChatContextProvider({ children }) {
   const updateMessages = async (userId) => {
     const newMessages = await getMessages(userId);
     setMessages(newMessages);
+    setChatSearchResult(newMessages);
   };
 
   // Change chat
@@ -172,6 +186,17 @@ export function ChatContextProvider({ children }) {
         timestamp: Date.now(),
       },
     ]);
+    setChatSearchResult((prevState) => [
+      ...prevState,
+      {
+        senderId,
+        sender: senderId,
+        receiverId,
+        receiver: receiverId,
+        content: message,
+        timestamp: Date.now(),
+      },
+    ]);
   };
 
   useEffect(() => {
@@ -213,6 +238,7 @@ export function ChatContextProvider({ children }) {
     currentChat,
     chatList,
     messages,
+    chatSearchResult,
     // function
     updateChatList,
     setChat,
@@ -220,6 +246,7 @@ export function ChatContextProvider({ children }) {
     getChatList,
     appendMessage,
     handleSearch,
+    handleChatSearch,
   };
 
   return <ChatContext.Provider value={context}>{children}</ChatContext.Provider>;
