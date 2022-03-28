@@ -174,6 +174,7 @@ export function ChatContextProvider({ children }) {
   }, [isActive]);
 
   // Append Message to message list
+
   const appendMessage = (senderId, receiverId, message) => {
     setMessages((prevState) => [
       ...prevState,
