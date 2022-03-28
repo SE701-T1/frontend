@@ -37,9 +37,11 @@ function ChatHeader({ active, name, callBuddy }) {
           </Typography>
         </Box>
       </Box>
-      <Box>
+      <Box className={styles.right}>
         <OutlinedInput
           size="small"
+          fullWidth
+          className={styles.searchBox}
           placeholder="search messages"
           onChange={handleChatSearch}
           startAdornment={
