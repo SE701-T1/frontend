@@ -18,6 +18,7 @@ import CoursesIcon from '../../assets/menu-icons/courses.svg';
 import FindMatchesIcon from '../../assets/menu-icons/find-matches.svg';
 import ChatIcon from '../../assets/menu-icons/chat.svg';
 import SettingsIcon from '../../assets/menu-icons/settings.svg';
+import LogoutIcon from '../../assets/menu-icons/logout.svg';
 
 // Sidebar menu is set here and corresponds to pages/Routes
 const menu = [
@@ -40,6 +41,11 @@ const menu = [
     title: 'Settings',
     icon: SettingsIcon,
     link: '/settings',
+  },
+  {
+    title: 'Logout',
+    icon: LogoutIcon,
+    link: '/logout',
   },
 ];
 
@@ -87,8 +93,7 @@ function SideBar({ open, handleClose, drawerWidth }) {
       className={styles.customDrawer}
       variant="permanent"
       open={open}
-      drawerWidth={drawerWidth}
-    >
+      drawerWidth={drawerWidth}>
       <div className={styles.drawerHeader}>
         <IconButton onClick={handleClose}>
           <ChevronLeftIcon />
@@ -106,15 +111,13 @@ function SideBar({ open, handleClose, drawerWidth }) {
             }}
             button
             component={Link}
-            to={link}
-          >
+            to={link}>
             <ListItemIcon
               sx={{
                 minWidth: 0,
                 mr: open ? 3 : 'auto',
                 justifyContent: 'center',
-              }}
-            >
+              }}>
               <img src={icon} alt={title} />
             </ListItemIcon>
             <ListItemText primary={title} sx={{ opacity: open ? 1 : 0 }} />
