@@ -1,4 +1,4 @@
-import { Button, Container, Grid, Typography } from '@mui/material';
+import { Button, Container, Grid, Snackbar, Typography } from '@mui/material';
 import { styled } from '@mui/material/styles';
 import React, { useContext, useEffect, useState } from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
@@ -35,6 +35,7 @@ function Pairing() {
     sharedCourses: [],
     buddyNumber: 0,
   });
+  const [openNoBuddyFoundSnackbar, setOpenNoBuddyFoundSnackbar] = useState(false);
 
   /**
    * If the course is not selected, add to the selectedCourses list.
@@ -62,6 +63,12 @@ function Pairing() {
   const handleFindBuddy = async () => {
     try {
       const pairing = await findPairing(selectedCourses);
+
+      if (pairing.length === 0) {
+        setOpenNoBuddyFoundSnackbar(true);
+        return;
+      }
+
       setBuddies(pairing);
     } catch (err) {
       console.log(err);
@@ -87,6 +94,17 @@ function Pairing() {
       console.error(e);
       setBuddies([]);
     }
+  };
+
+  /**
+   * handleCloseNoBuddyFoundSnackbar to close the snackbar
+   */
+  const handleCloseNoBuddyFoundSnackbar = (event, reason) => {
+    if (reason === 'clickaway') {
+      return;
+    }
+
+    setOpenNoBuddyFoundSnackbar(false);
   };
 
   /**
@@ -144,11 +162,16 @@ function Pairing() {
         <StyledButton
           disabled={numOfSelectedCourses === 0}
           variant="outlined"
-          onClick={() => handleFindBuddy()}
-        >
+          onClick={() => handleFindBuddy()}>
           <Typography color="primaryDark">FIND MY BUDDY</Typography>
           <ArrowForwardIcon />
         </StyledButton>
+        <Snackbar
+          open={openNoBuddyFoundSnackbar}
+          autoHideDuration={3000}
+          onClose={handleCloseNoBuddyFoundSnackbar}
+          message="No buddy found. Please ensure you have selected at least one course."
+        />
       </Grid>
     </Grid>
   );
@@ -180,8 +203,7 @@ function Pairing() {
                 col={4}
                 key={courseId}
                 className={styles.card}
-                onClick={() => handleSelectedCourse(courseId)}
-              >
+                onClick={() => handleSelectedCourse(courseId)}>
                 <CourseCard
                   key={courseId}
                   courseName={name}
