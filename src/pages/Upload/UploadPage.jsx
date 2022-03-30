@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { Button, Dialog } from '@mui/material';
 import UploadIcon from '@mui/icons-material/Upload';
-import styles from './UploadPopUp.module.css';
+import styles from './UploadPage.module.css';
 
 export default function UploadPopUp({ open, close }) {
   const [file, setFile] = useState([]);
