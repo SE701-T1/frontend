@@ -21,7 +21,6 @@ export function AuthContextProvider({ children }) {
   const [tokenId, setTokenId] = useState('');
 
   // Clears the JWT, which triggers the useEffect() below to set authenticated to false.
-
   function logout() {
     setJwt('');
   }
