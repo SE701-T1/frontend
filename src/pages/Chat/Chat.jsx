@@ -16,7 +16,7 @@ function Chat() {
     currentChat,
     searchResult,
     handleSearch,
-    messages,
+    chatSearchResult,
     selectChat,
     getChatList,
     updateChatList,
@@ -84,7 +84,7 @@ function Chat() {
         </div>
         <div className={styles.dialogueList}>
           <DialogueList
-            messages={messages?.map((message) => ({
+            messages={chatSearchResult?.map((message) => ({
               ...message,
               text: message.content,
               contentType: 'text',

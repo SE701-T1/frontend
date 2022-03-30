@@ -12,6 +12,15 @@
   align-items: center;
 }
 
+@media (max-width: 1200px) {
+  .chatHeader {
+    display: block;
+  }
+  .userDetails {
+    width: fit-content;
+  }
+}
+
 .headerText {
   margin-top: 0;
   margin-bottom: 0;
@@ -30,4 +39,15 @@
 .status {
   color: #959595;
   font-weight: 500;
+}
+
+.right {
+  white-space: nowrap;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+}
+
+.searchBox {
+  height: 30px;
 }
