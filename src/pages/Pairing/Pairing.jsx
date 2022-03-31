@@ -4,7 +4,7 @@ import React, { useContext, useEffect, useState } from 'react';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import { useNavigate } from 'react-router-dom';
-
+import NoBuddy from '../../components/NoBuddy/NoBuddy';
 import CourseCard from '../../components/CourseCard/CourseCard';
 import styles from './Pairing.module.css';
 import { getCourses, getUserCourses } from '../../api/TimetableAPI';
@@ -27,6 +27,7 @@ function Pairing() {
   const { getChatList } = useContext(ChatContext);
   const [numOfSelectedCourses, setNumOfSelectedCourses] = useState(0);
   const [selectedCourses, setSelectedCourses] = useState([]);
+  const [open, setOpen] = useState(false);
   const [courses, setCourses] = useState([]);
   const [buddies, setBuddies] = useState([]);
   const [buddy, setBuddy] = useState({
@@ -70,6 +71,8 @@ function Pairing() {
       }
 
       setBuddies(pairing);
+      /* open the nobuddy popup component */
+      setOpen(true);
     } catch (err) {
       console.log(err);
     }
@@ -80,6 +83,14 @@ function Pairing() {
    */
   const handleNextBuddy = () => {
     setBuddies((prev) => prev.slice(1));
+  };
+
+  /**
+   * close the popup component
+   */
+  const closePopUp = () => {
+    setBuddies([]);
+    setOpen(false);
   };
 
   /**
@@ -141,6 +152,7 @@ function Pairing() {
         buddyNumber: buddies[0].buddyCount,
       });
     };
+
     setup();
   }, [buddies]);
 
@@ -178,13 +190,14 @@ function Pairing() {
 
   return (
     <Container>
+      <NoBuddy open={open && buddies.length === 0} close={() => setOpen(false)} />
       <PopUp
         name={buddy.name}
         buddyNumber={buddy.buddyNumber}
         sharedCourses={buddy.sharedCourses}
         open={buddies.length !== 0}
         size={128}
-        onClose={() => setBuddies([])}
+        onClose={closePopUp}
         onChat={() => handleOnChat(buddy.userId)}
         onNext={() => handleNextBuddy()}
       />
