@@ -3,12 +3,12 @@ import {
   Button,
   Stack,
   Typography,
-  TextField,
   Link,
   InputAdornment,
-  IconButton,
+  FormControl,
+  InputLabel,
+  OutlinedInput,
 } from '@mui/material';
-import SendIcon from '@mui/icons-material/Send';
 import { useNavigate } from 'react-router-dom';
 import styles from './UploadPage.module.css';
 import { uploadTimetableURL } from '../../api/TimetableAPI';
@@ -58,29 +58,31 @@ export default function UploadPage() {
   };
   return (
     <Stack direction="column" spacing={3} className={styles.title}>
-      <Button variant="contained" onClick={handleClickOpen}>
-        Upload Timetable
+      <Button variant="contained" onClick={handleClickOpen} className={styles.uploadButton}>
+        <b className={styles.textColour}>Upload Timetable ICS File</b>
       </Button>
 
       <UploadPopUp open={open} close={handleClose} />
-      <Typography>OR</Typography>
-      <TextField
-        id="outlined-input"
-        aria-label="Enter URL"
-        label="Enter your calendar URL"
-        disabled={disable}
-        value={calendarURL}
-        onChange={handleChange}
-        InputProps={{
-          endAdornment: (
+      <Typography><b>OR</b></Typography>
+      <FormControl>
+        <InputLabel><b className={styles.textColour}>Input your timetable URL...</b></InputLabel>
+        <OutlinedInput
+          className={styles.textBox}
+          id="outlined-input"
+          aria-label="Enter URL"
+          disabled={disable}
+          value={calendarURL}
+          onChange={handleChange}
+          endAdornment={
             <InputAdornment position="end">
-              <IconButton edge="end" color="primary" aria-label="submit" onClick={handleSubmit}>
-                <SendIcon />
-              </IconButton>
+              <button type="button" variant="contained" aria-label="submit" onClick={handleSubmit} className={styles.button}>
+                <b className={styles.textColour}>Submit</b>
+              </button>
             </InputAdornment>
-          ),
-        }}
-      />
+          }
+        />
+      </FormControl>
+
       <Link
         href="https://uoacal.auckland.ac.nz/home"
         underline="hover"
