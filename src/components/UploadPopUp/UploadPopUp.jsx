@@ -11,8 +11,6 @@ export default function UploadPopUp({ open, close }) {
   }
 
   const handleOnChange = (e) => {
-    console.log(e.target.files[0]); 
-
     if(e.target.files[0]){
       if(e.target.files[0].type !== 'text/calendar') {
         setFile(undefined);
