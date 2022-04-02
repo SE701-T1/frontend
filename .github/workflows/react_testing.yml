@@ -1,10 +1,16 @@
 # workflow name
 name: React Testing
 
-# execute on events
+# Events that trigger the workflow
 on:
+  # This workflow is run when changes are pushed to any branch
+  push:
+
+  # This workflow is run when pull requests to any branch are opened, reopened, and synchronized
   pull_request:
-    branches: [ main ]
+
+  # This workflow is run when manually triggered on the GitHub website
+  workflow_dispatch:
 
 # jobs to run
 jobs:
