@@ -5,14 +5,22 @@ import styles from './UploadPopUp.module.css';
 
 export default function UploadPopUp({ open, close }) {
   const [file, setFile] = useState(undefined);
-
+  const [error, setError] = useState('');
   function deleteFile() {
     setFile(undefined);
   }
 
   const handleOnChange = (e) => {
+    console.log(e.target.files[0]); 
+
     if(e.target.files[0]){
-      setFile(e.target.files[0]);
+      if(e.target.files[0].type !== 'text/calendar') {
+        setFile(undefined);
+        setError('Please upload a .ics file');
+      } else {
+        setFile(e.target.files[0]);
+        setError('');
+      }
     }
   };
 
@@ -36,7 +44,7 @@ export default function UploadPopUp({ open, close }) {
             sx={{ maxHeight: '40px', minWidth: '120px', minHeight: '40px' }}>
             <UploadIcon />
             Upload File
-            <input type="file" onChange={handleOnChange} hidden accept=".ical,.ics,.ifb,.icalendar" id="fileUpload"/>
+            <input type="file" onChange={handleOnChange} hidden accept=".ics" id="fileUpload"/>
           </Button>
         </div>
 
@@ -60,7 +68,7 @@ export default function UploadPopUp({ open, close }) {
           }
         </div>
       </form>
-      
+      <div className={styles["upload-Error"]}>{error}</div>
       <div className={styles['close-button']}>
         <Button
           variant="outlined"

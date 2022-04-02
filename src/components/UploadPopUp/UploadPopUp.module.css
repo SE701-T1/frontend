@@ -40,3 +40,7 @@
   justify-content: center;
   -webkit-justify-content: center;
 }
+
+.upload-Error {
+  margin:auto;
+}
