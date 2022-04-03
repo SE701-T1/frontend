@@ -75,9 +75,19 @@ export default function UploadPage() {
           onChange={handleChange}
           endAdornment={
             <InputAdornment position="end">
-              <button type="button" variant="contained" aria-label="submit" onClick={handleSubmit} className={styles.button}>
-                <b className={styles.textColour}>Submit</b>
-              </button>
+              <Button
+                variant="contained"
+                aria-label="submit"
+                onClick={handleSubmit}
+                sx={{
+                  borderRadius: '30px',
+                  padding: '10px',
+                  paddingLeft: '20px',
+                  paddingRight: '20px',
+                  borderWidth: '1px',
+                }}> 
+                  <b className={styles.textColour}>Submit</b>
+                </Button>
             </InputAdornment>
           }
         />
