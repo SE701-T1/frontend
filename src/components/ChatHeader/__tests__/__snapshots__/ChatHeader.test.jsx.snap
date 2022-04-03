@@ -53,10 +53,10 @@ exports[`renders correctly 1`] = `
     </div>
   </div>
   <div
-    className="MuiBox-root css-0"
+    className="right MuiBox-root css-0"
   >
     <div
-      className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-sizeSmall MuiInputBase-adornedStart css-1dpn08u-MuiInputBase-root-MuiOutlinedInput-root"
+      className="MuiOutlinedInput-root MuiInputBase-root MuiInputBase-colorPrimary MuiInputBase-fullWidth MuiInputBase-sizeSmall MuiInputBase-adornedStart searchBox css-182bkfv-MuiInputBase-root-MuiOutlinedInput-root"
       onClick={[Function]}
     >
       <div
