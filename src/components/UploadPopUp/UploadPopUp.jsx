@@ -4,20 +4,28 @@ import UploadIcon from '@mui/icons-material/Upload';
 import styles from './UploadPopUp.module.css';
 
 export default function UploadPopUp({ open, close }) {
-  const [file, setFile] = useState([]);
-
-  function deleteFile(e) {
-    const s = file.filter((item, index) => index !== e);
-    setFile(s);
+  const [file, setFile] = useState(undefined);
+  const [error, setError] = useState('');
+  function deleteFile() {
+    setFile(undefined);
   }
 
   const handleOnChange = (e) => {
-    setFile([...file, ...e.target.files]);
+    if(e.target.files[0]){
+      if(e.target.files[0].type !== 'text/calendar') {
+        setFile(undefined);
+        setError('Please upload a .ics file');
+      } else {
+        setFile(e.target.files[0]);
+        setError('');
+      }
+    }
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    /** need to add submit fucntion code here */
+    /* For issue #48: connect to backend */
+    close();
   };
 
   return (
@@ -34,39 +42,43 @@ export default function UploadPopUp({ open, close }) {
             sx={{ maxHeight: '40px', minWidth: '120px', minHeight: '40px' }}>
             <UploadIcon />
             Upload File
-            <input type="file" onChange={handleOnChange} hidden />
+            <input type="file" onChange={handleOnChange} hidden accept=".ics" id="fileUpload"/>
           </Button>
         </div>
 
         <div className={styles['form-group-preview']}>
-          {file != null &&
-            file.length > 0 &&
-            file.map((item, index) => (
-              <div key={item}>
-                {item.name}
-                <Button
-                  variant="outlined"
-                  sx={{
-                    maxWidth: '120px',
-                    maxHeight: '40px',
-                    minWidth: '120px',
-                    minHeight: '40px',
-                  }}
-                  type="button"
-                  onClick={() => deleteFile(index)}>
-                  Delete
-                </Button>
-              </div>
-            ))}
+          {
+           file !== undefined &&
+           <><div>{file.name}</div> 
+           <Button
+            variant="outlined"
+            sx={{
+              maxWidth: '120px',
+              maxHeight: '40px',
+              minWidth: '120px',
+              minHeight: '40px',
+              marginLeft: '10px'
+            }}
+            type="button"
+            onClick={() => deleteFile()}>
+            Delete
+            </Button></>
+          }
         </div>
       </form>
-
+      <div className={styles["upload-Error"]}>{error}</div>
       <div className={styles['close-button']}>
         <Button
           variant="outlined"
-          sx={{ maxWidth: '120px', maxHeight: '40px', minWidth: '120px', minHeight: '40px' }}
+          sx={{ maxWidth: '120px', maxHeight: '40px', minWidth: '120px', minHeight: '40px', marginRight: '5px'}}
           onClick={close}>
           Close
+        </Button>
+        <Button
+          variant="contained"
+          sx={{ maxWidth: '120px', maxHeight: '40px', minWidth: '120px', minHeight: '40px', marginLeft: '5px' }}
+          onClick={handleSubmit}>
+          Submit
         </Button>
       </div>
     </Dialog>
