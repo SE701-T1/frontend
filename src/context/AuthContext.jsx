@@ -56,8 +56,11 @@ export function AuthContextProvider({ children }) {
       }
 
       // Triggering a backend call to verify the integrity of the current JWT.
+      console.log(process.env.REACT_APP_BACKEND_ENDPOINT)
+      const baseUrl = 'http://localhost:8080'
       try {
-        await axios.get(`${process.env.REACT_APP_BACKEND_ENDPOINT}/api/validate`, {
+        
+        await axios.get(`${baseUrl}/api/validate`, {
           headers: {
             Authorization: `Bearer ${jwt}`,
           },

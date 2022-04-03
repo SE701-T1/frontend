@@ -14,6 +14,7 @@ import styles from './UploadPage.module.css';
 import { uploadTimetableURL } from '../../api/TimetableAPI';
 import UploadPopUp from '../../components/UploadPopUp/UploadPopUp';
 
+
 /**
  * This component can be used to display the upload page for the app after the user has logged in.
  * Users can input their timetable details into this page. Currenly the page is not functional.
@@ -35,7 +36,9 @@ export default function UploadPage() {
   const handleSubmit = () => {
     const upload = async () => {
       try {
+        console.log(calendarURL)
         await uploadTimetableURL(calendarURL);
+        // await axios.post({url: `api/timetable/users/upload/`, data: calendarURL});
         navigate('/find-matches');
       } catch (err) {
         setCalendarURL('');
@@ -62,7 +65,7 @@ export default function UploadPage() {
         <b className={styles.textColour}>Upload Timetable ICS File</b>
       </Button>
 
-      <UploadPopUp open={open} close={handleClose} />
+      <UploadPopUp open={open} close={handleClose}  />
       <Typography><b>OR</b></Typography>
       <FormControl>
         <InputLabel><b className={styles.textColour}>Input your timetable URL...</b></InputLabel>

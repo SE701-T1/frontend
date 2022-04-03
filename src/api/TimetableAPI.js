@@ -52,3 +52,8 @@ export const uploadTimetableURL = async (URL) => {
   const response = await postData(`api/timetable/users/upload/`, URL);
   return response;
 };
+
+export const uploadFileIcs = async (val) => {
+  const response = await postData(`api/timetable/users/upload/file`, val);
+  return response;
+};

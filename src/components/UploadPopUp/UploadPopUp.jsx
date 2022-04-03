@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Button, Dialog } from '@mui/material';
 import UploadIcon from '@mui/icons-material/Upload';
+import axios from 'axios';
+// import { uploadFileIcs } from '../../api/TimetableAPI';
 import styles from './UploadPopUp.module.css';
 
 export default function UploadPopUp({ open, close }) {
@@ -22,9 +24,27 @@ export default function UploadPopUp({ open, close }) {
     }
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     /* For issue #48: connect to backend */
+    console.log(e)
+    // await uploadFileIcs(file)
+
+    const formData = new FormData();
+    formData.append("file",file,file.name);
+    
+    // const config = {
+    // headers: { "Content-Type": "multipart/form-data" }
+    // };
+    axios({url: `http://localhost:8080/api/timetable/users/upload/file`, method: 'post', data: formData, headers: { "Content-Type": "multipart/form-data" }}).then( (response) => {
+      console.log(response);
+    })
+    .catch( (err) => {
+      console.log(err);
+    });
+
+
+    console.log(file)
     close();
   };
 
@@ -34,7 +54,7 @@ export default function UploadPopUp({ open, close }) {
         <h1> Upload Timetable</h1>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <div className={styles.uploadContent}>
           <Button
             component="label"
@@ -42,7 +62,7 @@ export default function UploadPopUp({ open, close }) {
             sx={{ maxHeight: '40px', minWidth: '120px', minHeight: '40px' }}>
             <UploadIcon />
             Upload File
-            <input type="file" onChange={handleOnChange} hidden accept=".ics" id="fileUpload"/>
+            <input type="file" onChange={handleOnChange} hidden multiple="multiple" accept=".ics" id="fileUpload"/>
           </Button>
         </div>
 

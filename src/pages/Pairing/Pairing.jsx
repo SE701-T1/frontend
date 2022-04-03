@@ -123,8 +123,40 @@ function Pairing() {
    */
   useEffect(() => {
     const fetchCourses = async () => {
-      const response = await getCourses();
-      setCourses(response);
+      // const response = await getCourses();
+      await getCourses();
+      const arr = [
+        {
+        courseId: 'aksdjnasd',
+        name: 'SOFTENG 701',
+        semester: 'klasmdkl',
+        studentCount: 'Create Bratton',
+        buddyCount: 10
+      },
+      {
+        courseId: 'aksdjnasd7',
+        name: 'SOFTENG 702',
+        semester: 'klasmdkl',
+        studentCount: 'Create Bratton',
+        buddyCount: 10
+      },
+      {
+        courseId: 'aksdjnasd4',
+        name: 'SOFTENG 703',
+        semester: 'klasmdkl',
+        studentCount: 'Create Bratton',
+        buddyCount: 10
+      },
+      {
+        courseId: 'aksdjnasd2',
+        name: 'SOFTENG 704',
+        semester: 'klasmdkl',
+        studentCount: 'Create Bratton',
+        buddyCount: 10
+      },
+    
+    ]
+      setCourses(arr);
     };
 
     fetchCourses();
