@@ -16,20 +16,20 @@ export default function Login() {
   const data = [
     {
       id: 1,
-      title: 'Online classes robbing you of the experince of making friends?',
+      title: 'Online classes robbing you of the experience of making friends? ',
       description:
-        'Get partners to study with! Even Batman needs Justice league to defeat DarkSeid, just saying!',
+          'Find study buddies online! Even Batman needs Justice League to defeat Darkseid, just saying!',
     },
     {
       id: 2,
       title: 'Collaborative learning is better than solo learning!',
       description:
-        'Several researches show students are able to perform well in their courses if they learn with a community.',
+          'Research shows students can perform well in their courses if they learn with a community.',
     },
     {
       id: 3,
-      title: 'Get teammates to study your courses with!',
-      description: 'Or find some awesome people to form a super secret rock band with ;)',
+      title: 'Find teammates to study your courses together!',
+      description: 'Or find awesome people to form a super secret rock band with ;)',
     },
   ];
 
