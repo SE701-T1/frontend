@@ -36,9 +36,7 @@ export default function UploadPage() {
   const handleSubmit = () => {
     const upload = async () => {
       try {
-        console.log(calendarURL)
         await uploadTimetableURL(calendarURL);
-        // await axios.post({url: `api/timetable/users/upload/`, data: calendarURL});
         navigate('/find-matches');
       } catch (err) {
         setCalendarURL('');

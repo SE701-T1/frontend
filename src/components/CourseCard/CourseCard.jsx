@@ -141,7 +141,7 @@ function CourseCard({ courseName, numbOfStudents }) {
 CourseCard.propTypes = {
   courseName: PropTypes.string.isRequired,
   // semesterNumber: PropTypes.string.isRequired,
-  numbOfStudents: PropTypes.number.isRequired,
+  numbOfStudents: PropTypes.string.isRequired,
   // numOfBuddies: PropTypes.number.isRequired,
 };
 

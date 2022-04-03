@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import NoBuddy from '../../components/NoBuddy/NoBuddy';
 import CourseCard from '../../components/CourseCard/CourseCard';
 import styles from './Pairing.module.css';
-import { getCourses, getUserCourses } from '../../api/TimetableAPI';
+import {  getUserCourses } from '../../api/TimetableAPI';
 import { findPairing } from '../../api/PairingAPI';
 import PopUp from '../../components/PopUp/PopUp';
 import { addBuddy } from '../../api/UserAPI';
@@ -21,6 +21,36 @@ const StyledButton = styled(Button)(() => ({
     color: '#666666',
   },
 }));
+const arr = [
+  {
+  courseId: 'aksdjnasd',
+  name: '  701',
+  semester: 'klasmdkl',
+  studentCount: 'Create Bratton',
+  buddyCount: 10
+},
+{
+  courseId: 'aksdjnasd7',
+  name: 'SOFTENG 702',
+  semester: 'klasmdkl',
+  studentCount: 'Create Bratton',
+  buddyCount: 10
+},
+{
+  courseId: 'aksdjnasd4',
+  name: 'SOFTENG 703',
+  semester: 'klasmdkl',
+  studentCount: 'Create Bratton',
+  buddyCount: 10
+},
+{
+  courseId: 'aksdjnasd2',
+  name: 'SOFTENG 704',
+  semester: 'klasmdkl',
+  studentCount: 'Create Bratton',
+  buddyCount: 10
+},
+]
 
 function Pairing() {
   const navigate = useNavigate();
@@ -28,7 +58,7 @@ function Pairing() {
   const [numOfSelectedCourses, setNumOfSelectedCourses] = useState(0);
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [open, setOpen] = useState(false);
-  const [courses, setCourses] = useState([]);
+  const [courses] = useState(arr);
   const [buddies, setBuddies] = useState([]);
   const [buddy, setBuddy] = useState({
     userId: 0,
@@ -122,44 +152,13 @@ function Pairing() {
    * Fetch course timetable
    */
   useEffect(() => {
-    const fetchCourses = async () => {
-      // const response = await getCourses();
-      await getCourses();
-      const arr = [
-        {
-        courseId: 'aksdjnasd',
-        name: 'SOFTENG 701',
-        semester: 'klasmdkl',
-        studentCount: 'Create Bratton',
-        buddyCount: 10
-      },
-      {
-        courseId: 'aksdjnasd7',
-        name: 'SOFTENG 702',
-        semester: 'klasmdkl',
-        studentCount: 'Create Bratton',
-        buddyCount: 10
-      },
-      {
-        courseId: 'aksdjnasd4',
-        name: 'SOFTENG 703',
-        semester: 'klasmdkl',
-        studentCount: 'Create Bratton',
-        buddyCount: 10
-      },
-      {
-        courseId: 'aksdjnasd2',
-        name: 'SOFTENG 704',
-        semester: 'klasmdkl',
-        studentCount: 'Create Bratton',
-        buddyCount: 10
-      },
-    
-    ]
-      setCourses(arr);
-    };
+    // const fetchCourses = async () => {
+    //   // const response = await getCourses();
+    //    // await getCourses();
+    //   // setCourses(arr);
+    // };
 
-    fetchCourses();
+  // fetchCourses();
   }, []);
 
   /**
@@ -239,7 +238,7 @@ function Pairing() {
         </Grid>
         <Grid item>
           <Grid container>
-            {courses.map(({ courseId, name, semester, studentCount, buddyCount }) => (
+            {courses.map(({ courseId, name, studentCount }) => (
               <Grid
                 item
                 xs={12}
@@ -252,9 +251,9 @@ function Pairing() {
                 <CourseCard
                   key={courseId}
                   courseName={name}
-                  semesterNumber={semester}
+                 // semesterNumber={semester}
                   numbOfStudents={studentCount}
-                  numOfBuddies={buddyCount || 0}
+                  // numOfBuddies={buddyCount || 0}
                 />
               </Grid>
             ))}
