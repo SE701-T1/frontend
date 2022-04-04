@@ -42,7 +42,7 @@ const StyledCard = styled(Card)(() => ({
   borderRadius: '15px',
 }));
 
-function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }) {
+function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies, onClick }) {
   const [selected, setSelected] = useState(false);
 
   const cardContent = (
@@ -63,8 +63,7 @@ function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }
         direction="row"
         alignItems="baseline"
         spacing={1}
-        className={styles.memberNBuddiesText}
-      >
+        className={styles.memberNBuddiesText}>
         <Grid item>
           <Grid container direction="column">
             <Grid item>
@@ -108,7 +107,7 @@ function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies }
   );
 
   return (
-    <Box className={styles.root}>
+    <Box className={styles.root} onClick={onClick}>
       {selected ? (
         <Box className={styles.root} onClick={() => setSelected(!selected)}>
           <SelectedCard className={styles.card}>
