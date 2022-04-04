@@ -23,33 +23,32 @@ const StyledButton = styled(Button)(() => ({
 }));
 const arr = [
   {
-  courseId: 'aksdjnasd',
-  name: '  701',
-  semester: 'klasmdkl',
-  studentCount: 'Create Bratton',
-  buddyCount: 10
-},
-{
-  courseId: 'aksdjnasd7',
-  name: 'SOFTENG 702',
-  semester: 'klasmdkl',
-  studentCount: 'Create Bratton',
-  buddyCount: 10
-},
-{
-  courseId: 'aksdjnasd4',
-  name: 'SOFTENG 703',
-  semester: 'klasmdkl',
-  studentCount: 'Create Bratton',
-  buddyCount: 10
-},
-{
-  courseId: 'aksdjnasd2',
-  name: 'SOFTENG 704',
-  semester: 'klasmdkl',
-  studentCount: 'Create Bratton',
-  buddyCount: 10
-},
+    courseId: 1110,
+    name: 'SOFTENG 701',
+    semester: '2022 sem 1',
+    studentCount: 10,
+    buddyCount: 4,
+    updatedTime: 1647383521,
+    info: 'Creed Bratton'
+  },
+  {
+    courseId: 1111,
+    name: 'SOFTENG 754',
+    semester: '2022 sem 1',
+    studentCount: 11,
+    buddyCount: 5,
+    updatedTime: 1647383522,
+    info: 'Creed Bratton'
+  },
+  {
+    courseId: 1112,
+    name: 'SOFTENG 756',
+    semester: '2022 sem 1',
+    studentCount: 11,
+    buddyCount: 5,
+    updatedTime: 1647383522,
+    info: 'Creed Bratton'
+  },
 ]
 
 function Pairing() {
@@ -238,7 +237,7 @@ function Pairing() {
         </Grid>
         <Grid item>
           <Grid container>
-            {courses.map(({ courseId, name, studentCount }) => (
+            {courses.map(({ courseId, name, semester, studentCount, buddyCount }) => (
               <Grid
                 item
                 xs={12}
@@ -251,9 +250,9 @@ function Pairing() {
                 <CourseCard
                   key={courseId}
                   courseName={name}
-                 // semesterNumber={semester}
+                  semesterNumber={semester}
                   numbOfStudents={studentCount}
-                  // numOfBuddies={buddyCount || 0}
+                  numOfBuddies={buddyCount || 0}
                 />
               </Grid>
             ))}

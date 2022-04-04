@@ -33,7 +33,7 @@ import styles from './LoginButton.module.css';
  */
 
 // const clientId = process.env.REACT_APP_CLIENT_ID;
-const clientId = '225482705208-6jsn0f21nbrgivrjg7f3msackech73m1.apps.googleusercontent.com'
+const clientId = process.env.REACT_APP_CLIENT_ID;
 console.log(clientId)
 export default function LoginButton({ onSuccess, onFailure }) {
   return (

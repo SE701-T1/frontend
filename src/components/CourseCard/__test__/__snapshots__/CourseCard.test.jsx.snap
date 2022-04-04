@@ -1,0 +1,126 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Course Component test produces the correct initial snapshot 1`] = `
+<div
+  className="root MuiBox-root css-0"
+>
+  <div
+    className="MuiPaper-root MuiPaper-elevation MuiPaper-rounded MuiPaper-elevation1 MuiCard-root card css-4qowu-MuiPaper-root-MuiCard-root"
+  >
+    <button
+      className="MuiButtonBase-root MuiCardActionArea-root css-b6lsxj-MuiButtonBase-root-MuiCardActionArea-root"
+      disabled={false}
+      onBlur={[Function]}
+      onClick={[Function]}
+      onContextMenu={[Function]}
+      onDragLeave={[Function]}
+      onFocus={[Function]}
+      onKeyDown={[Function]}
+      onKeyUp={[Function]}
+      onMouseDown={[Function]}
+      onMouseLeave={[Function]}
+      onMouseUp={[Function]}
+      onTouchEnd={[Function]}
+      onTouchMove={[Function]}
+      onTouchStart={[Function]}
+      tabIndex={0}
+      type="button"
+    >
+      <div
+        className="MuiCardContent-root cardContent css-46bh2p-MuiCardContent-root"
+      >
+        <div
+          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 cardList css-zow5z4-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+          >
+            <h5
+              className="MuiTypography-root MuiTypography-h5 title css-z49yrg-MuiTypography-root"
+            >
+              Softeng 701
+            </h5>
+            <p
+              className="MuiTypography-root MuiTypography-body1 semesterText css-1d9ye53-MuiTypography-root"
+            >
+              1
+            </p>
+          </div>
+        </div>
+        <div
+          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-1 memberNBuddiesText css-17oy7hn-MuiGrid-root"
+        >
+          <div
+            className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column css-1vpwcmr-MuiGrid-root"
+            >
+              <div
+                className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+              >
+                <svg
+                  aria-hidden={true}
+                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium icons css-i4bv87-MuiSvgIcon-root"
+                  data-testid="PersonIcon"
+                  focusable="false"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    d="M12 12c2.21 0 4-1.79 4-4s-1.79-4-4-4-4 1.79-4 4 1.79 4 4 4zm0 2c-2.67 0-8 1.34-8 4v2h16v-2c0-2.66-5.33-4-8-4z"
+                  />
+                </svg>
+              </div>
+            </div>
+          </div>
+          <div
+            className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+          >
+            <div
+              className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column css-1ojlkzy-MuiGrid-root"
+            >
+              <div
+                className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+              >
+                <h6
+                  className="MuiTypography-root MuiTypography-subtitle2 MuiTypography-alignRight text css-h2l1uj-MuiTypography-root"
+                >
+                  <strong>
+                    20
+                  </strong>
+                </h6>
+              </div>
+              <div
+                className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+              >
+                <h6
+                  className="MuiTypography-root MuiTypography-subtitle2 MuiTypography-alignRight text css-h2l1uj-MuiTypography-root"
+                >
+                  <strong>
+                    0
+                  </strong>
+                </h6>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="removeButton"
+        >
+          <div
+            className="button"
+            color="primaryDark"
+            data-testid="remove-buddy"
+            variant="outlined"
+          >
+            Remove Button
+          </div>
+        </div>
+      </div>
+      <span
+        className="MuiCardActionArea-focusHighlight css-1v2exvi-MuiCardActionArea-focusHighlight"
+      />
+    </button>
+  </div>
+</div>
+`;

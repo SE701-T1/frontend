@@ -4,7 +4,7 @@ import Box from '@mui/material/Box';
 import Card from '@mui/material/Card';
 import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
-import { CardActionArea, Grid, Button } from '@mui/material';
+import { CardActionArea, Grid } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
 // import GroupsIcon from '@mui/icons-material/Groups';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
@@ -42,7 +42,7 @@ const StyledCard = styled(Card)(() => ({
   borderRadius: '15px',
 }));
 
-function CourseCard({ courseName, numbOfStudents }) {
+function CourseCard({ courseName,semesterNumber, numbOfStudents, numOfBuddies, onClick }) {
   const [selected, setSelected] = useState(false);
 
   const cardContent = (
@@ -52,9 +52,9 @@ function CourseCard({ courseName, numbOfStudents }) {
           <Typography variant="h5" fontWeight={550} className={styles.title}>
             {courseName}
           </Typography>
-          {/* <Typography className={styles.semesterText} fontSize={14}>
+          <Typography className={styles.semesterText} fontSize={14}>
             {semesterNumber}
-          </Typography> */}
+          </Typography>
         </Grid>
       </Grid>
 
@@ -63,23 +63,19 @@ function CourseCard({ courseName, numbOfStudents }) {
         direction="row"
         alignItems="baseline"
         spacing={1}
-        className={styles.memberNBuddiesText}
-      >
-        <PersonIcon className={styles.icons} />
-        <strong className={styles.student}>{numbOfStudents}</strong>
-        <strong className={styles.buddies}>{courseName}</strong>
-        {/* <Grid item>
+        className={styles.memberNBuddiesText}>
+        <Grid item>
           <Grid container direction="column">
             <Grid item>
               <PersonIcon className={styles.icons} />
             </Grid>
-            <Grid item>
+            {/* <Grid item>
               <GroupsIcon className={styles.icons} />
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
         <Grid item>
-          <Grid container direction="column" alignItems="flex-end">
+          <Grid container direction="column" alignItems="flex-center">
             <Grid item>
               <Typography variant="subtitle2" className={styles.text} align="right">
                 <strong>{numbOfStudents}</strong>
@@ -92,7 +88,7 @@ function CourseCard({ courseName, numbOfStudents }) {
             </Grid>
           </Grid>
         </Grid>
-        <Grid item>
+        {/* <Grid item>
           <Grid container direction="column">
             <Grid item>
               <Typography variant="subtitle2" className={styles.text}>
@@ -108,20 +104,19 @@ function CourseCard({ courseName, numbOfStudents }) {
         </Grid> */}
       </Grid>
       <div className={styles.removeButton}>
-       <Button
-          className={styles.button}
-          color="primaryDark"
-          variant="outlined"
-          data-testid="remove-buddy">
-          Remove Button
-        </Button>
-      </div>
-
+        <div
+           className={styles.button}
+           color="primaryDark"
+           variant="outlined"
+           data-testid="remove-buddy">
+             Remove Button
+           </div>
+       </div>
     </CardContent>
   );
 
   return (
-    <Box className={styles.root}>
+    <Box className={styles.root} onClick={onClick}>
       {selected ? (
         <Box className={styles.root} onClick={() => setSelected(!selected)}>
           <SelectedCard className={styles.card}>
@@ -140,9 +135,9 @@ function CourseCard({ courseName, numbOfStudents }) {
 
 CourseCard.propTypes = {
   courseName: PropTypes.string.isRequired,
-  // semesterNumber: PropTypes.string.isRequired,
-  numbOfStudents: PropTypes.string.isRequired,
-  // numOfBuddies: PropTypes.number.isRequired,
+  semesterNumber: PropTypes.string.isRequired,
+  numbOfStudents: PropTypes.number.isRequired,
+  numOfBuddies: PropTypes.number.isRequired,
 };
 
 export default CourseCard;

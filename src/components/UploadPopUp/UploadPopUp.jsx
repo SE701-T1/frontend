@@ -36,7 +36,8 @@ export default function UploadPopUp({ open, close }) {
     // const config = {
     // headers: { "Content-Type": "multipart/form-data" }
     // };
-    axios({url: `http://localhost:8080/api/timetable/users/upload/file`, method: 'post', data: formData, headers: { "Content-Type": "multipart/form-data" }}).then( (response) => {
+    const baseUrl = process.env.REACT_APP_BACKEND_ENDPOINT;
+    axios({url: `${baseUrl}/api/timetable/users/upload/file`, method: 'post', data: formData, headers: { "Content-Type": "multipart/form-data" }}).then( (response) => {
       console.log(response);
     })
     .catch( (err) => {

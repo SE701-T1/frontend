@@ -22,11 +22,16 @@
   display: flex;
   align-items: center;
   text-align: center;
+  justify-content: center;
   padding: 5px 20px 5px 20px;
 }
 .button{
   margin-left: 10px !important;
   background-color: rgb(82, 72, 72) !important;
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  line-height: 50px;
 }
 
 .icons {
@@ -43,6 +48,7 @@
 
 .semesterText {
   /* font-family: 'inner'; */
+  text-align: center;
   color: #8896ac;
 }
 
@@ -56,6 +62,7 @@
   border-radius: 10px;
   display: flex;
   align-content: center;
+  flex-wrap: nowrap;
   align-items: center !important;
   flex-direction: column !important;
 }
