@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Grid } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
-// import GroupsIcon from '@mui/icons-material/Groups';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import PropTypes from 'prop-types';
 
@@ -88,20 +87,6 @@ function CourseCard({ courseName,semesterNumber, numbOfStudents, numOfBuddies, o
             </Grid>
           </Grid>
         </Grid>
-        {/* <Grid item>
-          <Grid container direction="column">
-            <Grid item>
-              <Typography variant="subtitle2" className={styles.text}>
-                <strong>Members</strong>
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="subtitle2" className={styles.text}>
-                <strong>Buddies</strong>
-              </Typography>
-            </Grid>
-          </Grid>
-        </Grid> */}
       </Grid>
       <div className={styles.removeButton}>
         <div

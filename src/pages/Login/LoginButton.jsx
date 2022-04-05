@@ -32,9 +32,7 @@ import styles from './LoginButton.module.css';
  * which can be changed from Google Developer Console later.
  */
 
-// const clientId = process.env.REACT_APP_CLIENT_ID;
 const clientId = process.env.REACT_APP_CLIENT_ID;
-console.log(clientId)
 export default function LoginButton({ onSuccess, onFailure }) {
   return (
     <GoogleLogin

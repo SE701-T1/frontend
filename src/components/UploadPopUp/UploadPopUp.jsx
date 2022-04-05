@@ -24,18 +24,13 @@ export default function UploadPopUp({ open, close }) {
     }
   };
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = (e) => {
     e.preventDefault();
     /* For issue #48: connect to backend */
-    console.log(e)
-    // await uploadFileIcs(file)
 
     const formData = new FormData();
     formData.append("file",file,file.name);
-    
-    // const config = {
-    // headers: { "Content-Type": "multipart/form-data" }
-    // };
+
     const baseUrl = process.env.REACT_APP_BACKEND_ENDPOINT;
     axios({url: `${baseUrl}/api/timetable/users/upload/file`, method: 'post', data: formData, headers: { "Content-Type": "multipart/form-data" }}).then( (response) => {
       console.log(response);
@@ -63,7 +58,7 @@ export default function UploadPopUp({ open, close }) {
             sx={{ maxHeight: '40px', minWidth: '120px', minHeight: '40px' }}>
             <UploadIcon />
             Upload File
-            <input type="file" onChange={handleOnChange} hidden multiple="multiple" accept=".ics" id="fileUpload"/>
+            <input type="file" onChange={handleOnChange} hidden accept=".ics" id="fileUpload"/>
           </Button>
         </div>
 

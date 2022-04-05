@@ -148,19 +148,6 @@ function Pairing() {
   };
 
   /**
-   * Fetch course timetable
-   */
-  useEffect(() => {
-    // const fetchCourses = async () => {
-    //   // const response = await getCourses();
-    //    // await getCourses();
-    //   // setCourses(arr);
-    // };
-
-  // fetchCourses();
-  }, []);
-
-  /**
    * Fetch next buddy from the list
    */
   useEffect(() => {
