@@ -6,7 +6,6 @@ import CardContent from '@mui/material/CardContent';
 import Typography from '@mui/material/Typography';
 import { CardActionArea, Grid } from '@mui/material';
 import PersonIcon from '@mui/icons-material/Person';
-import GroupsIcon from '@mui/icons-material/Groups';
 import CheckCircleOutlinedIcon from '@mui/icons-material/CheckCircleOutlined';
 import PropTypes from 'prop-types';
 
@@ -43,11 +42,12 @@ const StyledCard = styled(Card)(() => ({
 }));
 
 function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies, onClick }) {
+
   const [selected, setSelected] = useState(false);
 
   const cardContent = (
     <CardContent className={styles.cardContent}>
-      <Grid container direction="row" spacing={3}>
+      <Grid container direction="row" spacing={3} className={styles.cardList}>
         <Grid item>
           <Typography variant="h5" fontWeight={550} className={styles.title}>
             {courseName}
@@ -69,13 +69,13 @@ function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies, 
             <Grid item>
               <PersonIcon className={styles.icons} />
             </Grid>
-            <Grid item>
+            {/* <Grid item>
               <GroupsIcon className={styles.icons} />
-            </Grid>
+            </Grid> */}
           </Grid>
         </Grid>
         <Grid item>
-          <Grid container direction="column" alignItems="flex-end">
+          <Grid container direction="column" alignItems="flex-center">
             <Grid item>
               <Typography variant="subtitle2" className={styles.text} align="right">
                 <strong>{numbOfStudents}</strong>
@@ -88,21 +88,16 @@ function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies, 
             </Grid>
           </Grid>
         </Grid>
-        <Grid item>
-          <Grid container direction="column">
-            <Grid item>
-              <Typography variant="subtitle2" className={styles.text}>
-                <strong>Members</strong>
-              </Typography>
-            </Grid>
-            <Grid item>
-              <Typography variant="subtitle2" className={styles.text}>
-                <strong>Buddies</strong>
-              </Typography>
-            </Grid>
-          </Grid>
-        </Grid>
       </Grid>
+      <div className={styles.removeButton}>
+        <div
+           className={styles.button}
+           color="primaryDark"
+           variant="outlined"
+           data-testid="remove-buddy">
+             Remove Button
+           </div>
+       </div>
     </CardContent>
   );
 

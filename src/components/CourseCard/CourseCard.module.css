@@ -5,25 +5,72 @@
 .cardContent {
   padding-top: 20px;
   margin-bottom: 55px;
+
 }
 
 .card {
   position: relative;
 }
+.cardList{
+  display: flex;
+  justify-content: center;
+}
+.removeButton {
+  width: 100%;
+  text-transform: none !important;
+  margin-top: 200px !important;
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 5px 20px 5px 20px;
+}
+.button{
+  margin-left: 10px !important;
+  background-color: rgb(82, 72, 72) !important;
+  width: 200px;
+  height: 50px;
+  border-radius: 20px;
+  line-height: 50px;
+}
 
 .icons {
   display: inline;
+  width: 50px !important;
+  height: 50px !important;
   color: #666666;
   vertical-align: middle;
+}
+.student{
+  font-weight: 800 !important;
+  font-size: 22px !important;
 }
 
 .semesterText {
   /* font-family: 'inner'; */
+  text-align: center;
   color: #8896ac;
 }
 
 .memberNBuddiesText {
   padding-top: 15px;
+  margin-top: 20px !important;
+  margin-left: 30px;
+  width: 80%;
+  height: 150px;
+  background-color: #92aeda;
+  border-radius: 10px;
+  display: flex;
+  align-content: center;
+  flex-wrap: nowrap;
+  align-items: center !important;
+  flex-direction: column !important;
+}
+.buddies{
+  font-weight: 400px !important;
+  margin-top: 5px !important;
+  font-size: 18px !important;
+  color: #8896ac;
 }
 
 .text {
@@ -41,9 +88,10 @@
 }
 
 .title {
-  text-align: left;
+  text-align: center;
   overflow: hidden;
   text-overflow: ellipsis;
+  margin-left: 20px;
   display: -webkit-box;
   -webkit-line-clamp: 1; /* number of lines to show */
   line-clamp: 1;

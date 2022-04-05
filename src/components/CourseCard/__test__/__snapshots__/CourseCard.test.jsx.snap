@@ -30,7 +30,7 @@ exports[`Course Component test produces the correct initial snapshot 1`] = `
         className="MuiCardContent-root cardContent css-46bh2p-MuiCardContent-root"
       >
         <div
-          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 css-zow5z4-MuiGrid-root"
+          className="MuiGrid-root MuiGrid-container MuiGrid-spacing-xs-3 cardList css-zow5z4-MuiGrid-root"
         >
           <div
             className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
@@ -71,28 +71,13 @@ exports[`Course Component test produces the correct initial snapshot 1`] = `
                   />
                 </svg>
               </div>
-              <div
-                className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
-              >
-                <svg
-                  aria-hidden={true}
-                  className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium icons css-i4bv87-MuiSvgIcon-root"
-                  data-testid="GroupsIcon"
-                  focusable="false"
-                  viewBox="0 0 24 24"
-                >
-                  <path
-                    d="M12 12.75c1.63 0 3.07.39 4.24.9 1.08.48 1.76 1.56 1.76 2.73V18H6v-1.61c0-1.18.68-2.26 1.76-2.73 1.17-.52 2.61-.91 4.24-.91zM4 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm1.13 1.1c-.37-.06-.74-.1-1.13-.1-.99 0-1.93.21-2.78.58C.48 14.9 0 15.62 0 16.43V18h4.5v-1.61c0-.83.23-1.61.63-2.29zM20 13c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm4 3.43c0-.81-.48-1.53-1.22-1.85-.85-.37-1.79-.58-2.78-.58-.39 0-.76.04-1.13.1.4.68.63 1.46.63 2.29V18H24v-1.57zM12 6c1.66 0 3 1.34 3 3s-1.34 3-3 3-3-1.34-3-3 1.34-3 3-3z"
-                  />
-                </svg>
-              </div>
             </div>
           </div>
           <div
             className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
           >
             <div
-              className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column css-1v7j7al-MuiGrid-root"
+              className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column css-1ojlkzy-MuiGrid-root"
             >
               <div
                 className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
@@ -118,35 +103,17 @@ exports[`Course Component test produces the correct initial snapshot 1`] = `
               </div>
             </div>
           </div>
+        </div>
+        <div
+          className="removeButton"
+        >
           <div
-            className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
+            className="button"
+            color="primaryDark"
+            data-testid="remove-buddy"
+            variant="outlined"
           >
-            <div
-              className="MuiGrid-root MuiGrid-container MuiGrid-direction-xs-column css-1vpwcmr-MuiGrid-root"
-            >
-              <div
-                className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
-              >
-                <h6
-                  className="MuiTypography-root MuiTypography-subtitle2 text css-ati914-MuiTypography-root"
-                >
-                  <strong>
-                    Members
-                  </strong>
-                </h6>
-              </div>
-              <div
-                className="MuiGrid-root MuiGrid-item css-13i4rnv-MuiGrid-root"
-              >
-                <h6
-                  className="MuiTypography-root MuiTypography-subtitle2 text css-ati914-MuiTypography-root"
-                >
-                  <strong>
-                    Buddies
-                  </strong>
-                </h6>
-              </div>
-            </div>
+            Remove Button
           </div>
         </div>
       </div>

@@ -1,9 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button, Dialog } from '@mui/material';
 import UploadIcon from '@mui/icons-material/Upload';
+import axios from 'axios';
 import styles from './UploadPopUp.module.css';
 
 export default function UploadPopUp({ open, close }) {
+  const navigate = useNavigate();
   const [file, setFile] = useState(undefined);
   const [error, setError] = useState('');
   function deleteFile() {
@@ -25,6 +28,21 @@ export default function UploadPopUp({ open, close }) {
   const handleSubmit = (e) => {
     e.preventDefault();
     /* For issue #48: connect to backend */
+
+    const formData = new FormData();
+    formData.append("file",file,file.name);
+
+    const baseUrl = process.env.REACT_APP_BACKEND_ENDPOINT;
+    axios({url: `${baseUrl}/api/timetable/users/upload/file`, method: 'post', data: formData, headers: { "Content-Type": "multipart/form-data" }}).then( (response) => {
+      console.log(response);
+    }).then(() => {
+      navigate('/find-matches');
+   }).catch( (err) => {
+      console.log(err);
+    });
+
+
+    console.log(file)
     close();
   };
 
@@ -34,7 +52,7 @@ export default function UploadPopUp({ open, close }) {
         <h1> Upload Timetable</h1>
       </div>
 
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} >
         <div className={styles.uploadContent}>
           <Button
             component="label"
