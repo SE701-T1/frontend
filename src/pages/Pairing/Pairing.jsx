@@ -7,7 +7,7 @@ import { useNavigate } from 'react-router-dom';
 import NoBuddy from '../../components/NoBuddy/NoBuddy';
 import CourseCard from '../../components/CourseCard/CourseCard';
 import styles from './Pairing.module.css';
-import {  getUserCourses } from '../../api/TimetableAPI';
+import { getCourses, getUserCourses } from '../../api/TimetableAPI';
 import { findPairing } from '../../api/PairingAPI';
 import PopUp from '../../components/PopUp/PopUp';
 import { addBuddy } from '../../api/UserAPI';
@@ -21,35 +21,6 @@ const StyledButton = styled(Button)(() => ({
     color: '#666666',
   },
 }));
-const arr = [
-  {
-    courseId: 1110,
-    name: 'SOFTENG 701',
-    semester: '2022 sem 1',
-    studentCount: 10,
-    buddyCount: 4,
-    updatedTime: 1647383521,
-    info: 'Creed Bratton'
-  },
-  {
-    courseId: 1111,
-    name: 'SOFTENG 754',
-    semester: '2022 sem 1',
-    studentCount: 11,
-    buddyCount: 5,
-    updatedTime: 1647383522,
-    info: 'Creed Bratton'
-  },
-  {
-    courseId: 1112,
-    name: 'SOFTENG 756',
-    semester: '2022 sem 1',
-    studentCount: 11,
-    buddyCount: 5,
-    updatedTime: 1647383522,
-    info: 'Creed Bratton'
-  },
-]
 
 function Pairing() {
   const navigate = useNavigate();
@@ -57,7 +28,7 @@ function Pairing() {
   const [numOfSelectedCourses, setNumOfSelectedCourses] = useState(0);
   const [selectedCourses, setSelectedCourses] = useState([]);
   const [open, setOpen] = useState(false);
-  const [courses] = useState(arr);
+  const [courses, setCourses] = useState([]);
   const [buddies, setBuddies] = useState([]);
   const [buddy, setBuddy] = useState({
     userId: 0,
@@ -146,6 +117,18 @@ function Pairing() {
 
     setOpenNoBuddyFoundSnackbar(false);
   };
+
+  /**
+   * Fetch course timetable
+   */
+  useEffect(() => {
+    const fetchCourses = async () => {
+      const response = await getCourses();
+      setCourses(response);
+    };
+
+    fetchCourses();
+  }, []);
 
   /**
    * Fetch next buddy from the list
