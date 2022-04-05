@@ -1,11 +1,12 @@
 import React, { useState } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { Button, Dialog } from '@mui/material';
 import UploadIcon from '@mui/icons-material/Upload';
 import axios from 'axios';
-// import { uploadFileIcs } from '../../api/TimetableAPI';
 import styles from './UploadPopUp.module.css';
 
 export default function UploadPopUp({ open, close }) {
+  const navigate = useNavigate();
   const [file, setFile] = useState(undefined);
   const [error, setError] = useState('');
   function deleteFile() {
@@ -34,8 +35,9 @@ export default function UploadPopUp({ open, close }) {
     const baseUrl = process.env.REACT_APP_BACKEND_ENDPOINT;
     axios({url: `${baseUrl}/api/timetable/users/upload/file`, method: 'post', data: formData, headers: { "Content-Type": "multipart/form-data" }}).then( (response) => {
       console.log(response);
-    })
-    .catch( (err) => {
+    }).then(() => {
+      navigate('/find-matches');
+   }).catch( (err) => {
       console.log(err);
     });
 
