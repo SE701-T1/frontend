@@ -225,16 +225,9 @@ function Pairing() {
         <Grid item>
           <Grid container>
             {courses.map(({ courseId, name, semester, studentCount, buddyCount }) => (
-              <Grid
-                item
-                xs={12}
-                sm={6}
-                md={3}
-                col={4}
-                key={courseId}
-                className={styles.card}
-                onClick={() => handleSelectedCourse(courseId)}>
+              <Grid item xs={12} sm={6} md={3} col={4} key={courseId} className={styles.card}>
                 <CourseCard
+                  onClick={() => handleSelectedCourse(courseId)}
                   key={courseId}
                   courseName={name}
                   semesterNumber={semester}

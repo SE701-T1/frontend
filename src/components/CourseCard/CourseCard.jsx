@@ -41,7 +41,8 @@ const StyledCard = styled(Card)(() => ({
   borderRadius: '15px',
 }));
 
-function CourseCard({ courseName,semesterNumber, numbOfStudents, numOfBuddies, onClick }) {
+function CourseCard({ courseName, semesterNumber, numbOfStudents, numOfBuddies, onClick }) {
+
   const [selected, setSelected] = useState(false);
 
   const cardContent = (
